@@ -1,10 +1,88 @@
+<!--
+TODO - Add email contact modal form with validation
+TODO - Fix navbar targets so they don't overshoot navbar
+TODO - Auto close navbar hamburger menu when clicked
+TODO - Add some padding to the footer area so the page does not end so abruptly
+TODO - Test in IE/EDGE
+TODO - Continue to work on Chrome on Android Landscape view
+-->
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>HyperSprite GitHub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Portfolio</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/styles.css" />
   </head>
   <body>
-    <h2 id="hypersprite-on-github">HyperSprite on Github</h2>
-    <p>This is a github page hosting experiment. </p>
+  <!-- Page Contents -->
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="navwrap">
+      <ul class="topnav" id="topNavbar">
+        <li><a href="#home"><i class="fa fa-home fa-lg" aria-hidden="true"></i> Home</a></li>
+        <li><a href="#projects"><i class="fa fa-file-code-o  fa-lg" aria-hidden="true"></i> Projects</a></li>
+        <li><a href="#opensource"><i class="fa fa-code-fork  fa-lg" aria-hidden="true"></i> Open Source</a></li>
+        <li><a href="#more"><i class="fa fa-info-circle  fa-lg" aria-hidden="true"></i> More</a></li>
+        <li class="icon"><a href="javascript:void(0);" onclick="navBarBurger()"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- Headline -->
+
+
+
+    <div class="container">
+      <div class="profile-details">
+        <div class="profile-left">
+        <!-- <div class="profile">
+        </div> -->
+        <img class="profile" src="/assets/images/400x400.jpg">
+        <!-- <h3>Christopher Dunavan</h3> -->
+          <ul>
+            <li><h3>Christopher Dunavan</h3></li>
+
+          </ul>
+        </div>
+        <div class="profile-right">
+          <ul>
+            <li><i class="fa fa-at" aria-hidden="true"></i>HyperSprite</li>
+            <li><i class="fa fa-map-marker" aria-hidden="true"></i> SF Bay Area</li>
+            <li><div class="codeblock"><i class="fa fa-code" aria-hidden="true"></i> HTML, CSS, JavaScript, Node, Mongodb, Express, Bootstrap, React and more</div></li>
+            <li class="social"><a href="https://github.com/HyperSprite" target="new"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></li>
+            <li class="social"><a href="http://codepen.io/HyperSprite/" target="new"><i class="fa fa-codepen fa-2x" aria-hidden="true"></i></a></li>
+            <li class="social"><a href="https://www.linkedin.com/in/cdunavan" target="new"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></li>
+            <li class="social"><a href="https://twitter.com/HyperSprite" target="new"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></li>
+            <li class="social"><a href="http://www.hypersprite.com/blog" target="new"><i class="fa fa-wordpress fa-2x" aria-hidden="true"></i></a></li>
+            <!-- <li class="social"><a href="#"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a></li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="maincol">
+        <div class="cardgroup">
+          <h2>Projects</h2>
+          <div id="projects">
+            <!-- class="card" -->
+          </div>
+        </div>
+        <div class="cardgroup">
+          <h2>Open Source</h2>
+          <div id="opensource">
+            <!-- class="card" -->
+          </div>
+        </div>
+        <div class="cardgroup">
+          <h2>More</h2>
+          <div id="more">
+            <!-- class="card" -->
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="banner parallax">
+  </div>
+  <script src="/assets/scripts.js"></script>
   </body>
 </html>

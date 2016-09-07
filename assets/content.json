@@ -1,0 +1,68 @@
+[
+  {
+    "type":"projects",
+    "priority":"1",
+    "headline":"DCIT - Data Center Information Tracking",
+    "image":"/assets/images/dcitjumbotron.png",
+    "imgAlt":"Jumbotron from DCIT application",
+    "repoLink":"https://github.com/HyperSprite/dcit",
+    "demoLink":"https://dcit.hypersprite.com/",
+    "furtherReading":"https://github.com/HyperSprite/dcit/wiki",
+    "repoIcon":"fa-github-square",
+    "content":"This is a data center asset tracking tool that goes way beyond spreadsheets. The point was to make it easier to use the tool as the equipment is received and installed because, the reality is, nobody has time to go back and documents things.<br>I designed it using three main collections, Locations, Assets and Systems. This allows equipment to be treated as commodity while not loosing what makes each System unique. It has Search and Reporting capabilities that allow data to be easily exported and utilized by other departments. It currently uses:<br>Node.js and Express for the server and includes such npm packages such as Passport, Moment.js and many more<br>Mongodb and Mongoose for data storage and models<br>Front end is primarily server rendered templates using Handlebars, Bootstrap and jQuery<br><br>For the future,  I hope to move to a React front end to allow for easier customization of the configuration output scripts."
+  },
+  {
+    "type":"projects",
+    "priority":"5",
+    "headline":"Portfolio Project",
+    "image":"/assets/images/portfolioproject.png",
+    "imgAlt":"Header of a website",
+    "repoLink":"https://github.com/HyperSprite/hypersprite.github.io",
+    "demoLink":"",
+    "furtherReading":"",
+    "repoIcon":"fa-github-square",
+    "content":"This is the Portfolio Project. It uses no jQuery or Bootstrap (although it does have <a href='http://necolas.github.io/normalize.css'>Normalize.css</a> to get all the browsers on the same page). This list, with the three types is generated via JavaScript. JSON is downloaded via an AJAX request and then parsed into this list."
+  },
+  {
+    "type":"opensource",
+    "priority":"5",
+    "headline":"GoalsManager",
+    "repoLink":"https://github.com/tcote19/goalsmanager",
+    "image":"/assets/images/goalstar.png", "furtherReading":"https://app.moqups.com/hypersprite/neomoD50mC/view/page/ad64222d5",
+    "repoIcon":"fa-github-square",
+    "content":"This is just getting started. A small group of Front End JavaScript developers in Silicon Valley are spending their free time working on building a new interface for Google Tasks. The idea is that google has a fine Task API with a front end that has never reached its full potential. <br>I have completed some mock ups and others have begun to contribute code. This is still in early stages. <br>Some of the goals of this project are:<ul><li>Use as much of Google infrastructure as possible, including authentication and storage.</li><li>This should be a single page app.</li></ul>"
+  },
+  {
+    "type":"more",
+    "priority":"4",
+    "headline":"World Bike Relief",
+    "repoLink":"http://www.worldbicyclerelief.org/",
+    "furtherReading":"http://www.worldbicyclerelief.org/the-bike",
+    "repoIcon":"fa-bicycle",
+    "content":"World Bicycle Relief is a charity I firmly believe in that mobilizes people in Africa and other countries with Buffalo Bikes. The primary goal is to enable people to live better lives in a sustainable way. These bikes have been custom designed from the ground up for the rigors of harsh country and low environmental impact, while being sturdy enough not to become a burden on the people who need them. This enables kids to go to school, doctors to reach more people and farmers to get to market."
+  },
+  {
+    "type":"more",
+    "priority":"1",
+    "headline":"HyperSprite.com Photography Blog",
+    "image":"/assets/images/hyperspriteblog.jpg",
+    "imgAlt":"HyperSprite Blog Image",
+    "repoLink":"http://www.hypersprite.com/blog/",
+    "demoLink":"",
+    "furtherReading":"",
+    "repoIcon":"fa-wordpress",
+    "content":"This is a collection of pictures from my travels. Subjects range from landscapes of Yosemite and Zion National Parks to animals and other interests."
+  },
+  {
+    "type":"more",
+    "priority":"3",
+    "headline":"2017 Goal: Finish Leadville MTB Trail 100",
+    "image":"assets/images/leadvilleblvd.png",
+    "repoLink":"http://www.leadvilleraceseries.com/mtb/leadvilletrail100mtb/",
+    "imgAlt":"Mountain biking on the Leadville Blvd.",
+    "demoLink":"",
+    "furtherReading":"",
+    "repoIcon":"fa-square-o",
+    "content":"The Leadville Trail 100 Mountain Bike Race is a bucket list item. To be an official finisher, you need to complete <em>104 miles at altitudes between ten thousand and twelve thousand five hundred feet in under twelve hours</em>. The gold belt buckle is awarded for a time <strong>under nine hours</strong>. The first challenge is just to get in. The Lottery opens in December."
+  }
+]
