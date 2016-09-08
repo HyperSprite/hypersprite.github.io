@@ -11,7 +11,7 @@ TODO - Continue to work on Chrome on Android Landscape view
 <html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Portfolio</title>
+    <title>Christopher Dunavan's Portfolio</title>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
     <link rel="stylesheet" href="/assets/styles.css" />
@@ -26,13 +26,11 @@ TODO - Continue to work on Chrome on Android Landscape view
         <li><a href="#projects"><i class="fa fa-file-code-o  fa-lg" aria-hidden="true"></i> Projects</a></li>
         <li><a href="#opensource"><i class="fa fa-code-fork  fa-lg" aria-hidden="true"></i> Open Source</a></li>
         <li><a href="#more"><i class="fa fa-info-circle  fa-lg" aria-hidden="true"></i> More</a></li>
+        <!-- <li><a id="open-email-modal" href="#"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i> Contact</a></li> -->
         <li class="icon"><a href="javascript:void(0);" onclick="navBarBurger()"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></a></li>
       </ul>
     </div>
   </div>
-  <!-- Headline -->
-
-
 
     <div class="container">
       <div class="profile-details">
@@ -56,7 +54,7 @@ TODO - Continue to work on Chrome on Android Landscape view
             <li class="social"><a href="https://www.linkedin.com/in/cdunavan" target="new"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></li>
             <li class="social"><a href="https://twitter.com/HyperSprite" target="new"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></li>
             <li class="social"><a href="http://www.hypersprite.com/blog" target="new"><i class="fa fa-wordpress fa-2x" aria-hidden="true"></i></a></li>
-            <!-- <li class="social"><a href="#"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a></li> -->
+            <!-- <li class="social"><a id="open-email-modal" href="#"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a></li> -->
           </ul>
         </div>
       </div>
@@ -81,6 +79,56 @@ TODO - Continue to work on Chrome on Android Landscape view
         </div>
       </div>
   </div>
+
+
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content card">
+    <span class="close">x</span>
+    <h2><i class="fa fa-envelope fa-lg" aria-hidden="true"></i> Contact me!</h2>
+    <hr>
+
+    <div class="card-block">
+    <div class="card-img"><img src="/assets/images/email.png" alt="type faces from newspaper printing presses"></div>
+      <p>
+        Are you interested in what you see, feel free to reach out.
+      </p>
+    <form id="gform" method="POST" class="" action="https://script.google.com/macros/s/AKfycbwsqIfOwve6lPjha9s9pHerdAoOYqjzfbpWCDQlUu2bOXz1RnAR/exec">
+      <div class="modal-left">
+          <div class="form-group">
+            <label for="name">Name: </label><br>
+            <input id="name" name="name" placeholder="What your Mom calls you" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address:</label><br>
+            <input id="email" name="email" type="email" value="" required placeholder="your.name@email.com"/>
+          </div>
+          <div class="form-group">
+            <label for="name">Phone: </label><br>
+            <input id="name" name="name" placeholder="123-456-7890" />
+          </div>
+          <div class="form-group">
+            <label for="name">Prefered contact method: </label><br>
+            <input type="radio" id="prefcontact" name="prefcontact" value="email" checked /> Email<br>
+            <input type="radio" id="prefcontact" name="prefcontact" value="phone" /> Phone<br>
+          </div>
+        </div>
+        <div class="modal-right">
+          <div  class="form-group">
+            <label for="message">Message: </label><br>
+            <textarea id="message" name="message" rows="10" placeholder="Tell us what's on your mind..."></textarea>
+          </div>
+        </div>
+        <button class="card-btn"><i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+      </form>
+    </div>
+  </div>
+
+</div>
+
   <div class="banner parallax">
   </div>
   <script src="/assets/scripts.js"></script>

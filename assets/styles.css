@@ -4,28 +4,28 @@ progress,sub,sup{vertical-align:baseline}button,hr,input{overflow:visible}html{f
  /*End of Normalize.css*/
 
 body, html {
-    font-family: 'Open Sans', sans-serif;
-    height: 100%;
-    margin: 0;
-    background-color: #eee;
-    max-width: 100%;
-    overflow-x: hidden;
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  margin: 0;
+  background-color: #eee;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 a:link {
-    text-decoration: none;
-    font-weight: bold;
-    color: #444;
+  text-decoration: none;
+  font-weight: bold;
+  color: #444;
 }
 
 a:visited {
-    text-decoration: none;
-    color: #555;
+  text-decoration: none;
+  color: #555;
 }
 
 a:hover {
-    text-decoration: underline;
-    color: #19334d;
+  text-decoration: underline;
+  color: #19334d;
 }
 
 a:active {
@@ -33,14 +33,27 @@ a:active {
     color: #336699;
 }
 
+label {
+  color: #222;
+  font-weight: bold;
+  /*padding: 5px;*/
+  margin: 5px;
+}
+
+input {
+  border-radius: 5px;
+  border: none;
+  /*height: 24px;*/
+}
+
 .banner {
-    background-image: url("images/1500x500.jpg");
-    height: 500px;
-    background-attachment: fixed;
-    background-position: center top;
-    background-position: initial;
-    background-repeat: no-repeat;
-    background-size: inherit;
+  background-image: url("images/1500x500.jpg");
+  height: 500px;
+  background-attachment: fixed;
+  background-position: center top;
+  background-position: initial;
+  background-repeat: no-repeat;
+  background-size: inherit;
 }
 
 .navbar {
@@ -59,11 +72,11 @@ a:active {
 }
 
 ul.topnav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #eee;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #eee;
 }
 
 ul.topnav li {
@@ -71,13 +84,13 @@ ul.topnav li {
 }
 
 ul.topnav li a {
-    display: inline-block;
-    color: #666;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    transition: 0.3s;
-    font-size: 17px;
+  display: inline-block;
+  color: #666;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
 }
 
 ul.topnav li a:hover {
@@ -122,7 +135,7 @@ ul.topnav li.icon {
 }
 
 .profile-details li {
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 .sidebar {
@@ -171,23 +184,80 @@ ul.topnav li.icon {
 }
 
 .card-btn {
-    background-color: #444;
-    border: none;
-    border-radius: 4px;
-    margin: 4px;
-    color: #eee;
-    padding: 15px 26px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    width: 140px;
+  background-color: #444;
+  border: none;
+  border-radius: 4px;
+  margin: 4px;
+  color: #eee;
+  padding: 15px 26px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  width: 140px;
 }
 
 .card-btn:hover {
   background-color: #336699;
   cursor:pointer;
 }
+
+/* Email form modal ************************************************** */
+/* ******************************************************************* */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 3; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  /*margin: 15% auto;  15% from the top and centered*/
+}
+
+.modal h2 {
+  color: #444;
+}
+
+.modal-left {
+  width: 250px;
+  float: left;
+}
+
+.modal-right {
+  margin-left: 250px;
+}
+
+.form-group {
+  margin: 10px;
+  padding: 8px;
+}
+
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
 
 /* Media /////////////////////////////////////////////////  */
 
@@ -240,9 +310,9 @@ ul.topnav li.icon {
     margin: 3%;
   }
   .card-btn {
-      padding: 8px 14px;
-      font-size: 12px;
-      width: 100px;
+    padding: 8px 14px;
+    font-size: 12px;
+    width: 100px;
   }
 }
 
@@ -258,15 +328,14 @@ ul.topnav li.icon {
   }
 
   .profile-details {
-  position: absolute;
-  top: 120px;
-  bottom: 30%;
-  background-color: #eee;
-  width: 250px;
-  float: left;
-  border-radius: 10px;
-  /*border: 1px solid #eee;*/
-  margin-top: 30px;
+    position: absolute;
+    top: 120px;
+    bottom: 30%;
+    background-color: #eee;
+    width: 250px;
+    float: left;
+    border-radius: 10px;
+    margin-top: 30px;
   }
 
   .profile, .profile-details {
@@ -300,9 +369,9 @@ ul.topnav li.icon {
   }
 
   .card-btn {
-      padding: 6px 14px;
-      font-size: 12px;
-      width: 100px;
+    padding: 6px 14px;
+    font-size: 12px;
+    width: 100px;
   }
 
   .social {
@@ -349,8 +418,8 @@ ul.topnav li.icon {
   }
 
   .profile-details {
-  top: 40px;
-  margin-top: 30px;
+    top: 40px;
+    margin-top: 30px;
   }
 
   .profile, .profile-details {
