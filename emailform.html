@@ -14,41 +14,35 @@
     <span class="close">x</span>
     <h2><i class="fa fa-envelope fa-lg" aria-hidden="true"></i> Contact me!</h2>
     <hr>
-
-    <div class="card-block">
-    <div class="card-img"><img src="/assets/images/email.png" alt="type faces from newspaper printing presses"></div>
-      <p>
-        Are you interested in what you see, feel free to reach out.
-      </p>
     <form id="gform" method="POST" class="" action="https://script.google.com/macros/s/AKfycbwsqIfOwve6lPjha9s9pHerdAoOYqjzfbpWCDQlUu2bOXz1RnAR/exec">
-      <div class="modal-left">
-          <div class="form-group">
-            <label for="name">Name: </label><br>
-            <input id="name" name="name" placeholder="What your Mom calls you" />
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address:</label><br>
-            <input id="email" name="email" type="email" value="" required placeholder="your.name@email.com"/>
-          </div>
-          <div class="form-group">
-            <label for="name">Phone: </label><br>
-            <input id="name" name="name" placeholder="123-456-7890" />
-          </div>
-          <div class="form-group">
-            <label for="name">Prefered contact method: </label><br>
-            <input type="radio" id="prefcontact" name="prefcontact" value="email" checked /> Email<br>
-            <input type="radio" id="prefcontact" name="prefcontact" value="phone" /> Phone<br>
-          </div>
+      <div class="card-block">
+        <div class="card-img">
+          <img src="/assets/images/email.png" alt="type faces from newspaper printing presses">
         </div>
-        <div class="modal-right">
+        <p>
+          Feel free to reach out.
+        </p>
+        <div class="card-txt">
+          <div class="form-group">
+            <label class="hidden" for="name">Name: </label>
+            <input id="name" name="name" required placeholder="Name&nbsp;*" />
+          </div>
+          <div class="form-group">
+            <label class="hidden" for="email">Email:</label>
+            <input id="email" name="email" required type="email" value="" placeholder="Email&nbsp;*"/>
+          </div>
+          <div class="form-group">
+            <label class="hidden" for="phone">Phone: </label>
+            <input id="phone" name="phone" placeholder="Phone" />
+          </div>
           <div  class="form-group">
-            <label for="message">Message: </label><br>
-            <textarea id="message" name="message" rows="10" placeholder="Tell us what's on your mind..."></textarea>
+            <label class="hidden" for="message">Message: </label><br>
+            <textarea id="message" name="message" required rows="10" placeholder="What's on your mind...&nbsp;*"></textarea>
           </div>
         </div>
         <button class="card-btn"><i class="fa fa-paper-plane"></i>&nbsp;Send</button>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
 
 

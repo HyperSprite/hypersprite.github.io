@@ -1,28 +1,20 @@
-function navBarBurger() {
-  var gotTopNavBar = document.getElementById('topNavbar');
-  if (gotTopNavBar.className === 'topnav') {
-    gotTopNavBar.className += ' responsive';
-  } else {
-    gotTopNavBar.className = 'topnav';
-  }
-}
+(function () {
+  var parallax = document.querySelectorAll('.banner'),
+    speed = -0.5;
+  var navContainer = document.getElementById('nav-container');
 
-(function(){
-
-  var parallax = document.querySelectorAll(".parallax"),
-      speed = -0.5;
-
-  window.onscroll = function(){
-    [].slice.call(parallax).forEach(function(el,i){
-
+  window.onscroll = function () {
+    [].slice.call(parallax).forEach(function (el, i) {
       var windowYOffset = window.pageYOffset,
-          elBackgrounPos = "50% " + (windowYOffset * speed) + "px";
-
+        elBackgrounPos = '50% ' + (windowYOffset * speed) + 'px';
       el.style.backgroundPosition = elBackgrounPos;
-
     });
+    if (window.pageYOffset > 500) {
+      navContainer.className = 'locked';
+    } else {
+      navContainer.className = 'pho-hidden';
+    }
   };
-
 })();
 
 function Cards(data) {
@@ -32,76 +24,65 @@ function Cards(data) {
   this.image = data.image;
   this.imgAlt = data.imgAlt;
   this.repoLink = data.repoLink;
+  this.repoTitle = data.repoTitle;
   this.demoLink = data.demoLink;
   this.furtherReading = data.furtherReading;
   this.repoIcon = data.repoIcon;
   this.content = data.content;
   this.divCard = function () {
-    var icon = '';
-    var link = '';
-    var demo = '';
-    var moreInfo = '';
+    var icon = this.repoIcon ?
+      '<i class="fa ' + this.repoIcon + ' fa-lg" aria-hidden="true"></i> ' : '';
+
+    var repoBtnName = this.repoTitle || 'Site';
+
+    var link = this.repoLink ?
+      '<a href="' + this.repoLink + '" target="new"><button class="card-btn">' + repoBtnName + '</button></a>' : '';
+
+
+
+    var demoLink = this.demoLink ?
+      '<a href="' + this.demoLink + '" target="new"><button class="card-btn">Demo</button></a>' : '';
+    var moreInfo = this.furtherReading ?
+      '<a href="' + this.furtherReading + '" target="new"><button class="card-btn">More Info</button></a>' : '';
+    var cardImage = this.image ?
+      '<div class="card-img"><img src="' + this.image + '" alt="this.imgAlt"></div>' : '';
     var cardHeadline = '';
-    var cardImage = '';
     var cardText = '';
-    if (this.repoIcon) {
-      icon = '<i class="fa ' + this.repoIcon + ' fa-lg" aria-hidden="true"></i> ';
-    } else {
-      icon = '';
-    }
-    if (this.repoLink) {
-      link = '<a href="' + this.repoLink + '" target="new">' + icon + this.headline + '</a>';
-    } else {
-      link = icon + this.headline;
-    }
-    if (this.demoLink) {
-      demo = '<a href="' + this.demoLink + '" target="new"><button class="card-btn">Demo</button></a>';
-    } else {
-      demo = '';
-    }
-    if (this.furtherReading) {
-      moreInfo = '<a href="' + this.furtherReading + '" target="new"><button class="card-btn">More Info</button></a>'
-    } else {
-      moreInfo = '';
-    }
-    if (this.image) {
-      cardImage = '<div class="card-img"><img src="' + this.image + '" alt="this.imgAlt"></div>';
-    } else {
-      cardImage = '';
-    }
-    cardHeadline = '<div class="card"><h2>' + link + '</h2><hr>';
-    cardText = '<p class="card-txt">' + this.content + '</p>' + demo + moreInfo + '</div>';
+
+    cardHeadline = '<div class="card type-' + this.type + '"><h2>' + icon + this.headline + '</h2><hr>';
+    cardText = '<p class="card-txt">' + this.content + '</p>' + link + demoLink + moreInfo + '</div>';
     return cardHeadline + '<div class="card-block">' + cardImage + cardText + '</div>';
   };
 }
 
-var cardDeck;
+var cardDeck = {};
+var typeCount;
+
 (function () {
 var jsonFile = '/assets/content.json';
-  var cardType = {
-    project: '',
-    opensource: '',
-    more: '',
-  };
 
 function reqListener() {
-
-  cardDeck = JSON.parse(this.responseText).map(function(crd) {
+  var typeCnt;
+  cardDeck = JSON.parse(this.responseText).map(function (crd) {
     return new Cards(crd);
   });
   cardDeck.sort(function(obj0, obj1) {
     return obj0.priority - obj1.priority;
   });
-  for (var i = 0, len = cardDeck.length; i < len; i++) {
-    if (cardDeck[i].type === 'projects') {
-      document.getElementById('projects').insertAdjacentHTML('beforeend', cardDeck[i].divCard());
-    } else if (cardDeck[i].type === 'opensource') {
-      document.getElementById('opensource').insertAdjacentHTML('beforeend', cardDeck[i].divCard());
-    } else {
-      document.getElementById('more').insertAdjacentHTML('beforeend', cardDeck[i].divCard());
-    }
+
+  cardDeck.map(function (crd) {
+    document.getElementById(crd.type).insertAdjacentHTML('beforeend', crd.divCard());
+  });
+
+  typeCount = cardDeck.reduce(function (acc, crd) {
+    ++acc[crd.type];
+    return acc;
+  }, { projects: 0, opensource: 0, more: 0 });
+
+  for (var tCnt in typeCount) {
+    document.getElementById('type-' + tCnt).insertAdjacentHTML('beforeend', typeCount[tCnt]);
   }
-  return cardDeck;
+  return typeCount;
 }
 
 var oReq = new XMLHttpRequest();
@@ -111,26 +92,25 @@ oReq.send();
 })();
 
 // Modal
-var modal = document.getElementById('myModal');
+var modal = document.getElementById('emailModal');
+var emaillink = document.getElementById('open-email-modal');
+var span = document.getElementsByClassName('close')[0];
 
-var emaillink = document.getElementById("open-email-modal");
+emaillink.onclick = function () {
+  modal.style.display = 'inherit';
+  setTimeout(function () {
+    modal.className += ' modal-pop';
+  }, 2);
+};
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+span.onclick = function () {
+  modal.style.display = 'none';
+  modal.className = 'modal';
+};
 
-// When the user clicks on the button, open the modal
-emaillink.onclick = function() {
-    modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
+window.onclick = function (event) {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+    modal.className = 'modal';
+  }
+};

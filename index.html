@@ -1,7 +1,6 @@
 <!--
 TODO - Add email contact modal form with validation
 TODO - Fix navbar targets so they don't overshoot navbar
-TODO - Auto close navbar hamburger menu when clicked
 TODO - Add some padding to the footer area so the page does not end so abruptly
 TODO - Test in IE/EDGE
 TODO - Continue to work on Chrome on Android Landscape view
@@ -17,120 +16,128 @@ TODO - Continue to work on Chrome on Android Landscape view
     <link rel="stylesheet" href="/assets/styles.css" />
   </head>
   <body>
+
+  <!-- The Modal -->
+    <div id="emailModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content card">
+        <a href="#" class="close">x</a><br>
+        <form id="gform" method="POST" class="" action="https://script.google.com/macros/s/AKfycbwsqIfOwve6lPjha9s9pHerdAoOYqjzfbpWCDQlUu2bOXz1RnAR/exec">
+
+        <h2><i class="fa fa-envelope fa-lg" aria-hidden="true"></i> Contact me!</h2>
+        <hr>
+          <div class="card-block">
+            <div class="card-img">
+              <img src="/assets/images/email.png" alt="type faces from newspaper printing presses">
+            </div>
+            <p>
+              Feel free to reach out.
+            </p>
+            <div class="card-txt">
+              <div class="form-group">
+                <label class="hidden" for="name">Name: </label>
+                <input id="name" name="name" required placeholder="Name&nbsp;*" />
+              </div>
+              <div class="form-group">
+                <label class="hidden" for="email">Email:</label>
+                <input id="email" name="email" required type="email" value="" placeholder="Email&nbsp;*"/>
+              </div>
+              <div class="form-group">
+                <label class="hidden" for="phone">Phone: </label>
+                <input id="phone" name="phone" placeholder="Phone" />
+              </div>
+              <div  class="form-group">
+                <label class="hidden" for="message">Message: </label><br>
+                <textarea id="message" name="message" required rows="10" placeholder="What's on your mind...&nbsp;*"></textarea>
+              </div>
+            </div>
+            <button class="card-btn"><i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+          </div>
+        </form>
+        <div style="display:none;" id="thankyou_message">
+        <h2><em>Thanks</em> for contacting me!</h2>
+        <p>I will get back to you soon!</p>
+        </div>
+      </div>
+
+    </div>
+
   <!-- Page Contents -->
+
+  <!-- Banner -->
+  <div class="banner">
+  </div>
   <!-- Navbar -->
-  <div class="navbar">
-    <div class="navwrap">
-      <ul class="topnav" id="topNavbar">
-        <li><a href="#home"><i class="fa fa-home fa-lg" aria-hidden="true"></i> Home</a></li>
-        <li><a href="#projects"><i class="fa fa-file-code-o  fa-lg" aria-hidden="true"></i> Projects</a></li>
-        <li><a href="#opensource"><i class="fa fa-code-fork  fa-lg" aria-hidden="true"></i> Open Source</a></li>
-        <li><a href="#more"><i class="fa fa-info-circle  fa-lg" aria-hidden="true"></i> More</a></li>
-        <!-- <li><a id="open-email-modal" href="#"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i> Contact</a></li> -->
-        <li class="icon"><a href="javascript:void(0);" onclick="navBarBurger()"><i class="fa fa-bars fa-lg" aria-hidden="true"></i></a></li>
-      </ul>
+  <div id="nav-container" class="pho-hidden">
+    <div class="nav-left">&nbsp;
+    </div>
+    <div class="navbar nav-right">
+        <ul class="topnav" id="topNavbar">
+          <li><a href="#home"><span class="hide-label">Home</span><div><i class="fa fa-home fa-lg" aria-hidden="true"></i></div></a></li>
+          <li><a href="#"><span class="hide-label">Projects</span><div id="type-projects"><i class="fa fa-file-code-o fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;</div></a></li>
+          <li><a href="#"><span class="hide-label">Open Source</span><div  id="type-opensource"><i class="fa fa-code-fork fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;</div></a></li>
+          <li><a href="#"><span class="hide-label">More</span><div id="type-more"><i class="fa fa-info-circle fa-lg" aria-hidden="true"></i>&nbsp;&nbsp;</div></a></li>
+        </ul>
     </div>
   </div>
 
-    <div class="container">
-      <div class="profile-details">
-        <div class="profile-left">
-        <!-- <div class="profile">
-        </div> -->
-        <img class="profile" src="/assets/images/400x400.jpg">
-        <!-- <h3>Christopher Dunavan</h3> -->
-          <ul>
-            <li><h3>Christopher Dunavan</h3></li>
+  <img class="profile" src="/assets/images/400x400.jpg">
 
-          </ul>
-        </div>
-        <div class="profile-right">
-          <ul>
-            <li><i class="fa fa-at" aria-hidden="true"></i>HyperSprite</li>
-            <li><i class="fa fa-map-marker" aria-hidden="true"></i> SF Bay Area</li>
-            <li><div class="codeblock"><i class="fa fa-code" aria-hidden="true"></i> HTML, CSS, JavaScript, Node, Mongodb, Express, Bootstrap, React and more</div></li>
-            <li class="social"><a href="https://github.com/HyperSprite" target="new"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a></li>
-            <li class="social"><a href="http://codepen.io/HyperSprite/" target="new"><i class="fa fa-codepen fa-2x" aria-hidden="true"></i></a></li>
-            <li class="social"><a href="https://www.linkedin.com/in/cdunavan" target="new"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></li>
-            <li class="social"><a href="https://twitter.com/HyperSprite" target="new"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></li>
-            <li class="social"><a href="http://www.hypersprite.com/blog" target="new"><i class="fa fa-wordpress fa-2x" aria-hidden="true"></i></a></li>
-            <!-- <li class="social"><a id="open-email-modal" href="#"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a></li> -->
-          </ul>
-        </div>
+  <div class="container">
+    <div class="profile-details">
+      <div class="profile-left">
+        <!-- <img class="profile" src="/assets/images/400x400.jpg"> -->
+      <div class="social">
+        <h3>Christopher Dunavan</h3>
       </div>
-      <div class="maincol">
-        <div class="cardgroup">
-          <h2>Projects</h2>
-          <div id="projects">
-            <!-- class="card" -->
+        </div>
+          <div class="profile-right">
+          <div class="social">
+            <ul>
+              <li><i class="fa fa-at" aria-hidden="true"></i>HyperSprite</li>
+              <li><i class="fa fa-map-marker" aria-hidden="true"></i> SF Bay Area</li>
+              <li><div class="codeblock"><i class="fa fa-code" aria-hidden="true"></i> HTML, CSS, JavaScript, Node, Mongodb, Express, Bootstrap, React and more</div></li>
+              <li class="social"><a href="https://github.com/HyperSprite" target="new"><i class="fa fa-github fa-lg" aria-hidden="true"></i><span class="hide-label">&nbsp;Github</span></a></li>
+              <li class="social"><a href="http://codepen.io/HyperSprite/" target="new"><i class="fa fa-codepen fa-lg" aria-hidden="true"></i><span class="hide-label">&nbsp;CodePen</span></a></li>
+              <li class="social"><a href="https://www.linkedin.com/in/cdunavan" target="new"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i><span class="hide-label">&nbsp;LinkedIn</span></a></li>
+              <li class="social"><a href="https://twitter.com/HyperSprite" target="new"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i><span class="hide-label">&nbsp;Twitter</span></a></li>
+              <li class="social"><a href="http://www.hypersprite.com/blog" target="new"><i class="fa fa-wordpress fa-lg" aria-hidden="true"></i><span class="hide-label">&nbsp;Blog</span></a></li>
+              <li class="social"><a id="open-email-modal" href="#"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i><span class="hide-label">&nbsp;Email</span></a></li>
+            </ul>
+          </div>
           </div>
         </div>
-        <div class="cardgroup">
-          <h2>Open Source</h2>
-          <div id="opensource">
-            <!-- class="card" -->
+        <div class="maincol col-right">
+          &nbsp;
+          <div class="cardgroup">
+            <h2>Projects</h2>
+            <div id="projects">
+              <!-- class="card" -->
+            </div>
+          </div>
+          <div class="cardgroup">
+            <h2>Open Source</h2>
+            <div id="opensource">
+              <!-- class="card" -->
+            </div>
+          </div>
+          <div class="cardgroup">
+            <h2>More</h2>
+            <div id="more">
+              <!-- class="card" -->
+            </div>
           </div>
         </div>
-        <div class="cardgroup">
-          <h2>More</h2>
-          <div id="more">
-            <!-- class="card" -->
-          </div>
-        </div>
-      </div>
-  </div>
-
-
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- Modal content -->
-  <div class="modal-content card">
-    <span class="close">x</span>
-    <h2><i class="fa fa-envelope fa-lg" aria-hidden="true"></i> Contact me!</h2>
-    <hr>
-
-    <div class="card-block">
-    <div class="card-img"><img src="/assets/images/email.png" alt="type faces from newspaper printing presses"></div>
-      <p>
-        Are you interested in what you see, feel free to reach out.
-      </p>
-    <form id="gform" method="POST" class="" action="https://script.google.com/macros/s/AKfycbwsqIfOwve6lPjha9s9pHerdAoOYqjzfbpWCDQlUu2bOXz1RnAR/exec">
-      <div class="modal-left">
-          <div class="form-group">
-            <label for="name">Name: </label><br>
-            <input id="name" name="name" placeholder="What your Mom calls you" />
-          </div>
-          <div class="form-group">
-            <label for="email">Email Address:</label><br>
-            <input id="email" name="email" type="email" value="" required placeholder="your.name@email.com"/>
-          </div>
-          <div class="form-group">
-            <label for="name">Phone: </label><br>
-            <input id="name" name="name" placeholder="123-456-7890" />
-          </div>
-          <div class="form-group">
-            <label for="name">Prefered contact method: </label><br>
-            <input type="radio" id="prefcontact" name="prefcontact" value="email" checked /> Email<br>
-            <input type="radio" id="prefcontact" name="prefcontact" value="phone" /> Phone<br>
-          </div>
-        </div>
-        <div class="modal-right">
-          <div  class="form-group">
-            <label for="message">Message: </label><br>
-            <textarea id="message" name="message" rows="10" placeholder="Tell us what's on your mind..."></textarea>
-          </div>
-        </div>
-        <button class="card-btn"><i class="fa fa-paper-plane"></i>&nbsp;Send</button>
-      </form>
     </div>
-  </div>
 
-</div>
 
-  <div class="banner parallax">
-  </div>
+
+
+
+
+
   <script src="/assets/scripts.js"></script>
+  <script src="/assets/email-handler.js"></script>
   </body>
 </html>

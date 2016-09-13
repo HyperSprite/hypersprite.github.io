@@ -1,7 +1,12 @@
 /*Start of Normalize.css, found here http://necolas.github.io/normalize.css/*/
 progress,sub,sup{vertical-align:baseline}button,hr,input{overflow:visible}html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0} figcaption, menu,article,aside,details,figure,footer,header,main,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block}audio:not([controls]){display:none;height:0} [hidden],template{display:none}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}svg:not(:root){overflow:hidden}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}figure{margin:1em 40px}hr{box-sizing:content-box;height:0}button,input,optgroup,select,textarea{font:inherit;margin:0}optgroup{font-weight:700}button,input{}button,select{text-transform:none}[type=submit], [type=reset],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:ButtonText dotted 1px}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-input-placeholder{color:inherit;opacity:.54}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}
 
- /*End of Normalize.css*/
+/*End of Normalize.css*/
+
+* {
+    box-sizing: border-box;
+    transition: 0.5s;
+}
 
 body, html {
   font-family: 'Open Sans', sans-serif;
@@ -33,42 +38,134 @@ a:active {
     color: #336699;
 }
 
-label {
-  color: #222;
-  font-weight: bold;
-  /*padding: 5px;*/
-  margin: 5px;
+/* ********************************************************* */
+/* ********************************************************* */
+/* * Email form ******************************************** */
+
+/* For screen readers*/
+.hidden {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}
+/* /end for screen readers */
+
+.form-group {
+  padding: 2px;
+  width: 100%;
 }
 
-input {
-  border-radius: 5px;
+
+input, textarea {
+  width: 100%;
+  font-size: 22px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 6px;
   border: none;
-  /*height: 24px;*/
+  border-bottom: solid 2px #ccc;
+  transition: border 0.3s;
 }
+
+textarea {
+  margin-top: -17px;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-bottom: solid 3px #444;
+  border-top: solid 1px #eee;
+}
+
+/* * Email form ******************************************** */
+/* ********************************************************* */
+/* * Email Modal ******************************************* */
+
+.modal {
+  display: none;
+  z-index: 5;
+  margin: 0 100%;
+  left: -600;
+  top: 0;
+  width: 1px;
+  height: 1px%;
+  overflow: none;
+}
+
+.modal-pop {
+  position: fixed;
+  float: left;
+  z-index: 5;
+  margin: 0;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(64,36,0,0.6);
+  transform:scale(1);
+  transition: .8s;
+}
+/* Modal Content/Box */
+
+.modal h2,p {
+  position:relative;
+  color: #444;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* * Email Modal ******************************************* */
+/* ********************************************************* */
+/* * Background and Navbar ********************************* */
 
 .banner {
   background-image: url("images/1500x500.jpg");
   height: 500px;
   background-attachment: fixed;
-  background-position: center top;
-  background-position: initial;
+  background-position: 50% 0px;
   background-repeat: no-repeat;
   background-size: inherit;
 }
 
-.navbar {
+
+.nav-left {
+  width: 500px;
+  float: left;
+}
+
+.nav-right {
+}
+
+
+.locked {
   margin: 0;
+  top: 0px;
   position:fixed;
   width: 100%;
-  background-color: #eee;
+  background-color: #fff;
   z-index: 2;
 }
 
-.navwrap {
-  width: 80%;
-  float: right;
-  margin: auto;
-  text-align: center;
+.navbar {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: solid 1px #aaa;
+  box-shadow: 0 6px 6px 0 rgba(0,0,0,0.2);
 }
 
 ul.topnav {
@@ -76,7 +173,7 @@ ul.topnav {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #eee;
+  background-color: #fff;
 }
 
 ul.topnav li {
@@ -85,25 +182,43 @@ ul.topnav li {
 
 ul.topnav li a {
   display: inline-block;
-  color: #666;
+  color: #777;
   text-align: center;
-  padding: 14px 16px;
+  padding: 2px 10px;
   text-decoration: none;
-  transition: 0.3s;
-  font-size: 17px;
+  border-bottom: solid 5px rgba(0,0,0,0.0);
+  font-size: 10px;
+  font-style: normal;
+}
+
+ul.topnav li a div {
+  padding-top: 2px;
+  font-size: 16px;
+  width: 70px;
+  font-style: normal;
 }
 
 ul.topnav li a:hover {
-  background-color: #ccc;
-  color: #222;
+  color: #336699;
+  border-bottom: solid 5px rgba(51, 102, 153,0.9);
 }
 
 ul.topnav li.icon {
   display: none;
 }
 
-.profile {
+/* * Background and Navbar ********************************* */
+/* ********************************************************* */
+/* * Profile and Cards ************************************* */
+
+.profile, .profile-details {
+  position: absolute;
+  left: 200px;
   width: 250px;
+}
+
+.profile {
+  top: 350px;
   height: 250px;
   border-radius: 10px;
   border: 8px solid #eee;
@@ -118,40 +233,49 @@ ul.topnav li.icon {
 }
 
 .profile-details {
-  position: absolute;
-  top: 300px;
-  bottom: 30%;
-  left: 10%;
-  background-color: #eee;
-  width: 250px;
+  left: reletive;
   float: left;
   border-radius: 10px;
-  margin-top: 30px;
+  margin-top: 50px;
 }
 
 .profile-details ul {
   list-style-type: none;
   font-weight: bold;
+  padding-left: 0;
 }
 
 .profile-details li {
-  margin-bottom: 10px;
+  margin: 5px;
 }
 
-.sidebar {
-  width: 280px;
-  float: left;
+.profile-right {
+  width: 250;
+}
+
+.profile-left {
+  width: 250px;
+  left: 250px;
+  text-align: center;
 }
 
 .maincol {
   position: absolute;
-  left: 35%;
-  margin-top: 500px;
+  left: 500px;
   padding-top: 5px;
 }
 
 .cardgroup {
   width: 100%;
+}
+
+.card {
+  background-color: #ddd;
+  width: 600px;
+  margin: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2);
 }
 
 .card-block {
@@ -163,24 +287,15 @@ ul.topnav li.icon {
   display: block;
   margin: auto;
   max-width: 500px;
+  width: 100%;
   max-height: 100%;
   border-radius: 5px;
-
 }
 
 .card-txt {
   display: block;
   margin: 3%;
   max-width: 540px;
-}
-
-.card {
-  background-color: #ddd;
-  width: 600px;
-  margin: 20px;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2);
 }
 
 .card-btn {
@@ -197,69 +312,14 @@ ul.topnav li.icon {
   width: 140px;
 }
 
-.card-btn:hover {
+.card-btn:hover, .card-btn:focus {
   background-color: #336699;
   cursor:pointer;
 }
 
-/* Email form modal ************************************************** */
-/* ******************************************************************* */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 3; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-  /*margin: 15% auto;  15% from the top and centered*/
-}
-
-.modal h2 {
-  color: #444;
-}
-
-.modal-left {
-  width: 250px;
-  float: left;
-}
-
-.modal-right {
-  margin-left: 250px;
-}
-
-.form-group {
-  margin: 10px;
-  padding: 8px;
-}
-
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-
-
-
-/* Media /////////////////////////////////////////////////  */
+/* * Profile and Cards ************************************* */
+/* ********************************************************* */
+/* * Media ************************************************* */
 
 @media screen and (min-width:1500px) {
   .banner {
@@ -270,179 +330,116 @@ ul.topnav li.icon {
   }
   .card {
     width: 800px;
-    margin: 30px;
   }
 }
 
-@media screen and (max-width:1140px) {
+@media screen and (max-width:1160px) {
 
-  .profile, .profile-details {
-    left: 2%;
+  .nav-left {
+    width: 370px;
   }
 
   .maincol {
-    left: 31%;
-  }
-}
-
-@media screen and (max-width:940px) {
-  .banner {
-    background-size: inherit;
-  }
-
-  .nav-container {
-    width: 90%;
+    left: 370px;
   }
 
   .profile, .profile-details {
-    left: 1%;
+    left: 100px;
+  }
+
+@media screen and (max-width:1030px) {
+
+   .nav-left {
+    width: 320px;
   }
 
   .maincol {
-    left: 40%;
+    left: 320px;
   }
 
-  .card-block, .card-img img {
-    max-width: 93%;
+  .profile, .profile-details {
+    left: 50px;
   }
+
   .card {
     width: auto;
     margin: 3%;
   }
   .card-btn {
-    padding: 8px 14px;
+    padding: 8px 8px;
     font-size: 12px;
     width: 100px;
   }
 }
 
-
 @media screen and (max-width:720px) {
-  .banner {
-    background-size: auto;
-    height: 460px;
+
+   .nav-left {
+    width: 270px;
   }
 
-  .nav-container {
-    width: 100%;
-  }
-
-  .profile-details {
-    position: absolute;
-    top: 120px;
-    bottom: 30%;
-    background-color: #eee;
-    width: 250px;
-    float: left;
-    border-radius: 10px;
-    margin-top: 30px;
+  .maincol {
+    left: 270px;
   }
 
   .profile, .profile-details {
     left: 10px;
   }
-
-  .profile-details {
-    width: 480px;
+  ul.topnav li a div {
+    padding-top: 2px;
+    font-size: 14px;
+    width: 40px;
+    font-style: normal;
   }
 
-  .profile-left {
-    width: 250px;
-    float: left;
-    background-color: #eee;
-  }
+}
 
-  .profile-right {
-    margin-left: 245px;
-    width: 210px;
-    background-color: #eee;
+@media screen and (max-width:600px) {
+  .nav-left {
+    width: 10px;
   }
 
   .maincol {
-    margin-top: 450px;
-    left: 16px;
+    left: 10px;
   }
 
-  .card {
-    width: auto;
-    margin: 3%;
+  .profile {
+    left: 10px;
+    top: 10px;
   }
 
-  .card-btn {
-    padding: 6px 14px;
-    font-size: 12px;
-    width: 100px;
+  .profile-details {
+    left: 10px;
+    top: 220px;
+    background-color: #eee;
+    border-radius: 10px;
   }
 
-  .social {
-    float: left;
+  .hide-label {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
   }
 
   .social a {
+    float: left;
     display: block;
-    text-align: center;
-    padding: 10px 14px;
+    padding: 8px;
     text-decoration: none;
   }
 
-  ul.topnav li:not(:first-child) {
+  .pho-hidden {
     display: none;
   }
-  ul.topnav li.icon {
-    float: right;
-    display: inline-block;
-  }
-  ul.topnav.responsive {
-    position: relative;
-  }
-  ul.topnav.responsive li.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  ul.topnav.responsive li {
-    float: none;
-    display: inline;
-  }
-  ul.topnav.responsive li a {
-    display: block;
-    text-align: left;
-  }
 
+  .card-btn {
+    padding: 16px;
+    font-size: 16px;
+    width: 100%
+  }
 }
 
-@media screen and (max-width:500px) {
-
-  .banner {
-    height: 600px;
-  }
-
-  .profile-details {
-    top: 40px;
-    margin-top: 30px;
-  }
-
-  .profile, .profile-details {
-    left: 10px;
-  }
-
-  .profile-details {
-    width: 265px;
-  }
-
-  .profile-left {
-    width: 265px;
-    float: none;
-  }
-
-  .profile-right {
-    margin-left: 0;
-    width: 265px;
-  }
-
-  .maincol {
-    margin-top: 660px;
-    left: 16px;
-  }
-}
 

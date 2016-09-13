@@ -6,6 +6,7 @@
     "image":"/assets/images/dcitjumbotron.png",
     "imgAlt":"Jumbotron from DCIT application",
     "repoLink":"https://github.com/HyperSprite/dcit",
+    "repoTitle":"Repo",
     "demoLink":"https://dcit.hypersprite.com/",
     "furtherReading":"https://github.com/HyperSprite/dcit/wiki",
     "repoIcon":"fa-github-square",
@@ -18,8 +19,8 @@
     "image":"/assets/images/portfolioproject.png",
     "imgAlt":"Header of a website",
     "repoLink":"https://github.com/HyperSprite/hypersprite.github.io",
-    "demoLink":"",
-    "furtherReading":"",
+    "repoTitle":"Repo",
+    "demoLink":"http://hypersprite.github.io/",
     "repoIcon":"fa-github-square",
     "content":"This is the Portfolio Project. It uses no jQuery or Bootstrap (although it does have <a href='http://necolas.github.io/normalize.css'>Normalize.css</a> to get all the browsers on the same page). This list, with the three types is generated via JavaScript. JSON is downloaded via an AJAX request and then parsed into this list."
   },
@@ -28,6 +29,7 @@
     "priority":"5",
     "headline":"GoalsManager",
     "repoLink":"https://github.com/tcote19/goalsmanager",
+    "repoTitle":"Repo",
     "image":"/assets/images/goalstar.png", "furtherReading":"https://app.moqups.com/hypersprite/neomoD50mC/view/page/ad64222d5",
     "repoIcon":"fa-github-square",
     "content":"This is just getting started. A small group of Front End JavaScript developers in Silicon Valley are spending their free time working on building a new interface for Google Tasks. The idea is that google has a fine Task API with a front end that has never reached its full potential. <br>I have completed some mock ups and others have begun to contribute code. This is still in early stages. <br>Some of the goals of this project are:<ul><li>Use as much of Google infrastructure as possible, including authentication and storage.</li><li>This should be a single page app.</li></ul>"
@@ -39,7 +41,8 @@
     "image":"/assets/images/wbratledville.jpg",
     "imgAlt":"Team WBR at Leadville",
     "repoLink":"http://www.worldbicyclerelief.org/",
-    "furtherReading":"http://www.worldbicyclerelief.org/the-bike",
+    "repoTitle":"WBR Site",
+    "furtherReading":"http://www.worldbicyclerelief.org/our-story/news/blog/876-bigger-than-mountains",
     "repoIcon":"fa-bicycle",
     "content":"World Bicycle Relief is a charity I firmly believe in that mobilizes people in Africa and other countries with Buffalo Bikes. The primary goal is to enable people to live better lives in a sustainable way. These bikes have been custom designed from the ground up for the rigors of harsh country and low environmental impact, while being sturdy enough not to become a burden on the people who need them. This enables kids to go to school, doctors to reach more people and farmers to get to market."
   },
@@ -50,6 +53,7 @@
     "image":"/assets/images/hyperspriteblog.png",
     "imgAlt":"HyperSprite Blog Image",
     "repoLink":"http://www.hypersprite.com/blog/",
+    "repoTitle":"Blog",
     "demoLink":"",
     "furtherReading":"",
     "repoIcon":"fa-wordpress",
@@ -57,14 +61,28 @@
   },
   {
     "type":"more",
-    "priority":"3",
+    "priority":"5",
     "headline":"2017 Goal: Finish Leadville MTB Trail 100",
     "image":"assets/images/leadvilleblvd.png",
     "repoLink":"http://www.leadvilleraceseries.com/mtb/leadvilletrail100mtb/",
+    "repoTitle":"Race",
     "imgAlt":"Mountain biking on the Leadville Blvd.",
     "demoLink":"",
     "furtherReading":"",
     "repoIcon":"fa-square-o",
     "content":"The Leadville Trail 100 Mountain Bike Race is a bucket list item. To be an official finisher, you need to complete <em>104 miles at altitudes between ten thousand and twelve thousand five hundred feet in under twelve hours</em>. The gold belt buckle is awarded for a time <strong>under nine hours</strong>. The first challenge is just to get in. The Lottery opens in December."
+  },
+  {
+    "type":"opensource",
+    "priority":"3",
+    "headline":"Node.js - First accepted pull request ",
+    "image":"/assets/images/firstpullrequest.png",
+    "imgAlt":"screenshot of Github",
+    "repoLink":"https://github.com/nodejs/node",
+    "repoTitle":"Repo",
+    "demoLink":"",
+    "furtherReading":"https://github.com/nodejs/node/pull/8472",
+    "repoIcon":"fa-github-square",
+    "content":"This isn't much, just a few simple changes but I needed wanted to start working on larger projects and looking at bigger code bases. Node.js has given me, and the javascript community,  so much I wanted to start giving back."
   }
 ]
