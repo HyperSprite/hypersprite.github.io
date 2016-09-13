@@ -385,6 +385,7 @@ ul.topnav li.icon {
   .profile, .profile-details {
     left: 10px;
   }
+
   ul.topnav li a div {
     padding-top: 2px;
     font-size: 14px;
@@ -427,8 +428,15 @@ ul.topnav li.icon {
   .social a {
     float: left;
     display: block;
-    padding: 8px;
+    padding: 8px 6px;
+    font-size: 22px;
     text-decoration: none;
+  }
+
+  ul.topnav li a div {
+    padding-top: 2px;
+    font-size: 22px;
+    width: 50px;
   }
 
   .pho-hidden {
