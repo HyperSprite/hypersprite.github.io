@@ -230,6 +230,7 @@ ul.topnav li.icon {
 .profile:hover {
   border: 8px solid #ccc;
   box-shadow: 0 12px 24px 0 rgba(0,0,0,0.3);
+  filter: inherit;
 }
 
 .profile-details {

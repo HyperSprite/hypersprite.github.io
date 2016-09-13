@@ -1,21 +1,6 @@
-(function () {
-  var parallax = document.querySelectorAll('.banner'),
-    speed = -0.5;
-  var navContainer = document.getElementById('nav-container');
 
-  window.onscroll = function () {
-    [].slice.call(parallax).forEach(function (el, i) {
-      var windowYOffset = window.pageYOffset,
-        elBackgrounPos = '50% ' + (windowYOffset * speed) + 'px';
-      el.style.backgroundPosition = elBackgrounPos;
-    });
-    if (window.pageYOffset > 500) {
-      navContainer.className = 'locked';
-    } else {
-      navContainer.className = 'pho-hidden';
-    }
-  };
-})();
+var cardDeck = {};
+var typeCount;
 
 function Cards(data) {
   this.type = data.type;
@@ -55,9 +40,7 @@ function Cards(data) {
   };
 }
 
-var cardDeck = {};
-var typeCount;
-
+// get and process data
 (function () {
 var jsonFile = '/assets/content.json';
 
@@ -92,26 +75,49 @@ oReq.open('GET', jsonFile);
 oReq.send();
 })();
 
+// Top banner and nav bar parallax movement
+(function () {
+  var parallax = document.querySelectorAll('.banner'),
+    speed = -0.5;
+  var navContainer = document.getElementById('nav-container');
+
+  window.onscroll = function () {
+    [].slice.call(parallax).forEach(function (el, i) {
+      var windowYOffset = window.pageYOffset,
+        elBackgrounPos = '50% ' + (windowYOffset * speed) + 'px';
+      el.style.backgroundPosition = elBackgrounPos;
+    });
+    if (window.pageYOffset > 500) {
+      navContainer.className = 'locked';
+    } else {
+      navContainer.className = 'pho-hidden';
+    }
+  };
+})();
+
 // Modal
-var modal = document.getElementById('emailModal');
-var emaillink = document.getElementById('open-email-modal');
-var span = document.getElementsByClassName('close')[0];
+(function() {
+  var modal = document.getElementById('emailModal');
+  var emaillink = document.getElementById('open-email-modal');
+  var span = document.getElementsByClassName('close')[0];
 
-emaillink.onclick = function () {
-  modal.style.display = 'inherit';
-  setTimeout(function () {
-    modal.className += ' modal-pop';
-  }, 2);
-};
+  emaillink.onclick = function () {
+    modal.style.display = 'inherit';
+    setTimeout(function () {
+      modal.className += ' modal-pop';
+    }, 2);
+  };
 
-span.onclick = function () {
-  modal.style.display = 'none';
-  modal.className = 'modal';
-};
-
-window.onclick = function (event) {
-  if (event.target === modal) {
+  span.onclick = function () {
     modal.style.display = 'none';
     modal.className = 'modal';
-  }
-};
+  };
+
+  window.onclick = function (event) {
+    if (event.target === modal) {
+      modal.style.display = 'none';
+      modal.className = 'modal';
+    }
+  };
+})();
+
