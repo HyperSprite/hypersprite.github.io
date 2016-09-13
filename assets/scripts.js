@@ -71,7 +71,8 @@ function reqListener() {
   });
 
   cardDeck.map(function (crd) {
-    document.getElementById(crd.type).insertAdjacentHTML('beforeend', crd.divCard());
+    elmById = document.getElementById(crd.type);
+    elmById.insertAdjacentHTML('beforeend', crd.divCard());
   });
 
   typeCount = cardDeck.reduce(function (acc, crd) {
