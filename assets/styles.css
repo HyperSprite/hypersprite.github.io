@@ -142,7 +142,6 @@ input:focus, textarea:focus {
   background-size: inherit;
 }
 
-
 .nav-left {
   width: 500px;
   float: left;
@@ -150,7 +149,6 @@ input:focus, textarea:focus {
 
 .nav-right {
 }
-
 
 .locked {
   margin: 0;
@@ -211,6 +209,8 @@ ul.topnav li.icon {
 /* ********************************************************* */
 /* * Profile and Cards ************************************* */
 
+
+
 .profile, .profile-details {
   position: absolute;
   left: 200px;
@@ -258,6 +258,10 @@ ul.topnav li.icon {
   width: 250px;
   left: 250px;
   text-align: center;
+}
+
+.profile-slide {
+  top: 50px;
 }
 
 .maincol {

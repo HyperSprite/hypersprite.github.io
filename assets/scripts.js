@@ -72,8 +72,9 @@ oReq.send();
 
 // Top banner and nav bar parallax movement
 (function () {
-  var parallax = document.querySelectorAll('.banner'),
-    speed = -0.5;
+  var speed = -0.5;
+  var parallax = document.querySelectorAll('.banner');
+  var profilePic = document.getElementsByClassName('profile')[0];
   var navContainer = document.getElementById('nav-container');
 
   window.onscroll = function () {
@@ -84,8 +85,10 @@ oReq.send();
     });
     if (window.pageYOffset > 500) {
       navContainer.className = 'locked';
+      profilePic.className = 'profile profile-slide';
     } else {
       navContainer.className = 'pho-hidden';
+      profilePic.className = 'profile';
     }
   };
 })();
@@ -99,12 +102,12 @@ oReq.send();
     filterLinks[i].onclick = function (e) {
       e.preventDefault();
       var clickedId = this.childNodes[1].id.slice(5);
+      console.log(clickedId);
+      (clickedId === 'home') ? docBody.scrollTop = 0 : docBody.scrollTop = 501;
       for(var j = 0; j < cardStack.length; j++) {
         if (clickedId === 'home') {
-          docBody.scrollTop = 0;
           cardStack[j].style.display = 'inherit';
         } else if (clickedId === cardStack[j].id) {
-          docBody.scrollTop = 501;
           cardStack[j].style.display = 'inherit';
         } else {
           cardStack[j].style.display = 'none';
