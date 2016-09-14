@@ -17,14 +17,9 @@ function Cards(data) {
   this.divCard = function () {
     var icon = this.repoIcon ?
       '<i class="fa ' + this.repoIcon + ' fa-lg" aria-hidden="true"></i> ' : '';
-
     var repoBtnName = this.repoTitle || 'Site';
-
     var link = this.repoLink ?
       '<a href="' + this.repoLink + '" target="new"><button class="card-btn">' + repoBtnName + '</button></a>' : '';
-
-
-
     var demoLink = this.demoLink ?
       '<a href="' + this.demoLink + '" target="new"><button class="card-btn">Demo</button></a>' : '';
     var moreInfo = this.furtherReading ?
@@ -40,7 +35,7 @@ function Cards(data) {
   };
 }
 
-// get and process data
+// Get and process data
 (function () {
 var jsonFile = '/assets/content.json';
 
@@ -95,8 +90,34 @@ oReq.send();
   };
 })();
 
-// Modal
-(function() {
+// Card Filter
+(function () {
+  var docBody = document.getElementsByTagName('body')[0];
+  var cardStack = document.getElementsByClassName('cardgroup');
+  var filterLinks = document.getElementById('topNavbar').getElementsByTagName('a');
+  for (var i = 0; i < filterLinks.length; i++) {
+    filterLinks[i].onclick = function (e) {
+      e.preventDefault();
+      var clickedId = this.childNodes[1].id.slice(5);
+      for(var j = 0; j < cardStack.length; j++) {
+        if (clickedId === 'home') {
+          docBody.scrollTop = 0;
+          cardStack[j].style.display = 'inherit';
+        } else if (clickedId === cardStack[j].id) {
+          docBody.scrollTop = 501;
+          cardStack[j].style.display = 'inherit';
+        } else {
+          cardStack[j].style.display = 'none';
+        }
+      }
+      return false;
+    };
+  }
+})();
+
+
+// Email Modal
+(function () {
   var modal = document.getElementById('emailModal');
   var emaillink = document.getElementById('open-email-modal');
   var span = document.getElementsByClassName('close')[0];
