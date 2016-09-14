@@ -92,7 +92,7 @@ input:focus, textarea:focus {
   top: 0;
   width: 1px;
   height: 1px;
-  overflow: none;
+  overflow: hidden;
 }
 
 .modal-pop {
@@ -257,7 +257,6 @@ ul.topnav li.icon {
 }
 
 .profile-details {
-  left: reletive;
   border-radius: 10px;
   margin-top: 50px;
 }
