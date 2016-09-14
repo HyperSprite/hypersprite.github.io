@@ -62,7 +62,6 @@ a:active {
 input, textarea {
   width: 100%;
   font-size: 22px;
-  appearance: none;
   box-shadow: none;
   border-radius: 6px;
   border: none;
@@ -72,6 +71,7 @@ input, textarea {
 
 textarea {
   margin-top: -17px;
+  height: 160px;
 }
 
 input:focus, textarea:focus {
@@ -88,10 +88,10 @@ input:focus, textarea:focus {
   display: none;
   z-index: 5;
   margin: 0 100%;
-  left: -600;
+  left: -3000px;
   top: 0;
   width: 1px;
-  height: 1px%;
+  height: 1px;
   overflow: none;
 }
 
@@ -128,6 +128,23 @@ input:focus, textarea:focus {
   text-decoration: none;
   cursor: pointer;
 }
+
+#email-progress {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  margin-bottom: 4px;
+  background-color: #ddd;
+  border-bottom: solid 2px #555;
+}
+
+#email-bar {
+  position: absolute;
+  width: 0;
+  height: 100%;
+  background-color: #336699;
+}
+
 
 /* * Email Modal ******************************************* */
 /* ********************************************************* */
@@ -235,7 +252,6 @@ ul.topnav li.icon {
 
 .profile-details {
   left: reletive;
-  float: left;
   border-radius: 10px;
   margin-top: 50px;
 }
@@ -251,7 +267,7 @@ ul.topnav li.icon {
 }
 
 .profile-right {
-  width: 250;
+  width: 250px;
 }
 
 .profile-left {
@@ -351,6 +367,7 @@ ul.topnav li.icon {
   .profile, .profile-details {
     left: 100px;
   }
+}
 
 @media screen and (max-width:1030px) {
 

@@ -37,37 +37,37 @@ function Cards(data) {
 
 // Get and process data
 (function () {
-var jsonFile = '/assets/content.json';
+  var jsonFile = '/assets/content.json';
 
-function reqListener() {
-  var typeCnt;
-  cardDeck = JSON.parse(this.responseText).map(function (crd) {
-    return new Cards(crd);
-  });
-  cardDeck.sort(function(obj0, obj1) {
-    return obj0.priority - obj1.priority;
-  });
+  function reqListener() {
+    var typeCnt;
+    cardDeck = JSON.parse(this.responseText).map(function (crd) {
+      return new Cards(crd);
+    });
+    cardDeck.sort(function(obj0, obj1) {
+      return obj0.priority - obj1.priority;
+    });
 
-  cardDeck.map(function (crd) {
-    elmById = document.getElementById(crd.type);
-    elmById.insertAdjacentHTML('beforeend', crd.divCard());
-  });
+    cardDeck.map(function (crd) {
+      elmById = document.getElementById(crd.type);
+      elmById.insertAdjacentHTML('beforeend', crd.divCard());
+    });
 
-  typeCount = cardDeck.reduce(function (acc, crd) {
-    ++acc[crd.type];
-    return acc;
-  }, { projects: 0, opensource: 0, more: 0 });
+    typeCount = cardDeck.reduce(function (acc, crd) {
+      ++acc[crd.type];
+      return acc;
+    }, { projects: 0, opensource: 0, more: 0 });
 
-  for (var tCnt in typeCount) {
-    document.getElementById('type-' + tCnt).insertAdjacentHTML('beforeend', typeCount[tCnt]);
+    for (var tCnt in typeCount) {
+      document.getElementById('type-' + tCnt).insertAdjacentHTML('beforeend', typeCount[tCnt]);
+    }
+    return typeCount;
   }
-  return typeCount;
-}
 
-var oReq = new XMLHttpRequest();
-oReq.addEventListener('load', reqListener);
-oReq.open('GET', jsonFile);
-oReq.send();
+  var oReq = new XMLHttpRequest();
+  oReq.addEventListener('load', reqListener);
+  oReq.open('GET', jsonFile);
+  oReq.send();
 })();
 
 // Top banner and nav bar parallax movement
@@ -95,16 +95,18 @@ oReq.send();
 
 // Card Filter
 (function () {
-  var docBody = document.getElementsByTagName('body')[0];
   var cardStack = document.getElementsByClassName('cardgroup');
   var filterLinks = document.getElementById('topNavbar').getElementsByTagName('a');
-  for (var i = 0; i < filterLinks.length; i++) {
+  var clickedId;
+  var i;
+  var j;
+  for (i = 0; i < filterLinks.length; i++) {
     filterLinks[i].onclick = function (e) {
       e.preventDefault();
-      var clickedId = this.childNodes[1].id.slice(5);
-      console.log(clickedId);
-      (clickedId === 'home') ? docBody.scrollTop = 0 : docBody.scrollTop = 501;
-      for(var j = 0; j < cardStack.length; j++) {
+      clickedId = this.childNodes[1].id.slice(5);
+      // console.log(clickedId);
+      (clickedId === 'home') ? window.scroll(0, 0) : window.scroll(0, 501);
+      for (j = 0; j < cardStack.length; j++) {
         if (clickedId === 'home') {
           cardStack[j].style.display = 'inherit';
         } else if (clickedId === cardStack[j].id) {
@@ -117,7 +119,6 @@ oReq.send();
     };
   }
 })();
-
 
 // Email Modal
 (function () {
@@ -145,3 +146,16 @@ oReq.send();
   };
 })();
 
+function statusMove(moveWhat) {
+  var elem = document.getElementById(moveWhat);
+  var width = 30;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++;
+      elem.style.width = width + '%';
+    }
+  }
+}
