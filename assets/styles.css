@@ -222,6 +222,12 @@ ul.topnav li.icon {
   display: none;
 }
 
+.footer {
+  bottom: 0;
+  margin: 10%;
+  /*clear: both;*/
+}
+
 /* * Background and Navbar ********************************* */
 /* ********************************************************* */
 /* * Profile and Cards ************************************* */
