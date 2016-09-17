@@ -109,31 +109,46 @@ function Cards(data) {
   var clickedId;
   var i;
   var j;
+  var scrollSpd = 16;
+  var scrollPxls = 24;
 
-
-  function scrollPage(scrlFrm, scrlTo) {
-    setTimeout(function(){
-      // console.log(scrlFrm, scrlTo);
-      if (scrlFrm <= scrlTo) {
-        // console.log('been here');
-        return null; // recurse, if you'd like.
-      } else {
-        scrlFrm = scrlFrm - 20;
-        // console.log(scrlFrm + 'Im in here');
-        window.scroll(0, scrlFrm--);
-        scrollPage(scrlFrm, scrlTo);
-      }
-    }, 1000/60);
+  function scrollCheck(scrlFrm, scrlTo) {
+    if (scrlFrm >= scrlTo) {
+      scrollPageDown(scrlFrm, scrlTo);
+    } else {
+      scrollPageUp(scrlFrm, scrlTo);
+    }
   }
 
+  function scrollPageUp(scrlFrm, scrlTo) {
+    setTimeout(function () {
+      if (scrlFrm >= scrlTo + scrollPxls) {
+        window.scroll(0, scrlTo);
+        return null; // recurse, if you'd like.
+      }
+      scrlFrm = scrlFrm + scrollPxls;
+      window.scroll(0, scrlFrm);
+      scrollPageUp(scrlFrm, scrlTo);
+    }, scrollSpd);
+  }
 
+  function scrollPageDown(scrlFrm, scrlTo) {
+    setTimeout(function () {
+      if (scrlFrm <= scrlTo + scrollPxls) {
+        window.scroll(0, scrlTo);
+        return null; // recurse, if you'd like.
+      }
+      scrlFrm = scrlFrm - scrollPxls;
+      window.scroll(0, scrlFrm);
+      scrollPageDown(scrlFrm, scrlTo);
+    }, scrollSpd);
+  }
 
   for (i = 0; i < filterLinks.length; i++) {
     filterLinks[i].onclick = function (e) {
       e.preventDefault();
       clickedId = this.childNodes[1].id.slice(5);
-      console.log(clickedId, window.pageYOffset);
-      (clickedId === 'home') ? scrollPage(window.pageYOffset, 0) : window.scroll(0, 501);
+      (clickedId === 'home') ? scrollCheck(window.pageYOffset, 0) : scrollCheck(window.pageYOffset, 501);
       for (j = 0; j < cardStack.length; j++) {
         if (clickedId === 'home') {
           cardStack[j].style.display = 'inherit';
