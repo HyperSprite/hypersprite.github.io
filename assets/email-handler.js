@@ -1,5 +1,22 @@
 // Credit for this script goes to https://github.com/dwyl/html-form-send-email-via-google-script-without-server
 
+// Email submit progress bar
+
+function statusMove(moveWhat) {
+  var elem = document.getElementById(moveWhat);
+  var width = 30;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 100) {
+      clearInterval(id);
+    } else {
+      width++;
+      elem.style.width = width + '%';
+    }
+  }
+}
+
+
 function validEmail(email) {
   var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
   return re.test(email);
