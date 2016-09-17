@@ -148,7 +148,7 @@ function Cards(data) {
     filterLinks[i].onclick = function (e) {
       e.preventDefault();
       clickedId = this.childNodes[1].id.slice(5);
-      (clickedId === 'home') ? scrollCheck(window.pageYOffset, 0) : scrollCheck(window.pageYOffset, 501);
+
       for (j = 0; j < cardStack.length; j++) {
         if (clickedId === 'home') {
           cardStack[j].style.display = 'inherit';
@@ -158,6 +158,7 @@ function Cards(data) {
           cardStack[j].style.display = 'none';
         }
       }
+      (clickedId === 'home') ? scrollCheck(window.pageYOffset, 0) : scrollCheck(window.pageYOffset, 501);
       return false;
     };
   }
