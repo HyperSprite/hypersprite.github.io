@@ -157,6 +157,7 @@ input:focus, textarea:focus {
   background-position: 50% 0px;
   background-repeat: no-repeat;
   background-size: inherit;
+  transition: 0.1s;
 }
 
 .nav-left {

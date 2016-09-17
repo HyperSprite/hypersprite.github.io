@@ -76,12 +76,21 @@ function Cards(data) {
   var parallax = document.querySelectorAll('.banner');
   var profilePic = document.getElementsByClassName('profile')[0];
   var navContainer = document.getElementById('nav-container');
+  var lastPageYOff = 0;
 
   window.onscroll = function () {
     [].slice.call(parallax).forEach(function (el, i) {
-      var windowYOffset = window.pageYOffset,
-        elBackgrounPos = '50% ' + (windowYOffset * speed) + 'px';
+      var windowYOffset = window.pageYOffset;
+      var elBackgrounPos;
+      // this controles scroll up and down speed
+      if (lastPageYOff > windowYOffset) {
+        speed = -0.3;
+      } else {
+        speed = -0.5;
+      }
+      elBackgrounPos = '50% ' + (windowYOffset * speed) + 'px';
       el.style.backgroundPosition = elBackgrounPos;
+      lastPageYOff = windowYOffset;
     });
     if (window.pageYOffset > 500) {
       navContainer.className = 'locked';
@@ -100,12 +109,31 @@ function Cards(data) {
   var clickedId;
   var i;
   var j;
+
+
+  function scrollPage(scrlFrm, scrlTo) {
+    setTimeout(function(){
+      // console.log(scrlFrm, scrlTo);
+      if (scrlFrm <= scrlTo) {
+        // console.log('been here');
+        return null; // recurse, if you'd like.
+      } else {
+        scrlFrm = scrlFrm - 20;
+        // console.log(scrlFrm + 'Im in here');
+        window.scroll(0, scrlFrm--);
+        scrollPage(scrlFrm, scrlTo);
+      }
+    }, 1000/60);
+  }
+
+
+
   for (i = 0; i < filterLinks.length; i++) {
     filterLinks[i].onclick = function (e) {
       e.preventDefault();
       clickedId = this.childNodes[1].id.slice(5);
-      // console.log(clickedId);
-      (clickedId === 'home') ? window.scroll(0, 0) : window.scroll(0, 501);
+      console.log(clickedId, window.pageYOffset);
+      (clickedId === 'home') ? scrollPage(window.pageYOffset, 0) : window.scroll(0, 501);
       for (j = 0; j < cardStack.length; j++) {
         if (clickedId === 'home') {
           cardStack[j].style.display = 'inherit';
@@ -146,16 +174,19 @@ function Cards(data) {
   };
 })();
 
-function statusMove(moveWhat) {
-  var elem = document.getElementById(moveWhat);
-  var width = 30;
-  var id = setInterval(frame, 10);
-  function frame() {
-    if (width >= 100) {
-      clearInterval(id);
-    } else {
-      width++;
-      elem.style.width = width + '%';
+// Email submit progress bar
+(function () {
+  function statusMove(moveWhat) {
+    var elem = document.getElementById(moveWhat);
+    var width = 30;
+    var id = setInterval(frame, 10);
+    function frame() {
+      if (width >= 100) {
+        clearInterval(id);
+      } else {
+        width++;
+        elem.style.width = width + '%';
+      }
     }
   }
-}
+});
