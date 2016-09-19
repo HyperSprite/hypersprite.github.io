@@ -14,6 +14,8 @@ function Cards(data) {
   this.furtherReading = data.furtherReading;
   this.repoIcon = data.repoIcon;
   this.content = data.content;
+  // since I am not using any templating engine, I am building the divs here.
+  // Otherwise, we could just return the object and parse it in a template.
   this.divCard = function () {
     var icon = this.repoIcon ?
       '<i class="fa ' + this.repoIcon + ' fa-lg" aria-hidden="true"></i> ' : '';
@@ -37,33 +39,37 @@ function Cards(data) {
 
 // Get and process data
 (function () {
+  // where to get the JSON data, this could be an API url but it is just a file
+  // for demo sake.
   var jsonFile = '/assets/content.json';
 
   function reqListener() {
     var typeCnt;
+    // takes the JSON array and builds objects
     cardDeck = JSON.parse(this.responseText).map(function (crd) {
       return new Cards(crd);
     });
+    // sorting the cards by priority
     cardDeck.sort(function(obj0, obj1) {
       return obj0.priority - obj1.priority;
     });
-
+    // puts the cards on the page
     cardDeck.map(function (crd) {
       elmById = document.getElementById(crd.type);
       elmById.insertAdjacentHTML('beforeend', crd.divCard());
     });
-
+    // this gets our counts for the navbar links
     typeCount = cardDeck.reduce(function (acc, crd) {
       ++acc[crd.type];
       return acc;
     }, { projects: 0, opensource: 0, more: 0 });
-
+    // this puts the numbers in the navbar
     for (var tCnt in typeCount) {
       document.getElementById('type-' + tCnt).insertAdjacentHTML('beforeend', typeCount[tCnt]);
     }
     return typeCount;
   }
-
+  // gets our JSON from the server
   var oReq = new XMLHttpRequest();
   oReq.addEventListener('load', reqListener);
   oReq.open('GET', jsonFile);
@@ -82,7 +88,7 @@ function Cards(data) {
     [].slice.call(parallax).forEach(function (el, i) {
       var windowYOffset = window.pageYOffset;
       var elBackgrounPos;
-      // this controles scroll up and down speed
+      // this controles scroll up and down speed of the banner
       if (lastPageYOff > windowYOffset) {
         speed = -0.3;
       } else {
@@ -109,9 +115,12 @@ function Cards(data) {
   var clickedId;
   var i;
   var j;
+  // scrollSpd = setTimeout wait in milliseconds
   var scrollSpd = 16;
+  // scrollSpd = default number of px to scroll
   var scrollPxls = 24;
 
+// check if we need to go up or down
   function scrollCheck(scrlFrm, scrlTo) {
     if (scrlFrm >= scrlTo) {
       scrollPageDown(scrlFrm, scrlTo);
@@ -120,30 +129,37 @@ function Cards(data) {
     }
   }
 
+// if we need to scroll te page up, recurse on this
   function scrollPageUp(scrlFrm, scrlTo) {
     setTimeout(function () {
+      // base case
       if (scrlFrm >= scrlTo + scrollPxls) {
         window.scroll(0, scrlTo);
-        return null; // recurse, if you'd like.
+        return null;
       }
+      // otherwise recursive
       scrlFrm = scrlFrm + scrollPxls;
       window.scroll(0, scrlFrm);
       scrollPageUp(scrlFrm, scrlTo);
     }, scrollSpd);
   }
 
+// if we need to scroll the page down, recurse on this
   function scrollPageDown(scrlFrm, scrlTo) {
     setTimeout(function () {
+      // base case
       if (scrlFrm <= scrlTo + scrollPxls) {
         window.scroll(0, scrlTo);
-        return null; // recurse, if you'd like.
+        return null;
       }
-      scrlFrm = scrlFrm - scrollPxls;
+      // otherwise recursive
+      scrlFrm = Math.floor(scrlFrm / 1.07);
       window.scroll(0, scrlFrm);
       scrollPageDown(scrlFrm, scrlTo);
     }, scrollSpd);
   }
 
+// this filters out the cards for the selected link
   for (i = 0; i < filterLinks.length; i++) {
     filterLinks[i].onclick = function (e) {
       e.preventDefault();
@@ -152,13 +168,16 @@ function Cards(data) {
       for (j = 0; j < cardStack.length; j++) {
         if (clickedId === 'home') {
           cardStack[j].style.display = 'inherit';
+          // auto scroll
+          scrollCheck(window.pageYOffset, 0);
         } else if (clickedId === cardStack[j].id) {
           cardStack[j].style.display = 'inherit';
+          // auto scroll
+          scrollCheck(window.pageYOffset, 501);
         } else {
           cardStack[j].style.display = 'none';
         }
       }
-      (clickedId === 'home') ? scrollCheck(window.pageYOffset, 0) : scrollCheck(window.pageYOffset, 501);
       return false;
     };
   }
