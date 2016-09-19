@@ -183,6 +183,15 @@ function Cards(data) {
   }
 })();
 
+
+(function() {
+  var foot = document.getElementsByClassName('footer')[0];
+  var today = new Date().getFullYear();
+  var footerTxt = '&copy;' + today + ' HyperSprite.com';
+  foot.insertAdjacentHTML('beforeend', footerTxt);
+})();
+
+
 // Email Modal
 (function () {
   var modal = document.getElementById('emailModal');
@@ -208,5 +217,4 @@ function Cards(data) {
     }
   };
 })();
-
 

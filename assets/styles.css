@@ -226,7 +226,7 @@ ul.topnav li.icon {
 .footer {
   bottom: 0;
   margin: 10%;
-  /*clear: both;*/
+  text-align: center;
 }
 
 /* * Background and Navbar ********************************* */
