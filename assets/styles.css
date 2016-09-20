@@ -154,7 +154,6 @@ input:focus, textarea:focus {
 }
 
 .three-wide {
-
 }
 
 .three-wide button {
@@ -393,6 +392,9 @@ ul.topnav li.icon {
   .card {
     width: 800px;
   }
+  .three-wide div {
+  width: 456px;
+}
 }
 
 @media screen and (max-width:1160px) {
