@@ -145,6 +145,41 @@ input:focus, textarea:focus {
   background-color: #336699;
 }
 
+#email-invalid {
+  display: none;
+}
+
+#email-initial {
+  display: block;
+}
+
+.three-wide {
+
+}
+
+.three-wide button {
+  float: left;
+  margin: 13px 0;
+  padding: 5px 20px;
+  text-align: left;
+  width: 50px;
+}
+
+.three-wide canvas {
+  float: left;
+}
+
+.three-wide div {
+  float: left;
+  padding: 13px 0;
+  width: 266px;
+  margin-right: 2px;
+}
+
+.three-wide input {
+  width: inherit;
+}
+
 
 /* * Email Modal ******************************************* */
 /* ********************************************************* */
@@ -475,6 +510,12 @@ ul.topnav li.icon {
     padding: 16px;
     font-size: 16px;
     width: 100%
+  }
+
+  .three-wide div {
+    padding: 13px 0;
+    width: 100%;
+    margin-right: 2px;
   }
 }
 

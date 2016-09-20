@@ -36,28 +36,45 @@ TODO - Continue to work on Chrome on Android Landscape view
             <div class="card-img">
               <img src="/assets/images/email.jpg" alt="type faces from newspaper printing presses">
             </div>
-            <p>
+            <p id="email-invalid">
+              <strong><em>Something went wrong!</em></strong><br>Your message was not sent.
+            </p>
+
+            <p id=email-initial>
               Feel free to reach out.
             </p>
             <div class="card-txt">
               <div class="form-group">
                 <label class="hidden" for="name">Name: </label>
-                <input id="name" name="name" required placeholder="Name&nbsp;*" />
+                <input id="name" name="name" required placeholder="&nbsp;Name&nbsp;*" />
               </div>
               <div class="form-group">
                 <label class="hidden" for="email">Email:</label>
-                <input id="email" name="email" required type="email" value="" placeholder="Email&nbsp;*"/>
+                <input id="email" name="email" required type="email" value="" placeholder="&nbsp;Email&nbsp;*"/>
               </div>
               <div class="form-group">
                 <label class="hidden" for="phone">Phone: </label>
-                <input id="phone" name="phone" placeholder="Phone" />
+                <input id="phone" name="phone" placeholder="&nbsp;Phone" />
               </div>
               <div  class="form-group">
                 <label class="hidden" for="message">Message: </label><br>
-                <textarea id="message" name="message" required rows="10" placeholder="What's on your mind...&nbsp;*"></textarea>
+                <textarea id="message" name="message" required rows="10" placeholder="&nbsp;What's on your mind...&nbsp;*"></textarea>
               </div>
+
+              <div class="three-wide">
+                <button class="card-btn" type="button" id="refresh"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+                <canvas id="email-canvas" width="150" height="50">
+                  Your browser does not support the canvas element.
+                </canvas>
+                <div class="form-group">
+                  <label class="hidden" for="ihatebots"></label>
+                  <input id="ihatebots" name="ihatebots" placeholder="&nbsp;type that" />
+                </div>
+              </div>
+
             </div>
-            <button class="card-btn"><i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+
+            <button class="card-btn" type="submit"><i class="fa fa-paper-plane"></i>&nbsp;Send</button>
           </div>
         </form>
         <div style="display:none;" id="thankyou_message">
@@ -69,6 +86,9 @@ TODO - Continue to work on Chrome on Android Landscape view
             </div>
             <p>Thank you!<br>Your message has been sent. I will get back to you soon.</p>
           </div>
+
+        </div>
+
 
         </div>
       </div>
