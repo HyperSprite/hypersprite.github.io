@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Random Quote of the Day</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+
+</head>
+<body>
+  <h1>Random Quote of the Day</h1>
+  <p>This is just the plan for now.</p>
+  <p>I doubt much, if any, of what you see here will be part of the finished project.</p>
+  <ul>
+    <li>Todo
+      <ul>
+        <li>Make style and js files</li>
+        <li>Decide if this is using jQuery, Some CSS framework, etc.</li>
+        <li>Hook up XHR to get quotes</li>
+        <li>Setup onload and onclick for quotes</li>
+        <li>Setup "quote to twitter" button</li>
+        <li>Complete page layout and CSS</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>returned quote info from: <a href="http://quotes.rest/qod.json?category=inspire" target="new">http://quotes.rest/qod.json?category=inspire</a></h3>
+  <pre class="prettyprint"><code class="language-json hljs ">{
+      "<span class="hljs-attribute">success</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">total</span>": <span class="hljs-value"><span class="hljs-number">1</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">contents</span>": <span class="hljs-value">{
+          "<span class="hljs-attribute">quotes</span>": <span class="hljs-value">[
+              {
+                  "<span class="hljs-attribute">quote</span>": <span class="hljs-value"><span class="hljs-string">"It is not the mountain we conquer, but ourselves."</span></span>,
+                  "<span class="hljs-attribute">length</span>": <span class="hljs-value"><span class="hljs-string">"49"</span></span>,
+                  "<span class="hljs-attribute">author</span>": <span class="hljs-value"><span class="hljs-string">"Edmund Hillary"</span></span>,
+                  "<span class="hljs-attribute">tags</span>": <span class="hljs-value">[
+                      <span class="hljs-string">"inspire"</span>,
+                      <span class="hljs-string">"life"</span>,
+                      <span class="hljs-string">"mountaineering"</span>
+                  ]</span>,
+                  "<span class="hljs-attribute">category</span>": <span class="hljs-value"><span class="hljs-string">"inspire"</span></span>,
+                  "<span class="hljs-attribute">date</span>": <span class="hljs-value"><span class="hljs-string">"2016-09-22"</span></span>,
+                  "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"Inspiring Quote of the day"</span></span>,
+                  "<span class="hljs-attribute">background</span>": <span class="hljs-value"><span class="hljs-string">"https://theysaidso.com/img/bgs/man_on_the_mountain.jpg"</span></span>,
+                  "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"74qX3QA323z6d1ePUS_GfweF"</span>
+              </span>}
+          ]
+      </span>}
+  </span>}</code></pre>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+</body>
+</html>

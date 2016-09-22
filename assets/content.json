@@ -84,5 +84,16 @@
     "furtherReading":"https://github.com/nodejs/node/pull/8472",
     "repoIcon":"fa-github-square",
     "content":"This isn't much, just a few simple changes but I needed wanted to start working on larger projects and looking at bigger code bases. Node.js has given me, and the javascript community,  so much I wanted to start giving back."
+  },
+  {
+    "type":"projects",
+    "priority":"6",
+    "headline":"FreeCodeCamp: Random Quote Machine",
+    "repoLink":"https://github.com/HyperSprite/hypersprite.github.io/randomquotemachine",
+    "repoTitle":"Repo",
+    "demoLink":"randomquotemachine",
+    "furtherReading":"https://www.freecodecamp.com/challenges/build-a-random-quote-machine",
+    "repoIcon":"fa-github-square",
+    "content":"This in part of the Intermediate Front End Developer Projects section. The task is to make a random quote display, have a button to get a new quote and a button to tweet the quote. I just started this project, so what you find on the demo link may or may not be working yet."
   }
 ]
