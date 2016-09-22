@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Highlightjs theme testing page</title>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+  <link rel="stylesheet" href="/highlightjs/assets/hypersprite-dark.css">
+  <link rel="stylesheet" href="/highlightjs/assets/styles.css">
+</head>
+<body>
+
+
+  <h3 id="javascript">JavaScript</h3>
+<p>Mutation</p>
+
+
+
+<pre class="prettyprint">
+<code class="language-js hljs ">
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mutation</span><span class="hljs-params">(arr)</span> {</span>
+  <span class="hljs-keyword">var</span> findIn = arr[<span class="hljs-number">0</span>].toLowerCase();
+  <span class="hljs-keyword">var</span> findWhat = arr[<span class="hljs-number">1</span>].toLowerCase().split(<span class="hljs-string">''</span>);
+  <span class="hljs-keyword">return</span> findWhat.every(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(fWhat)</span> {</span>
+    <span class="hljs-keyword">return</span> findIn.indexOf(fWhat) !== -<span class="hljs-number">1</span>;
+  });
+}
+
+mutation([<span class="hljs-string">"hello"</span>, <span class="hljs-string">"hey"</span>]); <span class="hljs-comment">// should return false.</span>
+mutation([<span class="hljs-string">"hello"</span>, <span class="hljs-string">"Hello"</span>]); <span class="hljs-comment">// should return true.</span>
+mutation([<span class="hljs-string">"zyxwvutsrqponmlkjihgfedcba"</span>, <span class="hljs-string">"qrstu"</span>]); <span class="hljs-comment">// should return true.</span>
+mutation([<span class="hljs-string">"Mary"</span>, <span class="hljs-string">"Army"</span>]); <span class="hljs-comment">// should return true.</span>
+mutation([<span class="hljs-string">"Mary"</span>, <span class="hljs-string">"Aarmy"</span>]); <span class="hljs-comment">// should return true.</span>
+mutation([<span class="hljs-string">"Alien"</span>, <span class="hljs-string">"line"</span>]); <span class="hljs-comment">// should return true.</span>
+mutation([<span class="hljs-string">"floor"</span>, <span class="hljs-string">"for"</span>]); <span class="hljs-comment">// should return true.</span>
+mutation([<span class="hljs-string">"hello"</span>, <span class="hljs-string">"neo"</span>]); <span class="hljs-comment">// should return false.</span>
+mutation([<span class="hljs-string">"voodoo"</span>, <span class="hljs-string">"no"</span>]); <span class="hljs-comment">// should return false.</span>
+</code>
+</pre>
+
+
+
+  <h3 id="json">JSON</h3>
+
+<pre class="prettyprint"><code class="language-json hljs ">[
+  {
+    "<span class="hljs-attribute">type</span>":<span class="hljs-value"><span class="hljs-string">"projects"</span></span>,
+    "<span class="hljs-attribute">priority</span>":<span class="hljs-value"><span class="hljs-string">"6"</span></span>,
+    "<span class="hljs-attribute">headline</span>":<span class="hljs-value"><span class="hljs-string">"FreeCodeCamp: Random Quote Machine"</span></span>,
+    "<span class="hljs-attribute">repoLink</span>":<span class="hljs-value"><span class="hljs-string">"https://github.com/HyperSprite/hypersprite.github.io/tree/master/randomquotemachine"</span></span>,
+    "<span class="hljs-attribute">repoTitle</span>":<span class="hljs-value"><span class="hljs-string">"Repo"</span></span>,
+    "<span class="hljs-attribute">demoLink</span>":<span class="hljs-value"><span class="hljs-string">"randomquotemachine"</span></span>,
+    "<span class="hljs-attribute">furtherReading</span>":<span class="hljs-value"><span class="hljs-string">"https://www.freecodecamp.com/challenges/build-a-random-quote-machine"</span></span>,
+    "<span class="hljs-attribute">repoIcon</span>":<span class="hljs-value"><span class="hljs-string">"fa-github-square"</span></span>,
+    "<span class="hljs-attribute">content</span>":<span class="hljs-value"><span class="hljs-string">"This in part of the Intermediate Front End Developer Projects section. The task is to make a random..."</span>
+  </span>}
+]
+</code></pre>
+
+<h3 id="html">HTML</h3>
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Random Quote of the Day<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Random Quote of the Day<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is just the plan for now.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>I doubt much, if any, of what you see here will be part of the finished project.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Todo
+      <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Make style and js files<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Decide if this is using jQuery, Some CSS framework, etc.<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Hook up XHR to get quotes<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Setup onload and onclick for quotes<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Setup "quote to twitter" button<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Complete page layout and CSS<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre>
+
+
+
+<h3 id="css">CSS</h3>
+
+<pre class="prettyprint"><code class="language-css hljs ">* <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">box-sizing</span>:<span class="hljs-value"> border-box</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> <span class="hljs-number">0.5</span>s</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-tag">body</span>, <span class="hljs-tag">html</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> <span class="hljs-string">'Open Sans'</span>, sans-serif</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">100</span>%</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#eee</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">max-width</span>:<span class="hljs-value"> <span class="hljs-number">100</span>%</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">overflow-x</span>:<span class="hljs-value"> hidden</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-tag">a</span><span class="hljs-pseudo">:link</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value"> none</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> bold</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#444</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-tag">a</span><span class="hljs-pseudo">:visited</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value"> none</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#555</span></span></span>;
+<span class="hljs-rule">}</span></span></code></pre>
+
+
+<h3 id="html">HTML</h3>
+
+
+
+<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Random Quote of the Day<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css"</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Random Quote of the Day<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is just the plan for now.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>I doubt much, if any, of what you see here will be part of the finished project.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Todo
+      <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Make style and js files<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Decide if this is using jQuery, Some CSS framework, etc.<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Hook up XHR to get quotes<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Setup onload and onclick for quotes<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Setup "quote to twitter" button<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Complete page layout and CSS<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre>
+
+
+
+<h3 id="css">CSS</h3>
+
+
+
+<pre class="prettyprint"><code class="language-css hljs ">* <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">box-sizing</span>:<span class="hljs-value"> border-box</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> <span class="hljs-number">0.5</span>s</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-tag">body</span>, <span class="hljs-tag">html</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> <span class="hljs-string">'Open Sans'</span>, sans-serif</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">100</span>%</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#eee</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">max-width</span>:<span class="hljs-value"> <span class="hljs-number">100</span>%</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">overflow-x</span>:<span class="hljs-value"> hidden</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-tag">a</span><span class="hljs-pseudo">:link</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value"> none</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> bold</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#444</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-tag">a</span><span class="hljs-pseudo">:visited</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value"> none</span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#555</span></span></span>;
+<span class="hljs-rule">}</span></span></code></pre>
+
+
+
+<h3 id="javascript">JavaScript</h3>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">balancedParens</span><span class="hljs-params">(string)</span> {</span>
+  <span class="hljs-keyword">if</span> (!string || <span class="hljs-keyword">typeof</span> string !== <span class="hljs-string">'string'</span>) { <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span> };
+  <span class="hljs-keyword">return</span> !string.split(<span class="hljs-string">""</span>).reduce(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(previous, char)</span>{</span>
+    <span class="hljs-keyword">if</span> (previous &lt; <span class="hljs-number">0</span>) { <span class="hljs-keyword">return</span> previous };
+    <span class="hljs-keyword">if</span> (char === <span class="hljs-string">'('</span>) { <span class="hljs-keyword">return</span> ++previous; }
+    <span class="hljs-keyword">if</span> (char === <span class="hljs-string">')'</span>) { <span class="hljs-keyword">return</span> --previous; }
+    <span class="hljs-keyword">return</span> previous;
+  }, <span class="hljs-number">0</span>);
+}
+
+balancedParens(<span class="hljs-string">'(((())))'</span>);</code></pre>
+
+
+
+<h3 id="markdown">Markdown</h3>
+
+<h4 id="this-is-markdown">This is Markdown</h4>
+
+<blockquote>
+  <p>Note: You never know what people might say.</p>
+</blockquote>
+
+<ul>
+<li>First List item</li>
+<li>Another list item</li>
+<li>and another</li>
+</ul>
+
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+</body>
+</html>

@@ -381,7 +381,7 @@ ul.topnav li.icon {
 
 .card-btn:hover, .card-btn:focus {
   background-color: #336699;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 /* * Profile and Cards ************************************* */
