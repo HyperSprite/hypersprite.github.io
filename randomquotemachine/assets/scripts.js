@@ -3,7 +3,7 @@ var qGlobal = {};
 
 // Do all the cool stuff in here but only export the doQuote fuction
 (function () {
-  var jsFile = '/randomquotemachine/quotes.js';
+  var jsFile = '/randomquotemachine/assets/quotes.js';
   var quotes;
 // Adding the doQuote to the qGlobal object
   qGlobal.doQuote = function () {
