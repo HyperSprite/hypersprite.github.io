@@ -22,6 +22,8 @@
     "repoTitle":"Repo",
     "demoLink":"http://hypersprite.github.io/",
     "repoIcon":"fa-github-square",
+    "furtherReading":"http://codepen.io/HyperSprite/full/RGpKYE/",
+    "moreTitle":"CodePen",
     "content":"This is the Portfolio Project. It uses no jQuery or Bootstrap (although it does have <a href='http://necolas.github.io/normalize.css'>Normalize.css</a> to get all the browsers on the same page). This list, with the three types is generated via JavaScript. JSON is downloaded via an AJAX request and then parsed into this list."
   },
   {
@@ -96,6 +98,8 @@
     "furtherReading":"https://www.freecodecamp.com/challenges/build-a-random-quote-machine",
     "furtherReading":"http://codepen.io/HyperSprite/full/QKpEAb/",
     "repoIcon":"fa-github-square",
+    "furtherReading":"http://codepen.io/HyperSprite/full/QKpEAb/",
+    "moreTitle":"CodePen",
     "content":"This in part of the Intermediate Front End Developer Projects section. The task is to make a random quote display, have a button to get a new quote and a button to tweet the quote. In addition to the requirements, I also added a random background image from <a href='http://www.unsplash.com' target='new'>Unsplash</a>."
   },
   {

@@ -9,9 +9,10 @@ var pGlobal = {};
     this.image = data.image;
     this.imgAlt = data.imgAlt;
     this.repoLink = data.repoLink;
-    this.repoTitle = data.repoTitle;
+    this.repoTitle = data.repoTitle || 'Repo';
     this.demoLink = data.demoLink;
     this.furtherReading = data.furtherReading;
+    this.moreTitle = data.moreTitle || 'More Info';
     this.repoIcon = data.repoIcon;
     this.content = data.content;
     // since I am not using any templating engine, I am building the divs here.
@@ -25,7 +26,7 @@ var pGlobal = {};
       var demoLink = this.demoLink ?
         '<a href="' + this.demoLink + '" target="new"><button class="card-btn">Demo</button></a>' : '';
       var moreInfo = this.furtherReading ?
-        '<a href="' + this.furtherReading + '" target="new"><button class="card-btn">More Info</button></a>' : '';
+        '<a href="' + this.furtherReading + '" target="new"><button class="card-btn">' + this.moreTitle + '</button></a>' : '';
       var cardImage = this.image ?
         '<div class="card-img"><img src="' + this.image + '" alt="' + this.imgAlt + '"></div>' : '';
       var cardHeadline = '';
