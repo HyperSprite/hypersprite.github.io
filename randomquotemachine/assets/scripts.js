@@ -1,3 +1,4 @@
+
 // Setting up a qGlobal object
 var qGlobal = {};
 
@@ -5,17 +6,31 @@ var qGlobal = {};
 (function () {
   var jsFile = '/randomquotemachine/assets/quotes.js';
   var quotes;
+
+  function fitText() {
+    var outer = document.getElementById('resizable');
+    var inner = document.getElementById('texter');
+    var innerHeight = window.innerHeight;
+    var innerYOffset = inner.windowYOffset;
+    var difference = outer.clientWidth - inner.clientWidth;
+    var ratio = outer.clientWidth / inner.clientWidth;
+    var style = 'translateX(' + (difference / 2) + 'px) scale(' + ratio + ')';
+    inner.style.transform = style;
+    // outer.style.marginTop = innerHeight
+  }
+
 // Adding the doQuote to the qGlobal object
   qGlobal.doQuote = function () {
     var thisQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    var elmById = document.getElementById('content');
-    elmById.innerHTML = '<h1>' + thisQuote + '</h1>';
+    var elmById = document.getElementById('texter');
+    elmById.innerHTML = thisQuote;
+    fitText();
   };
 
-    var clickThis = document.getElementsByClassName('click-this')[0];
-    clickThis.onclick = function () {
-      qGlobal.doQuote();
-    };
+  var getNew = document.getElementsByClassName('get-new')[0];
+  getNew.onclick = function () {
+    qGlobal.doQuote();
+  };
 
   function reqListener() {
     // quotes var is now an array of quotes
@@ -30,4 +45,3 @@ var qGlobal = {};
   oReq.send();
 })();
 
-// http://api.forismatic.com/api/1.0/?method=getQuote&format=json&lang=en

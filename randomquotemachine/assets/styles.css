@@ -1,25 +1,56 @@
-body {
+body, html {
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  margin: 0;
+  max-width: 100%;
+  overflow-x: hidden;
   background-color: #ddd;
   background-image: url("https://source.unsplash.com/category/nature/1600x900");
   background-size: cover;
-}
-
-.done {
-  text-decoration: line-through;
 }
 
 .click-this {
   cursor: pointer;
 }
 
-.see-this {
-  margin: auto;
-  width: 60%;
+.container {
+  width: 100%;
+}
+
+#resizable {
   position: absolute;
-  top: 50%;
-  /*left: 50%;*/
-  /*transform: translateX(-50%) translateY(-50%);*/
-  height: 10rem;
-  text-align: center;
+  width: 60%;
+  margin-top: 200px;
+  margin-left: auto;
+}
+
+
+#texter {
+  display: inline-block;
   background-color: rgba(255,255,255,0.4);
+  padding: .3em;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.fa-style {
+  color: rgba(255,255,255,0.4);
+  float: left;
+  margin: 10px;
+}
+
+.fa-style:hover {
+  color: #0084b4;
+}
+
+@media screen and (max-width:600px) {
+  body, html {
+    background-image: url("https://source.unsplash.com/category/nature/600x800");
+  }
+
+  #resizable {
+    width: 95%;
+    margin-top: 25%;
+    margin-left: auto;
+  }
 }
