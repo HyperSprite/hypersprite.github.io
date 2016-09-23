@@ -17,7 +17,7 @@ var qGlobal = {};
 
   qGlobal.doTweet = function () {
   var tweetLink = window.location.href;
-  window.open('http://twitter.com/intent/tweet?url=' + tweetLink + '&text="' + thisQuote + '"&via=hypersprite&hashtags=wikiquotes', 'twitterwindow', 'height=280, width=550, toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+  window.open('http://twitter.com/intent/tweet?url=' + tweetLink + '&text="' + thisQuote + '"&via=hypersprite&hashtags=wikiquote', 'twitterwindow', 'height=280, width=550, toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
   };
 
   function fitText() {
