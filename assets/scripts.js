@@ -1,73 +1,70 @@
-
-var cardDeck = {};
-var typeCount;
-
-function Cards(data) {
-  this.type = data.type;
-  this.priority = data.priority;
-  this.headline = data.headline;
-  this.image = data.image;
-  this.imgAlt = data.imgAlt;
-  this.repoLink = data.repoLink;
-  this.repoTitle = data.repoTitle;
-  this.demoLink = data.demoLink;
-  this.furtherReading = data.furtherReading;
-  this.repoIcon = data.repoIcon;
-  this.content = data.content;
-  // since I am not using any templating engine, I am building the divs here.
-  // Otherwise, we could just return the object and parse it in a template.
-  this.divCard = function () {
-    var icon = this.repoIcon ?
-      '<i class="fa ' + this.repoIcon + ' fa-lg" aria-hidden="true"></i> ' : '';
-    var repoBtnName = this.repoTitle || 'Site';
-    var link = this.repoLink ?
-      '<a href="' + this.repoLink + '" target="new"><button class="card-btn">' + repoBtnName + '</button></a>' : '';
-    var demoLink = this.demoLink ?
-      '<a href="' + this.demoLink + '" target="new"><button class="card-btn">Demo</button></a>' : '';
-    var moreInfo = this.furtherReading ?
-      '<a href="' + this.furtherReading + '" target="new"><button class="card-btn">More Info</button></a>' : '';
-    var cardImage = this.image ?
-      '<div class="card-img"><img src="' + this.image + '" alt="this.imgAlt"></div>' : '';
-    var cardHeadline = '';
-    var cardText = '';
-
-    cardHeadline = '<div class="card type-' + this.type + '"><h2>' + icon + this.headline + '</h2><hr>';
-    cardText = '<p class="card-txt">' + this.content + '</p>' + link + demoLink + moreInfo + '</div>';
-    return cardHeadline + '<div class="card-block">' + cardImage + cardText + '</div>';
-  };
-}
+var pGlobal = {};
 
 // Get and process data
 (function () {
+  function Cards(data) {
+    this.type = data.type;
+    this.priority = data.priority;
+    this.headline = data.headline;
+    this.image = data.image;
+    this.imgAlt = data.imgAlt;
+    this.repoLink = data.repoLink;
+    this.repoTitle = data.repoTitle;
+    this.demoLink = data.demoLink;
+    this.furtherReading = data.furtherReading;
+    this.repoIcon = data.repoIcon;
+    this.content = data.content;
+    // since I am not using any templating engine, I am building the divs here.
+    // Otherwise, we could just return the object and parse it in a template.
+    this.divCard = function () {
+      var icon = this.repoIcon ?
+        '<i class="fa ' + this.repoIcon + ' fa-lg" aria-hidden="true"></i> ' : '';
+      var repoBtnName = this.repoTitle || 'Site';
+      var link = this.repoLink ?
+        '<a href="' + this.repoLink + '" target="new"><button class="card-btn">' + repoBtnName + '</button></a>' : '';
+      var demoLink = this.demoLink ?
+        '<a href="' + this.demoLink + '" target="new"><button class="card-btn">Demo</button></a>' : '';
+      var moreInfo = this.furtherReading ?
+        '<a href="' + this.furtherReading + '" target="new"><button class="card-btn">More Info</button></a>' : '';
+      var cardImage = this.image ?
+        '<div class="card-img"><img src="' + this.image + '" alt="'this.imgAlt'"></div>' : '';
+      var cardHeadline = '';
+      var cardText = '';
+
+      cardHeadline = '<div class="card type-' + this.type + '"><h2>' + icon + this.headline + '</h2><hr>';
+      cardText = '<p class="card-txt">' + this.content + '</p>' + link + demoLink + moreInfo + '</div>';
+      return cardHeadline + '<div class="card-block">' + cardImage + cardText + '</div>';
+    };
+  }
   // where to get the JSON data, this could be an API url but it is just a file
   // for demo sake.
   var jsonFile = '/assets/content.json';
 
   function reqListener() {
-    var typeCnt;
+    pGlobal.cardDeck = {};
     // takes the JSON array and builds objects
-    cardDeck = JSON.parse(this.responseText).map(function (crd) {
+    pGlobal.cardDeck = JSON.parse(this.responseText).map(function (crd) {
       return new Cards(crd);
     });
     // sorting the cards by priority
-    cardDeck.sort(function(obj0, obj1) {
+    pGlobal.cardDeck.sort(function(obj0, obj1) {
       return obj0.priority - obj1.priority;
     });
     // puts the cards on the page
-    cardDeck.map(function (crd) {
+    pGlobal.cardDeck.map(function (crd) {
       elmById = document.getElementById(crd.type);
       elmById.insertAdjacentHTML('beforeend', crd.divCard());
     });
     // this gets our counts for the navbar links
-    typeCount = cardDeck.reduce(function (acc, crd) {
+    pGlobal.typeCount = pGlobal.cardDeck.reduce(function (acc, crd) {
       ++acc[crd.type];
       return acc;
     }, { projects: 0, opensource: 0, more: 0 });
     // this puts the numbers in the navbar
-    for (var tCnt in typeCount) {
-      document.getElementById('type-' + tCnt).insertAdjacentHTML('beforeend', typeCount[tCnt]);
+    for (var tCnt in pGlobal.typeCount) {
+      document.getElementById('type-' + tCnt).insertAdjacentHTML('beforeend', pGlobal.typeCount[tCnt]);
     }
-    return typeCount;
+    return pGlobal.typeCount;
   }
   // gets our JSON from the server
   var oReq = new XMLHttpRequest();
