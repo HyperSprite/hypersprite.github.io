@@ -27,7 +27,7 @@ var pGlobal = {};
       var moreInfo = this.furtherReading ?
         '<a href="' + this.furtherReading + '" target="new"><button class="card-btn">More Info</button></a>' : '';
       var cardImage = this.image ?
-        '<div class="card-img"><img src="' + this.image + '" alt="'this.imgAlt'"></div>' : '';
+        '<div class="card-img"><img src="' + this.image + '" alt="' + this.imgAlt + '"></div>' : '';
       var cardHeadline = '';
       var cardText = '';
 
