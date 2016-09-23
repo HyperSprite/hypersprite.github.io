@@ -129,6 +129,7 @@
   "I am not a National Insurance Number, I am a free man!",
   "I am nothing, not even hope.",
   "I can tune a guitar, but I can’t tüna fish.",
+  "I can't believe it is supposed to be butter.",
   "I don’t fear death; it’s re-incarnation I dread.",
   "I do not forgive!",
   "I don’t have an attitude problem: you have a perception problem!",

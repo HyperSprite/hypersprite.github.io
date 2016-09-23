@@ -6,6 +6,19 @@ var qGlobal = {};
 (function () {
   var jsFile = '/randomquotemachine/assets/quotes.js';
   var quotes;
+  var thisQuote;
+// Tweet this quote
+
+
+  var tweetThis = document.getElementsByClassName('tweet-this')[0];
+  tweetThis.onclick = function () {
+    qGlobal.doTweet();
+  };
+
+  qGlobal.doTweet = function () {
+  var tweetLink = window.location.href;
+  window.open('http://twitter.com/intent/tweet?url=' + tweetLink + '&text="' + thisQuote + '"&via=hypersprite&hashtags=wikiquotes', 'twitterwindow', 'height=280, width=550, toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
+  };
 
   function fitText() {
     var outer = document.getElementById('resizable');
@@ -21,7 +34,7 @@ var qGlobal = {};
 
 // Adding the doQuote to the qGlobal object
   qGlobal.doQuote = function () {
-    var thisQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    thisQuote = quotes[Math.floor(Math.random() * quotes.length)];
     var elmById = document.getElementById('texter');
     elmById.innerHTML = thisQuote;
     fitText();
