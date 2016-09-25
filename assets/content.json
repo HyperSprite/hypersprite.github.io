@@ -113,6 +113,6 @@
     "demoLink":"http://christopher.hypersprite.com/highlightjs/",
     "furtherReading":"",
     "repoIcon":"fa-github-square",
-    "content":"In Progress: I love highlightjs and wanted to work on a theme that looks like my [Sublime Text theme](http://christopher.hypersprite.com/highlightjs/assets/hypersprite-dark.tmTheme)."
+    "content":"In Progress: I love highlightjs and wanted to work on a theme that looks like my <a href='http://christopher.hypersprite.com/highlightjs/assets/hypersprite-dark.tmTheme' target='new'>Sublime Text theme</a>."
   }
 ]
