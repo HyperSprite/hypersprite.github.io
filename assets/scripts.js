@@ -48,7 +48,7 @@ var pGlobal = {};
       return new Cards(crd);
     });
     // sorting the cards by priority
-    pGlobal.cardDeck.sort(function(obj0, obj1) {
+    pGlobal.cardDeck.sort(function (obj0, obj1) {
       return obj0.priority - obj1.priority;
     });
     // puts the cards on the page
