@@ -111,14 +111,12 @@ var pGlobal = {};
   var cardStack = document.getElementsByClassName('cardgroup');
   var filterLinks = document.getElementById('topNavbar').getElementsByTagName('a');
   var clickedId;
-  var clickedA;
   var i;
-  var j;
   // scrollSpd = setTimeout wait in milliseconds
   var scrollSpd = 16;
   // scrollSpd = default number of px to scroll
   var scrollPxls = 24;
-
+  // Turning array-likes into arrays
   cardStack = Array.prototype.slice.call(cardStack);
   filterLinks = Array.prototype.slice.call(filterLinks);
 
@@ -162,8 +160,8 @@ var pGlobal = {};
   }
 
   // this filters out the cards for the selected link
-  for (i = 0; i < filterLinks.length; i++) {
-    filterLinks[i].onclick = function (e) {
+  filterLinks.forEach(function(filterL) {
+    filterL.onclick = function (e) {
       e.preventDefault();
       filterLinks.map(function (fLink) {
         fLink.className = '';
@@ -172,22 +170,22 @@ var pGlobal = {};
       this.className = 'selected';
       clickedId = this.childNodes[1].id.slice(5);
 
-      for (j = 0; j < cardStack.length; j++) {
+      cardStack.map(function (cardS) {
         if (clickedId === 'home') {
-          cardStack[j].style.display = 'inherit';
+          cardS.style.display = 'inherit';
           // auto scroll
           scrollCheck(window.pageYOffset, 0);
-        } else if (clickedId === cardStack[j].id) {
-          cardStack[j].style.display = 'inherit';
+        } else if (clickedId === cardS.id) {
+          cardS.style.display = 'inherit';
           // auto scroll
           scrollCheck(window.pageYOffset, 501);
         } else {
-          cardStack[j].style.display = 'none';
+          cardS.style.display = 'none';
         }
-      }
+      });
       return false;
     };
-  }
+  });
 })();
 
 
