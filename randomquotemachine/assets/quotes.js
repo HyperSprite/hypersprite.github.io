@@ -388,7 +388,7 @@
   "Those who suppress freedom always do so in the name of law and order.",
   "Thoughts don’t hurt, actions do.",
   "Time flies when you’re having fun.",
-  "Time files when you don’t care about it.",
+  "Time flies when you don’t care about it.",
   "Times change, and we change with them.",
   "Togetherness only through crisis.",
   "To ignore the past is to jeopardize the future.",
