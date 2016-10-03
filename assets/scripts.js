@@ -111,6 +111,7 @@ var pGlobal = {};
   var cardStack = document.getElementsByClassName('cardgroup');
   var filterLinks = document.getElementById('topNavbar').getElementsByTagName('a');
   var clickedId;
+  var clickedA;
   var i;
   var j;
   // scrollSpd = setTimeout wait in milliseconds
@@ -118,7 +119,10 @@ var pGlobal = {};
   // scrollSpd = default number of px to scroll
   var scrollPxls = 24;
 
-// check if we need to go up or down
+  cardStack = Array.prototype.slice.call(cardStack);
+  filterLinks = Array.prototype.slice.call(filterLinks);
+
+  // check if we need to go up or down
   function scrollCheck(scrlFrm, scrlTo) {
     if (scrlFrm >= scrlTo) {
       scrollPageDown(scrlFrm, scrlTo);
@@ -127,7 +131,7 @@ var pGlobal = {};
     }
   }
 
-// if we need to scroll te page up, recurse on this
+  // if we need to scroll te page up, recurse on this
   function scrollPageUp(scrlFrm, scrlTo) {
     setTimeout(function () {
       // base case
@@ -142,7 +146,7 @@ var pGlobal = {};
     }, scrollSpd);
   }
 
-// if we need to scroll the page down, recurse on this
+  // if we need to scroll the page down, recurse on this
   function scrollPageDown(scrlFrm, scrlTo) {
     setTimeout(function () {
       // base case
@@ -157,10 +161,15 @@ var pGlobal = {};
     }, scrollSpd);
   }
 
-// this filters out the cards for the selected link
+  // this filters out the cards for the selected link
   for (i = 0; i < filterLinks.length; i++) {
     filterLinks[i].onclick = function (e) {
       e.preventDefault();
+      filterLinks.map(function (fLink) {
+        fLink.className = '';
+      });
+
+      this.className = 'selected';
       clickedId = this.childNodes[1].id.slice(5);
 
       for (j = 0; j < cardStack.length; j++) {

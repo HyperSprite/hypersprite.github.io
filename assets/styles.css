@@ -263,6 +263,11 @@ ul.topnav li.icon {
   text-align: center;
 }
 
+ul.topnav .selected {
+  color: #336699;
+  border-bottom: solid 3px rgba(51, 102, 153,0.4);
+}
+
 /* * Background and Navbar ********************************* */
 /* ********************************************************* */
 /* * Profile and Cards ************************************* */
