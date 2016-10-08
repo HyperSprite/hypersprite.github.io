@@ -106,8 +106,9 @@ var pGlobal = {};
   };
 })();
 
+// Theme switcher
 (function () {
-  pGlobal.cssArray = [
+  var cssArray = [
     'soft',
     'dark-gray',
     'gray',
@@ -116,20 +117,45 @@ var pGlobal = {};
     'indigo',
   ];
 
+  function setCookie(name, value, days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 864000000));
+    var expires = '; expires=' + date.toGMTString();
+    document.cookie = name + '=' + value + expires + '; path=/';
+  }
 
-  var i = 0;
-  var l = pGlobal.cssArray.length;
+  function getCookie(name) {
+    var cookArr = document.cookie.split(';');
+    for (var i = 0, l = cookArr.length; i < l; i++) {
+      var cookie = cookArr[i].split('=', 2);
+      cookie[0] = cookie[0].replace(/^\s+/, '');
+      if (cookie[0] === name) {
+        return cookie;
+      }
+    }
+  }
+
+  var i;
+  var cTheme = getCookie('theme') || NaN;
+  if (isNaN(cTheme[1] * 1)) {
+    i = 0;
+  } else {
+    i = +cTheme[1];
+  }
+
+  var l = cssArray.length;
   var colorsCss = document.getElementById('colorsCss');
-  var linkCssColor = document.getElementById("linkCssColor");
+  var linkCssColor = document.getElementById('linkCssColor');
+  linkCssColor.href = '/assets/color-' + cssArray[i] + '.css';
+
   colorsCss.onclick = function (e) {
+    cTheme = getCookie('theme');
     (e).preventDefault;
     i++;
     i === l ? i = 0 : i;
-    console.log(pGlobal.cssArray[i], l);
-    linkCssColor.href = '/assets/color-' + pGlobal.cssArray[i] + '.css';
+    linkCssColor.href = '/assets/color-' + cssArray[i] + '.css';
+    setCookie('theme', i, 7);
   };
-
-
 })();
 
 // Card Filter
