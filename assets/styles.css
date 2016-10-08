@@ -3,16 +3,20 @@ progress,sub,sup{vertical-align:baseline}button,hr,input{overflow:visible}html{f
 
 /*End of Normalize.css*/
 
+/* ********************************************************* */
+/* * Main ************************************************** */
+
 * {
-    box-sizing: border-box;
-    transition: 0.5s;
+  box-sizing: border-box;
+  -webkit-transition:0.2s;
+  transition: 0.2s;
 }
 
-body, html {
+body,
+html {
   font-family: 'Open Sans', sans-serif;
   height: 100%;
   margin: 0;
-  background-color: #eee;
   max-width: 100%;
   overflow-x: hidden;
 }
@@ -20,25 +24,21 @@ body, html {
 a:link {
   text-decoration: none;
   font-weight: bold;
-  color: #444;
 }
 
 a:visited {
   text-decoration: none;
-  color: #555;
 }
 
 a:hover {
   text-decoration: underline;
-  color: #19334d;
 }
 
 a:active {
-    text-decoration: underline;
-    color: #336699;
+  text-decoration: underline;
 }
 
-/* ********************************************************* */
+/* * Main ************************************************** */
 /* ********************************************************* */
 /* * Email form ******************************************** */
 
@@ -59,13 +59,14 @@ a:active {
 }
 
 
-input, textarea {
+input,
+textarea {
   width: 100%;
   font-size: 22px;
   box-shadow: none;
   border-radius: 6px;
   border: none;
-  border-bottom: solid 2px #ccc;
+  -webkit-transition:border 0.3s;
   transition: border 0.3s;
 }
 
@@ -74,10 +75,9 @@ textarea {
   height: 160px;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   outline: none;
-  border-bottom: solid 3px #444;
-  border-top: solid 1px #eee;
 }
 
 /* * Email form ******************************************** */
@@ -106,25 +106,26 @@ input:focus, textarea:focus {
   height: 100%;
   overflow: auto;
   background-color: rgba(64,36,0,0.6);
-  transform:scale(1);
+  -webkit-transform:scale(1);
+          transform:scale(1);
+  -webkit-transition:.8s;
   transition: .8s;
 }
 /* Modal Content/Box */
 
-.modal h2,p {
+.modal h2,
+p {
   position:relative;
-  color: #444;
 }
 
 .close {
-  color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
 
-.close:hover, .close:focus {
-  color: black;
+.close:hover,
+.close:focus {
   text-decoration: none;
   cursor: pointer;
 }
@@ -134,15 +135,12 @@ input:focus, textarea:focus {
   width: 100%;
   height: 20px;
   margin-bottom: 4px;
-  background-color: #ddd;
-  border-bottom: solid 2px #555;
 }
 
 #email-bar {
   position: absolute;
   width: 0;
   height: 100%;
-  background-color: #336699;
 }
 
 #email-invalid {
@@ -191,6 +189,7 @@ input:focus, textarea:focus {
   background-position: 50% 0px;
   background-repeat: no-repeat;
   background-size: inherit;
+  -webkit-transition:0.1s;
   transition: 0.1s;
 }
 
@@ -207,14 +206,11 @@ input:focus, textarea:focus {
   top: 0px;
   position:fixed;
   width: 100%;
-  background-color: #fff;
   z-index: 2;
 }
 
 .navbar {
   width: 100%;
-  background-color: #fff;
-  border-bottom: solid 1px #aaa;
   box-shadow: 0 6px 6px 0 rgba(0,0,0,0.2);
 }
 
@@ -223,7 +219,6 @@ ul.topnav {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #fff;
 }
 
 ul.topnav li {
@@ -232,13 +227,13 @@ ul.topnav li {
 
 ul.topnav li a {
   display: inline-block;
-  color: #777;
   text-align: center;
   padding: 2px 10px;
   text-decoration: none;
-  border-bottom: solid 5px rgba(0,0,0,0.0);
   font-size: 10px;
   font-style: normal;
+  -webkit-transition:0.3;
+  transition: 0.3;
 }
 
 ul.topnav li a div {
@@ -249,8 +244,6 @@ ul.topnav li a div {
 }
 
 ul.topnav li a:hover {
-  color: #336699;
-  border-bottom: solid 5px rgba(51, 102, 153,0.9);
 }
 
 ul.topnav li.icon {
@@ -264,17 +257,14 @@ ul.topnav li.icon {
 }
 
 ul.topnav .selected {
-  color: #336699;
-  border-bottom: solid 3px rgba(51, 102, 153,0.4);
 }
 
 /* * Background and Navbar ********************************* */
 /* ********************************************************* */
 /* * Profile and Cards ************************************* */
 
-
-
-.profile, .profile-details {
+.profile,
+.profile-details {
   position: absolute;
   left: 200px;
   width: 250px;
@@ -284,16 +274,17 @@ ul.topnav .selected {
   top: 350px;
   height: 250px;
   border-radius: 10px;
-  border: 8px solid #eee;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-  transition: 0.3s;
+  -webkit-transition:0.2s;
+  transition: 0.2s;
   z-index: 1;
+  cursor: pointer;
 }
 
 .profile:hover {
-  border: 8px solid #ccc;
   box-shadow: 0 12px 24px 0 rgba(0,0,0,0.3);
-  filter: inherit;
+  -webkit-filter: inherit;
+          filter: inherit;
 }
 
 .profile-details {
@@ -337,12 +328,10 @@ ul.topnav .selected {
 }
 
 .cardgroup:nth-child(even) {
-  background-color: #e6e6e6;
   border-radius: 5px;
 }
 
 .card {
-  background-color: #ddd;
   width: 600px;
   margin: 20px;
   padding: 10px;
@@ -371,11 +360,9 @@ ul.topnav .selected {
 }
 
 .card-btn {
-  background-color: #444;
   border: none;
   border-radius: 4px;
   margin: 4px;
-  color: #eee;
   padding: 15px 26px;
   text-align: center;
   text-decoration: none;
@@ -384,8 +371,8 @@ ul.topnav .selected {
   width: 140px;
 }
 
-.card-btn:hover, .card-btn:focus {
-  background-color: #336699;
+.card-btn:hover,
+.card-btn:focus {
   cursor: pointer;
 }
 
@@ -397,15 +384,20 @@ ul.topnav .selected {
   .banner {
     background-size: contain;
   }
-  .card-block, .card-txt, .card-img img {
+
+  .card-block,
+  .card-txt,
+  .card-img img {
     max-width: 700px;
   }
+
   .card {
     width: 800px;
   }
+
   .three-wide div {
-  width: 456px;
-}
+    width: 456px;
+  }
 }
 
 @media screen and (max-width:1160px) {
@@ -418,14 +410,15 @@ ul.topnav .selected {
     left: 370px;
   }
 
-  .profile, .profile-details {
+  .profile,
+  .profile-details {
     left: 100px;
   }
 }
 
 @media screen and (max-width:1030px) {
 
-   .nav-left {
+  .nav-left {
     width: 320px;
   }
 
@@ -433,7 +426,8 @@ ul.topnav .selected {
     left: 320px;
   }
 
-  .profile, .profile-details {
+  .profile,
+  .profile-details {
     left: 50px;
   }
 
@@ -441,6 +435,7 @@ ul.topnav .selected {
     width: auto;
     margin: 3%;
   }
+
   .card-btn {
     padding: 8px 8px;
     font-size: 12px;
@@ -450,7 +445,7 @@ ul.topnav .selected {
 
 @media screen and (max-width:720px) {
 
-   .nav-left {
+  .nav-left {
     width: 270px;
   }
 
@@ -468,7 +463,6 @@ ul.topnav .selected {
     width: 40px;
     font-style: normal;
   }
-
 }
 
 @media screen and (max-width:600px) {
@@ -488,17 +482,16 @@ ul.topnav .selected {
   .profile-details {
     left: 10px;
     top: 220px;
-    background-color: #eee;
     border-radius: 10px;
   }
 
   .hide-label {
-  position:absolute;
-  left:-10000px;
-  top:auto;
-  width:1px;
-  height:1px;
-  overflow:hidden;
+    position:absolute;
+    left:-10000px;
+    top:auto;
+    width:1px;
+    height:1px;
+    overflow:hidden;
   }
 
   .social a {
@@ -522,7 +515,7 @@ ul.topnav .selected {
   .card-btn {
     padding: 16px;
     font-size: 16px;
-    width: 100%
+    width: 100%;
   }
 
   .three-wide div {
@@ -531,4 +524,3 @@ ul.topnav .selected {
     margin-right: 2px;
   }
 }
-

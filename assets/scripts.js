@@ -106,6 +106,32 @@ var pGlobal = {};
   };
 })();
 
+(function () {
+  pGlobal.cssArray = [
+    'soft',
+    'dark-gray',
+    'gray',
+    'dark-red',
+    'red',
+    'indigo',
+  ];
+
+
+  var i = 0;
+  var l = pGlobal.cssArray.length;
+  var colorsCss = document.getElementById('colorsCss');
+  var linkCssColor = document.getElementById("linkCssColor");
+  colorsCss.onclick = function (e) {
+    (e).preventDefault;
+    i++;
+    i === l ? i = 0 : i;
+    console.log(pGlobal.cssArray[i], l);
+    linkCssColor.href = '/assets/color-' + pGlobal.cssArray[i] + '.css';
+  };
+
+
+})();
+
 // Card Filter
 (function () {
   var cardStack = document.getElementsByClassName('cardgroup');
@@ -192,7 +218,7 @@ var pGlobal = {};
 (function() {
   var foot = document.getElementsByClassName('footer')[0];
   var today = new Date().getFullYear();
-  var footerTxt = '&copy;' + today + ' HyperSprite.com';
+  var footerTxt = '<p>&copy;' + today + ' HyperSprite.com</p>';
   foot.insertAdjacentHTML('beforeend', footerTxt);
 })();
 
@@ -203,7 +229,8 @@ var pGlobal = {};
   var emaillink = document.getElementById('open-email-modal');
   var span = document.getElementsByClassName('close')[0];
 
-  emaillink.onclick = function () {
+  emaillink.onclick = function (e) {
+    (e).preventDefault;
     modal.style.display = 'inherit';
     setTimeout(function () {
       modal.className += ' modal-pop';

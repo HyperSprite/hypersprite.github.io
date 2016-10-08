@@ -1,0 +1,156 @@
+/* * Colors ************************************************ */
+
+/* #f2f2f2 white +1 */
+/* #e6e6e6 white +2 */
+/* #262626 black -3 */
+
+/* #ECEFF1 0 */
+/* #CFD8DC 1 */
+/* #B0BEC5 2 */
+/* 3 */
+/* #78909C 4 */
+/* #607D8B 5 */
+/* 6 */
+/* #607D8B 7 */
+/* #37474F 8 */
+/* #263238 9 */
+
+
+/* #C5CAE9 2 alt */
+/*  5 alt */
+/* #3F51B5 5 alt */
+/* #303F9F 6 alt */
+/* #283593 7 alt */
+/* #1A237E 9 alt */
+
+
+/* * Colors  *********************************************** */
+
+ul.topnav li a {
+  border-bottom: solid 5px #f2f2f2;    /* white +1 */
+}
+
+.navbar,
+ul.topnav {
+  background-color: #f2f2f2;           /* white +1 */
+}
+
+.close:hover,
+.close:focus {
+  color: #f2f2f2;                      /* white +1 */
+}
+
+body,
+html {
+  background-color: #e6e6e6;           /* white + 2 */
+}
+
+.profile {
+  border: 8px solid #e6e6e6;           /* white + 2 */
+}
+
+.card-btn {
+  color: #e6e6e6;                      /* white + 2 */
+}
+
+h1,
+h3,
+p,
+a:link,
+a:visited,
+.card li {
+  color: #262626;                      /* black - 3 */
+}
+
+.locked {
+  background-color: #ECEFF1;           /* 0 */
+}
+
+.card {
+  background-color: #CFD8DC;           /* 1 */
+}
+
+input:focus,
+textarea:focus {
+  border-top: solid 1px #CFD8DC;       /* 1 */
+}
+
+.profile:hover {
+  border: 8px solid #B0BEC5;           /* 2 */
+}
+
+#email-progress,
+.cardgroup:nth-child(even) {
+  background-color: #B0BEC5;           /* 2 */
+}
+
+input,
+textarea {
+  border-bottom: solid 2px #78909C;    /* 4 */
+}
+
+.navbar {
+  border-bottom: solid 1px #607D8B;    /* 5 */
+}
+
+input:focus, textarea:focus {
+  border-bottom: solid 3px #607D8B;    /* 7 */
+}
+
+ul.topnav li a {
+  color: #607D8B;                      /* 7 */
+}
+
+.card-btn:hover, .card-btn:focus {
+  background-color: #607D8B;           /* 7 */
+}
+
+
+#email-progress {
+  border-bottom: solid 2px #37474F;    /* 8 */
+}
+
+.close {
+  color: #263238;                      /* 9 */
+}
+
+/* * Alt Colors ******************************************** */
+
+ul.topnav .selected {
+  border-bottom: solid 3px #C5CAE9;    /* 2 alt */
+}
+
+ul.topnav li a:hover {
+  border-bottom: solid 5px #3F51B5;    /* 5 alt */
+}
+
+.card-btn {
+  background-color: #303F9F;           /* 6 alt */
+}
+
+#email-bar {
+  background-color: #283593;           /* 7 alt */
+}
+
+a:hover,
+a:active,
+ul.topnav li a:hover,
+ul.topnav .selected  {
+  color: #283593;                      /* 7 alt */
+}
+
+h2, li {
+  color: #1A237E;                      /* 9 alt */
+}
+
+/* * Alt Colors ******************************************** */
+/* ********************************************************* */
+/* * Media ************************************************* */
+
+@media screen and (max-width:600px) {
+  .profile-details {
+    background-color: #e6e6e6;           /* white + 2 */
+  }
+}
+
+/* * Colors ************************************************ */

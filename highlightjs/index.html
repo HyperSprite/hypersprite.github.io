@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,204 +9,473 @@
 </head>
 <body>
 
-
-  <h3 id="javascript">JavaScript</h3>
-<p>Mutation</p>
+<h3 id="bash">Bash</h3>
 
 
 
-<pre class="prettyprint">
-<code class="language-js hljs ">
-<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mutation</span><span class="hljs-params">(arr)</span> {</span>
-  <span class="hljs-keyword">var</span> findIn = arr[<span class="hljs-number">0</span>].toLowerCase();
-  <span class="hljs-keyword">var</span> findWhat = arr[<span class="hljs-number">1</span>].toLowerCase().split(<span class="hljs-string">''</span>);
-  <span class="hljs-keyword">return</span> findWhat.every(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(fWhat)</span> {</span>
-    <span class="hljs-keyword">return</span> findIn.indexOf(fWhat) !== -<span class="hljs-number">1</span>;
-  });
+<pre class="prettyprint"><code class="language-bash hljs "><span class="hljs-shebang">#!/bin/bash
+</span>
+<span class="hljs-comment">###### CONFIG</span>
+ACCEPTED_HOSTS=<span class="hljs-string">"/root/.hag_accepted.conf"</span>
+BE_VERBOSE=<span class="hljs-literal">false</span>
+
+<span class="hljs-keyword">if</span> [ <span class="hljs-string">"<span class="hljs-variable">$UID</span>"</span> <span class="hljs-operator">-ne</span> <span class="hljs-number">0</span> ]
+<span class="hljs-keyword">then</span>
+ <span class="hljs-built_in">echo</span> <span class="hljs-string">"Superuser rights required"</span>
+ <span class="hljs-keyword">exit</span> <span class="hljs-number">2</span>
+<span class="hljs-keyword">fi</span>
+
+<span class="hljs-function"><span class="hljs-title">genApacheConf</span></span>(){
+ <span class="hljs-built_in">echo</span> <span class="hljs-operator">-e</span> <span class="hljs-string">"# Host <span class="hljs-variable">${HOME_DIR}</span><span class="hljs-variable">$1</span>/<span class="hljs-variable">$2</span> :"</span>
+}</code></pre>
+
+
+
+<h3 id="css">CSS</h3>
+
+
+
+<pre class="prettyprint"><code class="language-css hljs "><span class="hljs-at_rule">@<span class="hljs-keyword">font-face</span></span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> Chunkfive</span></span>; <span class="hljs-rule"><span class="hljs-attribute">src</span>:<span class="hljs-value"> <span class="hljs-function">url(<span class="hljs-string">'Chunkfive.otf'</span>)</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-tag">body</span>, <span class="hljs-class">.usertext</span> <span class="hljs-rules">{
+  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#F0F0F0</span></span></span>; <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#600</span></span></span>;
+  <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> Chunkfive, sans</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-function">url(print.css)</span></span>;
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> print </span>{
+  <span class="hljs-tag">a</span><span class="hljs-attr_selector">[href^=http]</span><span class="hljs-pseudo">::after</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-function">attr(href)</span>
+  </span></span></span>}
+}</code></pre>
+
+
+
+<h3 id="dockerfile">Dockerfile</h3>
+
+
+
+<pre class="prettyprint"><code class="language-docker hljs sql"># Example instructions from https://docs.docker.com/reference/builder/
+FROM ubuntu:14.04
+
+MAINTAINER example@example.com
+
+ENV foo /bar
+WORKDIR ${foo}   # WORKDIR /bar
+ADD . $foo       # ADD . /bar
+COPY \$foo /quux # COPY $foo /quux
+
+RUN apt-get <span class="hljs-operator"><span class="hljs-keyword">update</span> &amp;&amp; apt-<span class="hljs-keyword">get</span> install -y software-properties-common\
+    zsh curl wget git htop\
+    unzip vim telnet
+RUN [<span class="hljs-string">"/bin/bash"</span>, <span class="hljs-string">"-c"</span>, <span class="hljs-string">"echo hello ${USER}"</span>]
+
+CMD [<span class="hljs-string">"executable"</span>,<span class="hljs-string">"param1"</span>,<span class="hljs-string">"param2"</span>]
+CMD command param1 param2
+
+EXPOSE <span class="hljs-number">1337</span>
+
+ENV myName=<span class="hljs-string">"John Doe"</span> myDog=Rex\ The\ Dog \
+    myCat=fluffy
+
+ENV myName John Doe
+ENV myDog Rex The Dog
+ENV myCat fluffy
+
+<span class="hljs-keyword">ADD</span> hom* /mydir/        # adds <span class="hljs-keyword">all</span> files starting <span class="hljs-keyword">with</span> <span class="hljs-string">"hom"</span>
+<span class="hljs-keyword">ADD</span> hom?.txt /mydir/    # ? <span class="hljs-keyword">is</span> replaced <span class="hljs-keyword">with</span> <span class="hljs-keyword">any</span> single <span class="hljs-keyword">character</span>
+
+COPY hom* /mydir/        # adds <span class="hljs-keyword">all</span> files starting <span class="hljs-keyword">with</span> <span class="hljs-string">"hom"</span>
+COPY hom?.txt /mydir/    # ? <span class="hljs-keyword">is</span> replaced <span class="hljs-keyword">with</span> <span class="hljs-keyword">any</span> single <span class="hljs-keyword">character</span>
+
+ENTRYPOINT [<span class="hljs-string">"executable"</span>, <span class="hljs-string">"param1"</span>, <span class="hljs-string">"param2"</span>]
+ENTRYPOINT command param1 param2
+
+VOLUME [<span class="hljs-string">"/data"</span>]
+
+<span class="hljs-keyword">USER</span> daemon
+
+LABEL com.example.label-<span class="hljs-keyword">with</span>-<span class="hljs-keyword">value</span>=<span class="hljs-string">"foo"</span>
+LABEL version=<span class="hljs-string">"1.0"</span>
+LABEL description=<span class="hljs-string">"This text illustrates \
+that label-values can span multiple lines."</span>
+
+WORKDIR /path/<span class="hljs-keyword">to</span>/workdir
+
+ONBUILD <span class="hljs-keyword">ADD</span> . /app/src</span></code></pre>
+
+
+
+<h3 id="elm">Elm</h3>
+
+
+
+<pre class="prettyprint"><code class="language-elm hljs haskell"><span class="hljs-import"><span class="hljs-keyword">import</span> Html exposing <span class="hljs-container">(<span class="hljs-title">div</span>, <span class="hljs-title">button</span>, <span class="hljs-title">text</span>)</span></span>
+<span class="hljs-import"><span class="hljs-keyword">import</span> Html.App exposing <span class="hljs-container">(<span class="hljs-title">beginnerProgram</span>)</span></span>
+<span class="hljs-import"><span class="hljs-keyword">import</span> Html.Events exposing <span class="hljs-container">(<span class="hljs-title">onClick</span>)</span></span>
+
+<span class="hljs-typedef"><span class="hljs-keyword">type</span> <span class="hljs-type">Msg</span></span>
+    = <span class="hljs-type">Increment</span>
+
+<span class="hljs-title">main</span> =
+    beginnerProgram
+        { model = <span class="hljs-number">0</span>, view = view
+        , update = \<span class="hljs-type">Increment</span> model -&gt; model + <span class="hljs-number">1</span> }
+
+<span class="hljs-title">view</span> model =
+    div [] [ div [] [ text (toString model) ]
+           , button [ onClick <span class="hljs-type">Increment</span> ] [ text <span class="hljs-string">"+"</span> ] ]</code></pre>
+
+
+
+<h3 id="handlebars">Handlebars</h3>
+
+
+
+<pre class="prettyprint"><code class="language-hbs hljs handlebars"><span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"entry"</span>&gt;</span>
+  </span><span class="hljs-expression">{{!<span class="hljs-variable">--</span> <span class="hljs-variable">only</span> <span class="hljs-variable">show</span> <span class="hljs-variable"><span class="hljs-keyword">if</span></span> <span class="hljs-variable">author</span> <span class="hljs-variable">exists</span> <span class="hljs-variable">--</span>}}</span><span class="xml">
+  </span><span class="hljs-expression">{{<span class="hljs-begin-block">#<span class="hljs-keyword">if</span> author</span>}}</span><span class="xml">
+    <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span></span><span class="hljs-expression">{{<span class="hljs-variable">firstName</span>}}</span><span class="xml"> </span><span class="hljs-expression">{{<span class="hljs-variable">lastName</span>}}</span><span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+  </span><span class="hljs-expression">{{<span class="hljs-end-block">/<span class="hljs-keyword">if</span></span>}}</span><span class="xml">
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span></span></code></pre>
+
+
+
+
+<h3 id="javascript">Javascript</h3>
+
+
+
+<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">$initHighlight</span><span class="hljs-params">(block, cls)</span> {</span>
+  <span class="hljs-keyword">try</span> {
+    <span class="hljs-keyword">if</span> (cls.search(<span class="hljs-regexp">/\bno\-highlight\b/</span>) != -<span class="hljs-number">1</span>)
+      <span class="hljs-keyword">return</span> process(block, <span class="hljs-literal">true</span>, <span class="hljs-number">0x0F</span>) +
+             ` <span class="hljs-keyword">class</span>=<span class="hljs-string">"${cls}"</span>`;
+  } <span class="hljs-keyword">catch</span> (e) {
+    <span class="hljs-comment">/* handle exception */</span>
+  }
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span> / <span class="hljs-number">2</span>; i &lt; classes.length; i++) {
+    <span class="hljs-keyword">if</span> (checkCondition(classes[i]) === <span class="hljs-literal">undefined</span>)
+      console.log(<span class="hljs-string">'undefined'</span>);
+  }
 }
 
-mutation([<span class="hljs-string">"hello"</span>, <span class="hljs-string">"hey"</span>]); <span class="hljs-comment">// should return false.</span>
-mutation([<span class="hljs-string">"hello"</span>, <span class="hljs-string">"Hello"</span>]); <span class="hljs-comment">// should return true.</span>
-mutation([<span class="hljs-string">"zyxwvutsrqponmlkjihgfedcba"</span>, <span class="hljs-string">"qrstu"</span>]); <span class="hljs-comment">// should return true.</span>
-mutation([<span class="hljs-string">"Mary"</span>, <span class="hljs-string">"Army"</span>]); <span class="hljs-comment">// should return true.</span>
-mutation([<span class="hljs-string">"Mary"</span>, <span class="hljs-string">"Aarmy"</span>]); <span class="hljs-comment">// should return true.</span>
-mutation([<span class="hljs-string">"Alien"</span>, <span class="hljs-string">"line"</span>]); <span class="hljs-comment">// should return true.</span>
-mutation([<span class="hljs-string">"floor"</span>, <span class="hljs-string">"for"</span>]); <span class="hljs-comment">// should return true.</span>
-mutation([<span class="hljs-string">"hello"</span>, <span class="hljs-string">"neo"</span>]); <span class="hljs-comment">// should return false.</span>
-mutation([<span class="hljs-string">"voodoo"</span>, <span class="hljs-string">"no"</span>]); <span class="hljs-comment">// should return false.</span>
-</code>
-</pre>
+export  $initHighlight;</code></pre>
 
 
 
-  <h3 id="json">JSON</h3>
+<h3 id="json">JSON</h3>
 
-<pre class="prettyprint"><code class="language-json hljs ">[
+
+
+<pre class="prettyprint"><code class="language-json hljs ">
+[
   {
-    "<span class="hljs-attribute">type</span>":<span class="hljs-value"><span class="hljs-string">"projects"</span></span>,
-    "<span class="hljs-attribute">priority</span>":<span class="hljs-value"><span class="hljs-string">"6"</span></span>,
-    "<span class="hljs-attribute">headline</span>":<span class="hljs-value"><span class="hljs-string">"FreeCodeCamp: Random Quote Machine"</span></span>,
-    "<span class="hljs-attribute">repoLink</span>":<span class="hljs-value"><span class="hljs-string">"https://github.com/HyperSprite/hypersprite.github.io/tree/master/randomquotemachine"</span></span>,
-    "<span class="hljs-attribute">repoTitle</span>":<span class="hljs-value"><span class="hljs-string">"Repo"</span></span>,
-    "<span class="hljs-attribute">demoLink</span>":<span class="hljs-value"><span class="hljs-string">"randomquotemachine"</span></span>,
-    "<span class="hljs-attribute">furtherReading</span>":<span class="hljs-value"><span class="hljs-string">"https://www.freecodecamp.com/challenges/build-a-random-quote-machine"</span></span>,
-    "<span class="hljs-attribute">repoIcon</span>":<span class="hljs-value"><span class="hljs-string">"fa-github-square"</span></span>,
-    "<span class="hljs-attribute">content</span>":<span class="hljs-value"><span class="hljs-string">"This in part of the Intermediate Front End Developer Projects section. The task is to make a random..."</span>
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"apples"</span></span>,
+    "<span class="hljs-attribute">count</span>": <span class="hljs-value">[<span class="hljs-number">12000</span>, <span class="hljs-number">20000</span>]</span>,
+    "<span class="hljs-attribute">description</span>": <span class="hljs-value">{"<span class="hljs-attribute">text</span>": <span class="hljs-value"><span class="hljs-string">"..."</span></span>, "<span class="hljs-attribute">sensitive</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>}
+  </span>},
+  {
+    "<span class="hljs-attribute">title</span>": <span class="hljs-value"><span class="hljs-string">"oranges"</span></span>,
+    "<span class="hljs-attribute">count</span>": <span class="hljs-value">[<span class="hljs-number">17500</span>, <span class="hljs-literal">null</span>]</span>,
+    "<span class="hljs-attribute">description</span>": <span class="hljs-value">{"<span class="hljs-attribute">text</span>": <span class="hljs-value"><span class="hljs-string">"..."</span></span>, "<span class="hljs-attribute">sensitive</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>}
   </span>}
-]
-</code></pre>
-
-<h3 id="html">HTML</h3>
-
-<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Random Quote of the Day<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css"</span>&gt;</span>
-
-<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Random Quote of the Day<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is just the plan for now.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>I doubt much, if any, of what you see here will be part of the finished project.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Todo
-      <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Make style and js files<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Decide if this is using jQuery, Some CSS framework, etc.<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Hook up XHR to get quotes<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Setup onload and onclick for quotes<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Setup "quote to twitter" button<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Complete page layout and CSS<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre>
+]</code></pre>
 
 
 
-<h3 id="css">CSS</h3>
-
-<pre class="prettyprint"><code class="language-css hljs ">* <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">box-sizing</span>:<span class="hljs-value"> border-box</span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> <span class="hljs-number">0.5</span>s</span></span>;
-<span class="hljs-rule">}</span></span>
-
-<span class="hljs-tag">body</span>, <span class="hljs-tag">html</span> <span class="hljs-rules">{
-  <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> <span class="hljs-string">'Open Sans'</span>, sans-serif</span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">100</span>%</span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#eee</span></span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">max-width</span>:<span class="hljs-value"> <span class="hljs-number">100</span>%</span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">overflow-x</span>:<span class="hljs-value"> hidden</span></span>;
-<span class="hljs-rule">}</span></span>
-
-<span class="hljs-tag">a</span><span class="hljs-pseudo">:link</span> <span class="hljs-rules">{
-  <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value"> none</span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> bold</span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#444</span></span></span>;
-<span class="hljs-rule">}</span></span>
-
-<span class="hljs-tag">a</span><span class="hljs-pseudo">:visited</span> <span class="hljs-rules">{
-  <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value"> none</span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#555</span></span></span>;
-<span class="hljs-rule">}</span></span></code></pre>
-
-
-<h3 id="html">HTML</h3>
+<h3 id="less">Less</h3>
 
 
 
-<pre class="prettyprint"><code class="language-html hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Random Quote of the Day<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">link</span> <span class="hljs-attribute">rel</span>=<span class="hljs-value">"stylesheet"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css"</span>&gt;</span>
+<pre class="prettyprint"><code class="language-less hljs css"><span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"fruits"</span></span>;
 
-<span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Random Quote of the Day<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>This is just the plan for now.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>I doubt much, if any, of what you see here will be part of the finished project.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Todo
-      <span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Make style and js files<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Decide if this is using jQuery, Some CSS framework, etc.<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Hook up XHR to get quotes<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Setup onload and onclick for quotes<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Setup "quote to twitter" button<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Complete page layout and CSS<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
-  <span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span></code></pre>
+<span class="hljs-at_rule">@<span class="hljs-keyword">rhythm:</span> <span class="hljs-number">1.5</span>em</span>;
 
-
-
-<h3 id="css">CSS</h3>
-
-
-
-<pre class="prettyprint"><code class="language-css hljs ">* <span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">box-sizing</span>:<span class="hljs-value"> border-box</span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">transition</span>:<span class="hljs-value"> <span class="hljs-number">0.5</span>s</span></span>;
-<span class="hljs-rule">}</span></span>
-
-<span class="hljs-tag">body</span>, <span class="hljs-tag">html</span> <span class="hljs-rules">{
-  <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> <span class="hljs-string">'Open Sans'</span>, sans-serif</span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">100</span>%</span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#eee</span></span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">max-width</span>:<span class="hljs-value"> <span class="hljs-number">100</span>%</span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">overflow-x</span>:<span class="hljs-value"> hidden</span></span>;
-<span class="hljs-rule">}</span></span>
-
-<span class="hljs-tag">a</span><span class="hljs-pseudo">:link</span> <span class="hljs-rules">{
-  <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value"> none</span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> bold</span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#444</span></span></span>;
-<span class="hljs-rule">}</span></span>
-
-<span class="hljs-tag">a</span><span class="hljs-pseudo">:visited</span> <span class="hljs-rules">{
-  <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value"> none</span></span>;
-  <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#555</span></span></span>;
-<span class="hljs-rule">}</span></span></code></pre>
-
-
-
-<h3 id="javascript">JavaScript</h3>
-
-
-
-<pre class="prettyprint"><code class="language-js hljs "><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">balancedParens</span><span class="hljs-params">(string)</span> {</span>
-  <span class="hljs-keyword">if</span> (!string || <span class="hljs-keyword">typeof</span> string !== <span class="hljs-string">'string'</span>) { <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span> };
-  <span class="hljs-keyword">return</span> !string.split(<span class="hljs-string">""</span>).reduce(<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(previous, char)</span>{</span>
-    <span class="hljs-keyword">if</span> (previous &lt; <span class="hljs-number">0</span>) { <span class="hljs-keyword">return</span> previous };
-    <span class="hljs-keyword">if</span> (char === <span class="hljs-string">'('</span>) { <span class="hljs-keyword">return</span> ++previous; }
-    <span class="hljs-keyword">if</span> (char === <span class="hljs-string">')'</span>) { <span class="hljs-keyword">return</span> --previous; }
-    <span class="hljs-keyword">return</span> previous;
-  }, <span class="hljs-number">0</span>);
+<span class="hljs-at_rule">@<span class="hljs-keyword">media</span> screen and (min-resolution: <span class="hljs-number">2</span>dppx) </span>{
+    <span class="hljs-tag">body</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">125</span>%</span></span></span>}
 }
 
-balancedParens(<span class="hljs-string">'(((())))'</span>);</code></pre>
+<span class="hljs-tag">section</span> &gt; <span class="hljs-class">.foo</span> + <span class="hljs-id">#bar</span><span class="hljs-pseudo">:hover</span> <span class="hljs-attr_selector">[href*="less"]</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value">     @rhythm <span class="hljs-number">0</span> <span class="hljs-number">0</span> @rhythm</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value">    <span class="hljs-function">calc(<span class="hljs-number">5</span>% + <span class="hljs-number">20</span>px)</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">background</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#f00ba7</span> <span class="hljs-function">url(http://placehold.alpha-centauri/<span class="hljs-number">42</span>.png)</span> no-repeat</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">background-image</span>:<span class="hljs-value"> <span class="hljs-function">linear-gradient(-<span class="hljs-number">135</span>deg, wheat, fuchsia)</span> <span class="hljs-important">!important</span> </span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">background-blend-mode</span>:<span class="hljs-value"> multiply</span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">font-face</span></span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> <span class="hljs-comment">/* ? */</span> <span class="hljs-string">'Omega'</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">src</span>:<span class="hljs-value"> <span class="hljs-function">url(<span class="hljs-string">'../fonts/omega-webfont.woff?v=2.0.2'</span>)</span></span></span>;
+<span class="hljs-rule">}</span></span>
+
+<span class="hljs-class">.icon-baz</span><span class="hljs-pseudo">::before</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">display</span>:<span class="hljs-value">     inline-block</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> <span class="hljs-string">"Omega"</span>, Alpha, sans-serif</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value">     <span class="hljs-string">"\f085"</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value">       <span class="hljs-function">rgba(<span class="hljs-number">98</span>, <span class="hljs-number">76</span> /* or <span class="hljs-number">54</span> */, <span class="hljs-number">231</span>, .<span class="hljs-number">75</span>)</span></span></span>;
+<span class="hljs-rule">}</span></span></code></pre>
 
 
 
 <h3 id="markdown">Markdown</h3>
 
-<h4 id="this-is-markdown">This is Markdown</h4>
 
-<blockquote>
-  <p>Note: You never know what people might say.</p>
-</blockquote>
+
+<h1 id="hello-world">hello world</h1>
+
+<p>you can write text <a href="http://example.com">with links</a> inline or <a href="http://example.com">link references</a>.</p>
 
 <ul>
-<li>First List item</li>
-<li>Another list item</li>
-<li>and another</li>
+<li>one <em>thing</em> has *em*phasis</li>
+<li>two <strong>things</strong> are <strong>bold</strong></li>
 </ul>
 
+<hr>
 
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
-</body>
-</html>
+
+<h1 id="hello-world-1">hello world</h1>
+
+<p></p>
+
+<blockquote>
+  <p>markdown is so cool</p>
+</blockquote>
+
+<pre><code>so are code segments
+</code></pre>
+
+<ol>
+<li>one thing (yeah!)</li>
+<li>two thing <code>i can write code</code>, and <code>more</code> wipee!</li>
+</ol>
+
+<h3 id="perl">Perl</h3>
+
+
+
+<pre class="prettyprint"><code class="language-perl hljs "><span class="hljs-comment"># loads object</span>
+<span class="hljs-sub"><span class="hljs-keyword">sub</span> load
+{</span>
+  <span class="hljs-keyword">my</span> <span class="hljs-variable">$flds</span> = <span class="hljs-variable">$c</span>-&gt;db_load(<span class="hljs-variable">$id</span>,<span class="hljs-variable">@_</span>) || <span class="hljs-keyword">do</span> {
+    Carp::carp <span class="hljs-string">"Can`t load (class: <span class="hljs-variable">$c</span>, id: <span class="hljs-variable">$id</span>): '<span class="hljs-variable">$!</span>'"</span>; <span class="hljs-keyword">return</span> <span class="hljs-keyword">undef</span>
+  };
+  <span class="hljs-keyword">my</span> <span class="hljs-variable">$o</span> = <span class="hljs-variable">$c</span>-&gt;_perl_new();
+  <span class="hljs-variable">$id12</span> = <span class="hljs-variable">$id</span> / <span class="hljs-number">24</span> / <span class="hljs-number">3600</span>;
+  <span class="hljs-variable">$o</span>-&gt;{<span class="hljs-string">'ID'</span>} = <span class="hljs-variable">$id12</span> + <span class="hljs-number">123</span>;
+  <span class="hljs-comment">#$o-&gt;{'SHCUT'} = $flds-&gt;{'SHCUT'};</span>
+  <span class="hljs-keyword">my</span> <span class="hljs-variable">$p</span> = <span class="hljs-variable">$o</span>-&gt;props;
+  <span class="hljs-keyword">my</span> <span class="hljs-variable">$vt</span>;
+  <span class="hljs-variable">$string</span> =~ <span class="hljs-regexp">m/^sought_text$/</span>;
+  <span class="hljs-variable">$items</span> = <span class="hljs-keyword">split</span> <span class="hljs-regexp">//</span>, <span class="hljs-string">'abc'</span>;
+  <span class="hljs-variable">$string</span> //= <span class="hljs-string">"bar"</span>;
+  <span class="hljs-keyword">for</span> <span class="hljs-keyword">my</span> <span class="hljs-variable">$key</span> (<span class="hljs-keyword">keys</span> <span class="hljs-variable">%$</span>p)
+  {
+    <span class="hljs-keyword">if</span>(${<span class="hljs-variable">$vt</span>.<span class="hljs-string">'::property'</span>}) {
+      <span class="hljs-variable">$o</span>-&gt;{<span class="hljs-variable">$key</span> . <span class="hljs-string">'_real'</span>} = <span class="hljs-variable">$flds</span>-&gt;{<span class="hljs-variable">$key</span>};
+      <span class="hljs-keyword">tie</span> <span class="hljs-variable">$o</span>-&gt;{<span class="hljs-variable">$key</span>}, <span class="hljs-string">'CMSBuilder::Property'</span>, <span class="hljs-variable">$o</span>, <span class="hljs-variable">$key</span>;
+    }
+  }
+  <span class="hljs-variable">$o</span>-&gt;save <span class="hljs-keyword">if</span> <span class="hljs-keyword">delete</span> <span class="hljs-variable">$o</span>-&gt;{<span class="hljs-string">'_save_after_load'</span>};
+
+  <span class="hljs-comment"># GH-117</span>
+  <span class="hljs-keyword">my</span> <span class="hljs-variable">$g</span> = <span class="hljs-keyword">glob</span>(<span class="hljs-string">"/usr/bin/<span class="hljs-variable">*"</span>);
+
+  return <span class="hljs-variable">$o</span>;
+}
+
+__DATA__
+<span class="hljs-variable">@@</span> layouts/default.html.ep
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;title&gt;&lt;<span class="hljs-variable">%=</span> title <span class="hljs-variable">%&gt;</span>&lt;/title&gt;&lt;/head&gt;
+  &lt;body&gt;&lt;<span class="hljs-variable">%=</span> content <span class="hljs-variable">%&gt;</span>&lt;/body&gt;
+&lt;/html&gt;
+__END__
+
+=head1 NAME
+POD till the end of file</span></code></pre>
+
+<h3 id="powershell">Powershell</h3>
+
+
+
+<pre class="prettyprint"><code class="language-powershell hljs perl"><span class="hljs-variable">$initialDate</span> = [datetime]<span class="hljs-string">'2013/1/8'</span>
+
+<span class="hljs-variable">$rollingDate</span> = <span class="hljs-variable">$initialDate</span>
+
+<span class="hljs-keyword">do</span> {
+    <span class="hljs-variable">$client</span> = New-Object System.Net.WebClient
+    <span class="hljs-variable">$results</span> = <span class="hljs-variable">$client</span>.DownloadString(<span class="hljs-string">"http://not.a.real.url"</span>)
+    Write-Host <span class="hljs-string">"<span class="hljs-variable">$rollingDate</span>.ToShortDateString() - <span class="hljs-variable">$results</span>"</span>
+    <span class="hljs-variable">$rollingDate</span> = <span class="hljs-variable">$rollingDate</span>.AddDays(<span class="hljs-number">21</span>)
+    <span class="hljs-variable">$username</span> = [System.Environment]::UserName
+} <span class="hljs-keyword">until</span> (<span class="hljs-variable">$rollingDate</span> -ge [datetime]<span class="hljs-string">'2013/12/31'</span>)</code></pre>
+
+<h3 id="scss">SCSS</h3>
+
+
+
+<pre class="prettyprint"><code class="language-scss hljs "><span class="hljs-at_rule">@<span class="hljs-keyword">import</span> <span class="hljs-string">"compass/reset"</span>;</span>
+
+<span class="hljs-comment">// variables</span>
+$colorGreen<span class="hljs-value">: <span class="hljs-hexcolor">#008000</span>;</span>
+$colorGreenDark<span class="hljs-value">: darken($colorGreen, <span class="hljs-number">10</span>);</span>
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">mixin</span><span class="hljs-preprocessor"> container</span> {</span>
+    <span class="hljs-attribute">max-width</span><span class="hljs-value">: <span class="hljs-number">980</span>px;</span>
+}
+
+<span class="hljs-comment">// mixins with parameters</span>
+<span class="hljs-at_rule">@<span class="hljs-keyword">mixin</span><span class="hljs-preprocessor"> button</span>($color:green) {</span>
+    <span class="hljs-at_rule">@<span class="hljs-keyword">if</span> ($color ==<span class="hljs-preprocessor"> green</span>) {</span>
+        <span class="hljs-attribute">background-color</span><span class="hljs-value">: <span class="hljs-hexcolor">#008000</span>;</span>
+    }
+    <span class="hljs-at_rule">@<span class="hljs-keyword">else</span><span class="hljs-preprocessor"> if</span> ($color ==<span class="hljs-preprocessor"> red</span>) {</span>
+        <span class="hljs-attribute">background-color</span><span class="hljs-value">: <span class="hljs-hexcolor">#B22222</span>;</span>
+    }
+}
+
+<span class="hljs-tag">button</span> {
+    <span class="hljs-at_rule">@<span class="hljs-keyword">include</span><span class="hljs-preprocessor"> button</span>(red);</span>
+}
+
+<span class="hljs-tag">div</span>,
+<span class="hljs-class">.navbar</span>,
+<span class="hljs-id">#header</span>,
+<span class="hljs-tag">input</span><span class="hljs-attr_selector">[type="input"]</span> {
+    <span class="hljs-attribute">font-family</span><span class="hljs-value">: <span class="hljs-string">"Helvetica Neue"</span>, Arial, sans-serif;</span>
+    <span class="hljs-attribute">width</span><span class="hljs-value">: auto;</span>
+    <span class="hljs-attribute">margin</span><span class="hljs-value">: <span class="hljs-number">0</span> auto;</span>
+    <span class="hljs-attribute">display</span><span class="hljs-value">: block;</span>
+}
+
+<span class="hljs-class">.row-12</span> &gt; <span class="hljs-attr_selector">[class*="spans"]</span> {
+    <span class="hljs-attribute">border-left</span><span class="hljs-value">: <span class="hljs-number">1</span>px solid <span class="hljs-hexcolor">#B5C583</span>;</span>
+}
+
+<span class="hljs-comment">// nested definitions</span>
+<span class="hljs-tag">ul</span> {
+    <span class="hljs-attribute">width</span><span class="hljs-value">: <span class="hljs-number">100</span>%;</span>
+    <span class="hljs-attribute">padding</span><span class="hljs-value">: {
+        left: <span class="hljs-number">5</span>px;</span> <span class="hljs-attribute">right</span><span class="hljs-value">: <span class="hljs-number">5</span>px;</span>
+    }
+  <span class="hljs-tag">li</span> {
+      <span class="hljs-attribute">float</span><span class="hljs-value">: left;</span> <span class="hljs-attribute">margin-right</span><span class="hljs-value">: <span class="hljs-number">10</span>px;</span>
+      <span class="hljs-class">.home</span> {
+          <span class="hljs-attribute">background</span><span class="hljs-value">: url(<span class="hljs-string">'http://placehold.it/20'</span>) scroll no-repeat <span class="hljs-number">0</span> <span class="hljs-number">0</span>;</span>
+    }
+  }
+}
+
+<span class="hljs-class">.banner</span> {
+    <span class="hljs-at_rule">@<span class="hljs-keyword">extend</span><span class="hljs-preprocessor"> .container</span>;</span>
+}
+
+<span class="hljs-tag">a</span> {
+  <span class="hljs-attribute">color</span><span class="hljs-value">: $colorGreen;</span>
+  &amp;<span class="hljs-pseudo">:hover</span> { <span class="hljs-attribute">color</span><span class="hljs-value">: $colorGreenDark;</span> }
+  &amp;<span class="hljs-pseudo">:visited</span> { <span class="hljs-attribute">color</span><span class="hljs-value">: <span class="hljs-hexcolor">#c458cb</span>;</span> }
+}
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">for</span> $i<span class="hljs-preprocessor"> from</span><span class="hljs-preprocessor"> 1</span><span class="hljs-preprocessor"> through</span><span class="hljs-preprocessor"> 5</span> {</span>
+    <span class="hljs-class">.span</span>#{$<span class="hljs-tag">i</span>} {
+        <span class="hljs-attribute">width</span><span class="hljs-value">: <span class="hljs-number">20</span>px*$i;</span>
+    }
+}
+
+<span class="hljs-at_rule">@<span class="hljs-keyword">mixin</span><span class="hljs-preprocessor"> mobile</span> {</span>
+  <span class="hljs-at_rule">@<span class="hljs-keyword">media</span><span class="hljs-preprocessor"> screen</span><span class="hljs-preprocessor"> and</span> (max-width :<span class="hljs-preprocessor"> 600px</span>) {</span>
+    <span class="hljs-at_rule">@<span class="hljs-keyword">content</span>;</span>
+  }
+}</code></pre>
+
+<h3 id="sql">SQL</h3>
+
+
+
+<pre class="prettyprint"><code class="language-sql hljs "><span class="hljs-operator"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">"topic"</span> (
+    <span class="hljs-string">"id"</span> serial <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span> <span class="hljs-keyword">PRIMARY</span> <span class="hljs-keyword">KEY</span>,
+    <span class="hljs-string">"forum_id"</span> <span class="hljs-keyword">integer</span> <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>,
+    <span class="hljs-string">"subject"</span> <span class="hljs-keyword">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-keyword">NULL</span>
+);</span>
+<span class="hljs-operator"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">"topic"</span>
+<span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> forum_id <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (<span class="hljs-string">"forum_id"</span>)
+<span class="hljs-keyword">REFERENCES</span> <span class="hljs-string">"forum"</span> (<span class="hljs-string">"id"</span>);</span>
+
+<span class="hljs-comment">-- Initials</span>
+<span class="hljs-operator"><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> <span class="hljs-string">"topic"</span> (<span class="hljs-string">"forum_id"</span>, <span class="hljs-string">"subject"</span>)
+<span class="hljs-keyword">values</span> (<span class="hljs-number">2</span>, <span class="hljs-string">'D''artagnian'</span>);</span></code></pre>
+
+<h3 id="stylus">Stylus</h3>
+
+
+
+<pre class="prettyprint"><code class="language-stylus hljs lasso">@<span class="hljs-keyword">import</span> <span class="hljs-string">"nib"</span>
+
+<span class="hljs-comment">// variables</span>
+<span class="hljs-variable">$green</span> <span class="hljs-subst">=</span> <span class="hljs-variable">#008000</span>
+<span class="hljs-variable">$green_dark</span> <span class="hljs-subst">=</span> darken(<span class="hljs-variable">$green</span>, <span class="hljs-number">10</span>)
+
+<span class="hljs-comment">// mixin/function</span>
+container()
+  <span class="hljs-keyword">max</span><span class="hljs-attribute">-width</span> <span class="hljs-number">980</span>px
+
+<span class="hljs-comment">// mixin/function with parameters</span>
+buttonBG(<span class="hljs-variable">$color</span> <span class="hljs-subst">=</span> green)
+  <span class="hljs-keyword">if</span> <span class="hljs-variable">$color</span> <span class="hljs-subst">==</span> green
+    background<span class="hljs-attribute">-color</span> <span class="hljs-variable">#008000</span>
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> <span class="hljs-variable">$color</span> <span class="hljs-subst">==</span> red
+    background<span class="hljs-attribute">-color</span> <span class="hljs-variable">#B22222</span>
+
+button
+  buttonBG(red)
+
+<span class="hljs-variable">#content</span>, <span class="hljs-built_in">.</span>content
+  font Tahoma, Chunkfive, sans<span class="hljs-attribute">-serif</span>
+  background url(<span class="hljs-string">'hatch.png'</span>)
+  color <span class="hljs-variable">#F0F0F0</span> <span class="hljs-subst">!</span>important
+  width <span class="hljs-number">100</span><span class="hljs-subst">%</span></code></pre>
+
+<h3 id="typescript">Typescript</h3>
+
+
+
+<pre class="prettyprint"><code class="language-ts hljs php"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyClass</span> {</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> myValue: string;
+  constructor(init: string) {
+    this.myValue = init;
+  }
+}
+import fs = <span class="hljs-keyword">require</span>(<span class="hljs-string">"fs"</span>);
+module MyModule {
+  export <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">MyInterface</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Other</span> {</span>
+    myProperty: any;
+  }
+}
+<span class="hljs-keyword">declare</span> magicNumber number;
+myArray.<span class="hljs-keyword">forEach</span>(() =&gt; { }); <span class="hljs-comment">// fat arrow syntax</span></code></pre>
+
+<h3 id="xml">XML</h3>
+
+
+
+<pre class="prettyprint"><code class="language-xml hljs "><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css"><span class="hljs-tag">body</span> <span class="hljs-rules">{<span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">500</span>px</span></span>;<span class="hljs-rule">}</span></span></span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"application/javascript"</span>&gt;</span><span class="javascript">
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">$init</span><span class="hljs-params">()</span> {</span><span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;}
+</span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">checked</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"title"</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">'title'</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- here goes the rest of the page --&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span></code></pre>
+
+  </body>
+  </html>
