@@ -116,6 +116,11 @@ var pGlobal = {};
     'red',
     'indigo',
   ];
+  var curTheme;
+  var cTheme;
+  var cssAL = cssArray.length;
+  var colorsCss = document.getElementById('colorsCss');
+  var linkCssColor = document.getElementById('linkCssColor');
 
   function setCookie(name, value, days) {
     var date = new Date();
@@ -134,27 +139,22 @@ var pGlobal = {};
       }
     }
   }
-
-  var i;
-  var cTheme = getCookie('theme') || NaN;
+  cTheme = getCookie('theme') || NaN;
   if (isNaN(cTheme[1] * 1)) {
-    i = 0;
+    curTheme = 0;
   } else {
-    i = +cTheme[1];
+    curTheme = +cTheme[1];
   }
 
-  var l = cssArray.length;
-  var colorsCss = document.getElementById('colorsCss');
-  var linkCssColor = document.getElementById('linkCssColor');
-  linkCssColor.href = '/assets/color-' + cssArray[i] + '.css';
+  linkCssColor.href = '/assets/color-' + cssArray[curTheme] + '.css';
 
   colorsCss.onclick = function (e) {
     cTheme = getCookie('theme');
     (e).preventDefault;
-    i++;
-    i === l ? i = 0 : i;
-    linkCssColor.href = '/assets/color-' + cssArray[i] + '.css';
-    setCookie('theme', i, 7);
+    curTheme++;
+    curTheme >= cssAL ? curTheme = 0 : curTheme;
+    linkCssColor.href = '/assets/color-' + cssArray[curTheme] + '.css';
+    setCookie('theme', curTheme, 7);
   };
 })();
 

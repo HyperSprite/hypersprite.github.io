@@ -26,6 +26,12 @@
 
 /* * Colors  *********************************************** */
 
+hr {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
 ul.topnav li a {
   border-bottom: solid 5px #f2f2f2;    /* white +1 */
 }

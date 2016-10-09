@@ -1,6 +1,18 @@
 /* Original hand picked colors *******************************/
 /* * Colors ************************************************ */
 
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(
+      to right,
+      #ddd,
+      #555,
+      #ddd
+    );
+}
+
 body, html {
   background-color: #eee; /* 1 */
 }
