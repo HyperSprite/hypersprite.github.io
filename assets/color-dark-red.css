@@ -61,7 +61,7 @@ html {
   border: 8px solid #fff7e6;           /* white + 2 */
 }
 
-.card-btn {
+.card-btn, .magic-footer {
   color: #fff7e6;                      /* white + 2 */
 }
 
@@ -117,7 +117,7 @@ ul.topnav li a {
   color: #E57373;                      /* 7 */
 }
 
-.card-btn {
+.card-btn, .magic-footer {
   background-color: #990000;           /* 6 */
 }
 

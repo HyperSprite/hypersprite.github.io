@@ -55,7 +55,7 @@ html {
   border: 8px solid #e6e6e6;           /* white + 2 */
 }
 
-.card-btn {
+.card-btn, .magic-footer {
   color: #e6e6e6;                      /* white + 2 */
 }
 
@@ -108,7 +108,8 @@ ul.topnav li a {
   color: #616161;                      /* 7 */
 }
 
-.card-btn:hover, .card-btn:focus {
+.card-btn:hover,
+.card-btn:focus {
   background-color: #616161;           /* 7 */
 }
 
@@ -130,7 +131,7 @@ ul.topnav li a:hover {
   border-bottom: solid 5px #546E7A;    /* 5 alt */
 }
 
-.card-btn {
+.card-btn, .magic-footer {
   background-color: #455A64;           /* 6 alt */
 }
 

@@ -138,7 +138,9 @@ var pGlobal = {};
         return cookie;
       }
     }
+    return undefined;
   }
+
   cTheme = getCookie('theme') || NaN;
   if (isNaN(cTheme[1] * 1)) {
     curTheme = 0;

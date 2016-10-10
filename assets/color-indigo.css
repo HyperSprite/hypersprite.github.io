@@ -49,7 +49,7 @@ html {
   border: 8px solid #e6e6e6;           /* white + 2 */
 }
 
-.card-btn {
+.card-btn, .magic-footer {
   color: #e6e6e6;                      /* white + 2 */
 }
 
@@ -124,7 +124,7 @@ ul.topnav li a:hover {
   border-bottom: solid 5px #3F51B5;    /* 5 alt */
 }
 
-.card-btn {
+.card-btn, .magic-footer {
   background-color: #303F9F;           /* 6 alt */
 }
 
