@@ -111,12 +111,16 @@ ul.topnav .selected {
   background-color: #ddd; /* 3 */
 }
 
-.card-btn, .magic-footer {
+.card-btn,
+.magic-footer {
   background-color: #444; /* 7 */
   color: #eee; /* 1 */
 }
 
-.card-btn:hover, .card-btn:focus {
+.card-btn:hover,
+.card-btn:focus,
+.magic-footer:hover,
+.magic-footer:focus {
   background-color: #336699;
   color: #eee; /* 1 */
 }

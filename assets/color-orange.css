@@ -1,8 +1,8 @@
 /* * Colors ************************************************ */
 
-/* #f2f2f2 white +1 */
-/* #e6e6e6 white +2 */
-/* #262626 black -3 */
+/* #cddee7 white +1 */
+/* #9bbecf white +2 */
+/* #582005 black -3 */
 
 /* #FAFAFA 0 */
 /* #F5F5F5 1 */
@@ -11,52 +11,53 @@
 /* #BDBDBD 4 */
 /* #9E9E9E 5 */
 /* 6 */
-/* #616161 7 */
+/* #075E89 7 */
 /* #424242 8 */
 /* #263238 9 */
 
 
-/* #B0BEC5 2 alt */
+/* #e8a685 2 alt */
 /*  5 alt */
-/* #546E7A 5 alt */
-/* #455A64 6 alt */
-/* #37474F 7 alt */
-/* #263238 9 alt */
+/* #d65e23 5 alt */
+/* #d24d0b 6 alt */
+/* #bd4509 7 alt */
+/* #541e04 9 alt */
 
 
 /* * Colors  *********************************************** */
 
 hr {
-    height: 12px;
+    height: 10px;
     border: 0;
-    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 12px 12px -12px rgba(7, 94, 137, 0.5);
 }
 
 ul.topnav li a {
-  border-bottom: solid 5px #f2f2f2;    /* white +1 */
+  border-bottom: solid 5px #cddee7;    /* white +1 */
 }
 
 .navbar,
 ul.topnav {
-  background-color: #f2f2f2;           /* white +1 */
+  background-color: #cddee7;           /* white +1 */
+}
+
+#email-progress,
+.cardgroup:nth-child(even) {
+  background-color: #cddee7;           /* white  +1 */
 }
 
 .close:hover,
 .close:focus {
-  color: #f2f2f2;                      /* white +1 */
+  color: #cddee7;                      /* white +1 */
 }
 
 body,
 html {
-  background-color: #e6e6e6;           /* white + 2 */
+  background-color: #9bbecf;           /* white + 2 */
 }
 
-.profile {
-  border: 8px solid #e6e6e6;           /* white + 2 */
-}
-
-.card-btn, .magic-footer {
-  color: #e6e6e6;                      /* white + 2 */
+.profile:hover {
+  border: 8px solid #d65e23;           /* white + 2 */
 }
 
 h1,
@@ -65,7 +66,7 @@ p,
 a:link,
 a:visited,
 .card li {
-  color: #262626;                      /* black - 3 */
+  color: #582005;                      /* black - 3 */
 }
 
 .locked {
@@ -76,18 +77,17 @@ a:visited,
   background-color: #F5F5F5;           /* 1 */
 }
 
+.profile {
+  border: 8px solid #F5F5F5;           /* 1 */
+}
+
+.card-btn, .magic-footer {
+  color: #F5F5F5;                      /* 1 */
+}
+
 input:focus,
 textarea:focus {
   border-top: solid 1px #F5F5F5;       /* 1 */
-}
-
-.profile:hover {
-  border: 8px solid #EEEEEE;           /* 2 */
-}
-
-#email-progress,
-.cardgroup:nth-child(even) {
-  background-color: #EEEEEE;           /* 2 */
 }
 
 input,
@@ -101,18 +101,18 @@ textarea {
 
 input:focus,
 textarea:focus {
-  border-bottom: solid 3px #616161;    /* 7 */
+  border-bottom: solid 3px #075E89;    /* 7 */
 }
 
 ul.topnav li a {
-  color: #616161;                      /* 7 */
+  color: #075E89;                      /* 7 */
 }
 
 .card-btn:hover,
 .card-btn:focus,
 .magic-footer:hover,
 .magic-footer:focus {
-  background-color: #616161;           /* 7 */
+  background-color: #075E89;           /* 7 */
 }
 
 #email-progress {
@@ -126,30 +126,30 @@ ul.topnav li a {
 /* * Alt Colors ******************************************** */
 
 ul.topnav .selected {
-  border-bottom: solid 3px #B0BEC5;    /* 2 alt */
+  border-bottom: solid 3px #e8a685;    /* 2 alt */
 }
 
 ul.topnav li a:hover {
-  border-bottom: solid 5px #546E7A;    /* 5 alt */
+  border-bottom: solid 5px #d65e23;    /* 5 alt */
 }
 
 .card-btn, .magic-footer {
-  background-color: #455A64;           /* 6 alt */
+  background-color: #d24d0b;           /* 6 alt */
 }
 
 #email-bar {
-  background-color: #37474F;           /* 7 alt */
+  background-color: #bd4509;           /* 7 alt */
 }
 
 a:hover,
 a:active,
 ul.topnav li a:hover,
 ul.topnav .selected  {
-  color: #37474F;                      /* 7 alt */
+  color: #bd4509;                      /* 7 alt */
 }
 
 h2, li {
-  color: #263238;                      /* 9 alt */
+  color: #541e04;                      /* 9 alt */
 }
 
 /* * Alt Colors ******************************************** */
@@ -158,7 +158,7 @@ h2, li {
 
 @media screen and (max-width:600px) {
   .profile-details {
-    background-color: #e6e6e6;           /* white + 2 */
+    background-color: #9bbecf;           /* white + 2 */
   }
 }
 

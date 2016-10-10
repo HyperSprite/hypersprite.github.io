@@ -111,7 +111,10 @@ ul.topnav li a {
   color: #616161;                      /* 7 */
 }
 
-.card-btn:hover, .card-btn:focus {
+.card-btn:hover,
+.card-btn:focus,
+.magic-footer:hover,
+.magic-footer:focus {
   background-color: #616161;           /* 7 */
 }
 

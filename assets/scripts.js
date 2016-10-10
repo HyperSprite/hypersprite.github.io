@@ -116,6 +116,7 @@ var pGlobal = {};
     'red',
     'indigo',
     'green',
+    'orange',
   ];
   var curTheme;
   var cTheme;

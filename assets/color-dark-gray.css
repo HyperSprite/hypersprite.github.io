@@ -135,7 +135,10 @@ ul.topnav li a:hover {
   border-bottom: solid 5px #78909C;    /* 5 alt */
 }
 
-.card-btn:hover, .card-btn:focus {
+.card-btn:hover,
+.card-btn:focus,
+.magic-footer:hover,
+.magic-footer:focus {
   background-color: #90A4AE;           /* 6 alt */
 }
 
