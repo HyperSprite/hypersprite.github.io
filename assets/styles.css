@@ -538,4 +538,9 @@ ul.topnav .selected {
     width: 100%;
     margin-right: 2px;
   }
+  /* this is here in case the colorCSS does not load */
+  .profile-details {
+    background-color: #e6e6e6;           /* white + 2 */
+  }
+}
 }
