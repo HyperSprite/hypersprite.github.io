@@ -146,6 +146,10 @@ var pGlobal = {};
     return undefined;
   }
 
+  function mkUpper(word) {
+    return word.charAt(0).toUpperCase() + word.slice(1);
+  }
+
   // This gets the cookie and sets current theme based on what it finds
   cTheme = getCookie('theme') || NaN;
   if (isNaN(cTheme[1] * 1)) {
@@ -174,7 +178,7 @@ var pGlobal = {};
     curTheme++;
     curTheme >= cssAL ? curTheme = 0 : curTheme;
     linkCssColor.href = '/assets/color-' + cssArray[curTheme] + '.css';
-    tstr.textContent = cssArray[curTheme];
+    tstr.textContent = mkUpper(cssArray[curTheme].split('-').join(' '));
     tstr.className = 'show card-btn';
     tstrTimeout();
     setCookie('theme', curTheme, 7);
