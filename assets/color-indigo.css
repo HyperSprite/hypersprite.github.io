@@ -26,6 +26,15 @@
 
 /* * Colors  *********************************************** */
 
+h1,
+h3,
+p,
+a:link,
+a:visited,
+.card li {
+  color: #262626;                      /* black - 3 */
+}
+
 ul.topnav li a {
   border-bottom: solid 5px #f2f2f2;    /* white +1 */
 }
@@ -49,17 +58,8 @@ html {
   border: 8px solid #e6e6e6;           /* white + 2 */
 }
 
-.card-btn, .magic-footer {
+.card-btn, .btn-color {
   color: #e6e6e6;                      /* white + 2 */
-}
-
-h1,
-h3,
-p,
-a:link,
-a:visited,
-.card li {
-  color: #262626;                      /* black - 3 */
 }
 
 .locked {
@@ -93,7 +93,8 @@ textarea {
   border-bottom: solid 1px #607D8B;    /* 5 */
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
   border-bottom: solid 3px #607D8B;    /* 7 */
 }
 
@@ -101,7 +102,8 @@ ul.topnav li a {
   color: #607D8B;                      /* 7 */
 }
 
-.card-btn:hover, .card-btn:focus {
+.card-btn:hover,
+.card-btn:focus {
   background-color: #607D8B;           /* 7 */
 }
 
@@ -125,9 +127,9 @@ ul.topnav li a:hover {
 }
 
 .card-btn,
-.magic-footer,
-.magic-footer:hover,
-.magic-footer:focus {
+.btn-color,
+.btn-color:hover,
+.btn-color:focus {
   background-color: #303F9F;           /* 6 alt */
 }
 

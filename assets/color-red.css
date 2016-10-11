@@ -36,6 +36,15 @@ hr {
     );
 }
 
+h1,
+h3,
+p,
+a:link,
+a:visited,
+.card li {
+  color: #640000;                      /* black - 3 */
+}
+
 ul.topnav li a {
   border-bottom: solid 5px #f2f2f2;    /* white +1 */
 }
@@ -59,17 +68,8 @@ html {
   border: 8px solid #e6e6e6;           /* white + 2 */
 }
 
-.card-btn, .magic-footer {
+.card-btn, .btn-color {
   color: #e6e6e6;                      /* white + 2 */
-}
-
-h1,
-h3,
-p,
-a:link,
-a:visited,
-.card li {
-  color: #640000;                      /* black - 3 */
 }
 
 .locked {
@@ -113,8 +113,8 @@ ul.topnav li a {
 
 .card-btn:hover,
 .card-btn:focus,
-.magic-footer:hover,
-.magic-footer:focus {
+.btn-color:hover,
+.btn-color:focus {
   background-color: #616161;           /* 7 */
 }
 
@@ -136,7 +136,7 @@ ul.topnav li a:hover {
   border-bottom: solid 5px #F44336;    /* 5 alt */
 }
 
-.card-btn, .magic-footer {
+.card-btn, .btn-color {
   background-color: #D32F2F;           /* 6 alt */
 }
 

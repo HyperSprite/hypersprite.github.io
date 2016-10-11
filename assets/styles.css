@@ -38,7 +38,9 @@ a:active {
   text-decoration: underline;
 }
 
-
+button {
+  font-weight: bold;
+}
 
 /* * Main ************************************************** */
 /* ********************************************************* */
@@ -392,6 +394,29 @@ ul.topnav .selected {
 }
 
 /* * Profile and Cards ************************************* */
+/* ********************************************************* */
+/* * Tstr*************************************************** */
+
+#tstr {
+  visibility: hidden;
+  position: fixed;
+  z-index: 1;
+  right: -60px;
+  bottom: 34px;
+  max-width: 120px;
+  padding: 10px 15px;
+  text-align: left;
+}
+
+#tstr.show {
+  visibility: visible;
+  right: -10px;
+  bottom: 34px;
+  -webkit-animation: fadein 1s, fadeout 0.5s;
+  animation: fadein 1s, fadeout 0.5s;
+}
+
+/* * Tstr ************************************************** */
 /* ********************************************************* */
 /* * Media ************************************************* */
 

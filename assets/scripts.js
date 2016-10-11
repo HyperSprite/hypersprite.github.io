@@ -120,10 +120,13 @@ var pGlobal = {};
   ];
   var curTheme;
   var cTheme;
+  var tstrTime;
   var cssAL = cssArray.length;
   var colorsCss = document.getElementById('colorsCss');
   var linkCssColor = document.getElementById('linkCssColor');
+  var tstr = document.getElementById('tstr');
 
+  // this will be moved out to pGlobal if some other function needs cookies
   function setCookie(name, value, days) {
     var date = new Date();
     date.setTime(date.getTime() + (days * 864000000));
@@ -143,21 +146,37 @@ var pGlobal = {};
     return undefined;
   }
 
+  // This gets the cookie and sets current theme based on what it finds
   cTheme = getCookie('theme') || NaN;
   if (isNaN(cTheme[1] * 1)) {
     curTheme = 0;
   } else {
     curTheme = +cTheme[1];
   }
-
+  // This sets the page to use the current theme on page load
   linkCssColor.href = '/assets/color-' + cssArray[curTheme] + '.css';
 
+  // This timeout function is here so it can be killed
+  // this way if someone hits the button quickly, the
+  // tstr button will just stay there utnil they stop
+  function tstrTimeout() {
+    tstrTime = setTimeout(function() {
+      tstr.className = tstr.className.replace('show ', '');
+    }, 2600);
+  }
+
+  // This does the colorCSS swaping
   colorsCss.onclick = function (e) {
-    cTheme = getCookie('theme');
     (e).preventDefault;
+    clearTimeout(tstrTime);
+
+    cTheme = getCookie('theme');
     curTheme++;
     curTheme >= cssAL ? curTheme = 0 : curTheme;
     linkCssColor.href = '/assets/color-' + cssArray[curTheme] + '.css';
+    tstr.textContent = cssArray[curTheme];
+    tstr.className = 'show card-btn';
+    tstrTimeout();
     setCookie('theme', curTheme, 7);
   };
 })();
