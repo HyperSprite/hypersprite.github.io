@@ -1,20 +1,41 @@
 const should = require('chai').should();
-const basic = require('./multHyperSprite');
+const multHyperSprite = require('./multHyperSprite');
+const multHyperSprite2 = require('./multHyperSprite2');
 
-describe('basic', () => {
+
+describe('multHyperSprite', () => {
   it('should return 23 when passed 10', () => {
-    basic(10).should.equal(23);
+    multHyperSprite(10).should.equal(23);
   });
   it('should return 78 when passed 20', () => {
-    basic(20).should.equal(78);
+    multHyperSprite(20).should.equal(78);
   });
   it('should return 2318 when passed 100', () => {
-    basic(100).should.equal(2318);
+    multHyperSprite(100).should.equal(2318);
   });
   it('should return 23331668 when passed 10000', () => {
-    basic(10000).should.equal(23331668);
+    multHyperSprite(10000).should.equal(23331668);
   });
   it('should return 486804150 when passed 45678', () => {
-    basic(45678).should.equal(486804150);
+    multHyperSprite(45678).should.equal(486804150);
+  });
+});
+
+
+describe('multHyperSprite2', () => {
+  it('should return 23 when passed 10', () => {
+    multHyperSprite2(10).should.equal(23);
+  });
+  it('should return 78 when passed 20', () => {
+    multHyperSprite2(20).should.equal(78);
+  });
+  it('should return 2318 when passed 100', () => {
+    multHyperSprite2(100).should.equal(2318);
+  });
+  it('should return 23331668 when passed 10000', () => {
+    multHyperSprite2(10000).should.equal(23331668);
+  });
+  it('should return 486804150 when passed 45678', () => {
+    multHyperSprite2(45678).should.equal(486804150);
   });
 });
