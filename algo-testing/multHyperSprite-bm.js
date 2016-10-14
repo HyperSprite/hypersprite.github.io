@@ -5,7 +5,7 @@ const multHyperSprite3 = require('./multHyperSprite3');
 const multShanthiKarunakaran = require('./multShanthiKarunakaran');
 
 const suite = new Benchmark.Suite;
-const number = 10000;
+const number = 45678;
 
 // add tests
 suite
