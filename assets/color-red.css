@@ -157,6 +157,23 @@ h2, li {
 
 /* * Alt Colors ******************************************** */
 /* ********************************************************* */
+/* * Remove Radius ***************************************** */
+
+input,
+textarea,
+.magic-footer,
+.profile,
+.profile-details,
+.cardgroup,
+.card,
+.card-img,
+.card-btn,
+.profile-details {
+  border-radius: inherit;
+}
+
+/* * Remove Radius ***************************************** */
+/* ********************************************************* */
 /* * Media ************************************************* */
 
 @media screen and (max-width:600px) {
