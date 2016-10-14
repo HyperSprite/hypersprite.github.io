@@ -131,6 +131,10 @@ ul.topnav .selected {
   border-bottom: solid 3px #E0E0E0;    /* 2 alt */
 }
 
+.card:hover {
+  box-shadow: 0 10px 12px 0 rgba(120,144,126,0.5); /* 5 alt */
+}
+
 ul.topnav li a:hover {
   border-bottom: solid 5px #78909C;    /* 5 alt */
 }

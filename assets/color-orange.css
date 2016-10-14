@@ -133,6 +133,10 @@ ul.topnav li a:hover {
   border-bottom: solid 5px #d65e23;    /* 5 alt */
 }
 
+h1, h2 {
+  color: #d24d0b;                      /* 6 alt */
+}
+
 .card-btn, .btn-color {
   background-color: #d24d0b;           /* 6 alt */
 }
@@ -148,7 +152,7 @@ ul.topnav .selected  {
   color: #bd4509;                      /* 7 alt */
 }
 
-h2, li {
+li {
   color: #541e04;                      /* 9 alt */
 }
 
