@@ -135,7 +135,7 @@ ul.topnav .selected {
 }
 
 .card:hover {
-  box-shadow: 0 10px 12px 0 rgba(239,83,80,0.5); /* 5 alt */
+  box-shadow: 0 8px 14px rgba(239,83,80,0.5); /* 5 alt */
 }
 
 ul.topnav li a:hover {
