@@ -50,7 +50,8 @@ function binarySearch(arr, find, min, max, count) {
 
 
 // node binarySearch-bm.js
-// binarySearchHyperSprite        6000, 3465 x 3,779,887 ops/sec ±0.91% (84 runs sampled)
+// binarySearchHyperSprite        600000, 293246 x 3,862,328 ops/sec ±0.65% (91 runs sampled)
+
 
 // This is the console.log version
 
