@@ -113,19 +113,5 @@
     "furtherReading":"",
     "repoIcon":"fa-github-square",
     "content":"In Progress: I love highlightjs and wanted to work on a theme that looks like my <a href='/highlightjs/assets/hypersprite-dark.tmTheme' target='new'>Sublime Text theme</a>."
-  },
-  {
-    "type":"projects",
-    "priority":"5",
-    "headline":"100 Days of React UI",
-    "image":"/assets/images/100daysofreactui.jpg",
-    "imgAlt":"Login Modal",
-    "repoLink":"https://github.com/HyperSprite/one-hundred-days-of-react-ui",
-    "repoTitle":"Repo",
-    "demoLink":"one-hundred-days-of-react-ui/",
-    "furtherReading":"https://www.fullstackreact.com/react-daily-ui/001-sign-up-form/",
-    "moreTitle":"",
-    "repoIcon":"fa-github-square",
-    "content":"I am following along with Fullstack React's 100 days of React UI but wanted to build components in separate files and for it to be ES6. So I’ve been reworking things from there. Started this project using <a href='https://github.com/facebookincubator/create-react-app'>Create React App</a>"
   }
 ]
