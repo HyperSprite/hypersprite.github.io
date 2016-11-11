@@ -84,7 +84,7 @@
     "repoTitle":"Repo",
     "demoLink":"",
     "furtherReading":"https://github.com/nodejs/node/pull/8472",
-    "repoIcon":"fa-github-square",
+    "repoIcon":"fa-free-code-camp",
     "content":"This isn't much, just a few simple changes but I needed wanted to start working on larger projects and looking at bigger code bases. Node.js has given me, and the javascript community,  so much I wanted to start giving back."
   },
   {
@@ -113,5 +113,17 @@
     "furtherReading":"",
     "repoIcon":"fa-github-square",
     "content":"In Progress: I love highlightjs and wanted to work on a theme that looks like my <a href='/highlightjs/assets/hypersprite-dark.tmTheme' target='new'>Sublime Text theme</a>."
+  },
+  {
+    "type":"opensource",
+    "priority":"1",
+    "headline":"Web and Mobile Messaging Platform",
+    "image":"/assets/images/r3blbase.jpg",
+    "imgAlt":"Github Network",
+    "repoLink":"https://github.com/r3bl-alliance/r3bl-base",
+    "repoTitle":"Repo",
+    "demoLink":"https://r3bl-base-test.herokuapp.com",
+    "repoIcon":"fa-github-square",
+    "content":"Working on a web platform for building all manner of useful projects. It uses technologies such as Firebase, React, Redux, Flow, Socket.io, Node, Express, Webpack and Material Design"
   }
 ]
