@@ -77,13 +77,12 @@ var pGlobal = {};
 // Top banner and nav bar parallax movement
 (function () {
   var speed = -0.5;
-  var parallax = document.querySelectorAll('.banner');
+  var parallax = document.getElementsByClassName('banner')[0];
   var profilePic = document.getElementsByClassName('profile')[0];
   var navContainer = document.getElementById('nav-container');
   var lastPageYOff = 0;
 
   window.onscroll = function () {
-    [].slice.call(parallax).forEach(function (el, i) {
       var windowYOffset = window.pageYOffset;
       var elBackgrounPos;
       // this controles scroll up and down speed of the banner
@@ -93,9 +92,9 @@ var pGlobal = {};
         speed = -0.5;
       }
       elBackgrounPos = '50% ' + (windowYOffset * speed) + 'px';
-      el.style.backgroundPosition = elBackgrounPos;
+      parallax.style.backgroundPosition = elBackgrounPos;
       lastPageYOff = windowYOffset;
-    });
+
     if (window.pageYOffset > 500) {
       navContainer.className = 'locked';
       profilePic.className = 'profile profile-slide';
