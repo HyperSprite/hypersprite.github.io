@@ -1,0 +1,283 @@
+@import "syntax-variables";
+
+atom-text-editor, :host {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+}
+
+atom-text-editor .gutter, :host .gutter {
+  background-color: @syntax-gutter-background-color;
+  color: @syntax-gutter-text-color;
+}
+
+atom-text-editor .gutter .line-number.cursor-line, :host .gutter .line-number.cursor-line {
+  background-color: @syntax-gutter-background-color-selected;
+  color: @syntax-gutter-text-color-selected;
+}
+
+atom-text-editor .gutter .line-number.cursor-line-no-selection, :host .gutter .line-number.cursor-line-no-selection {
+  color: @syntax-gutter-text-color-selected;
+}
+
+atom-text-editor .wrap-guide, :host .wrap-guide {
+  color: @syntax-wrap-guide-color;
+}
+
+atom-text-editor .indent-guide, :host .indent-guide {
+  color: @syntax-indent-guide-color;
+}
+
+atom-text-editor .invisible-character, :host .invisible-character {
+  color: @syntax-invisible-character-color;
+}
+
+atom-text-editor .search-results .marker .region, :host .search-results .marker .region {
+  background-color: transparent;
+  border: @syntax-result-marker-color;
+}
+
+atom-text-editor .search-results .marker.current-result .region, :host .search-results .marker.current-result .region {
+  border: @syntax-result-marker-color-selected;
+}
+
+atom-text-editor.is-focused .cursor, :host(.is-focused) .cursor {
+  border-color: @syntax-cursor-color;
+}
+
+atom-text-editor.is-focused .selection .region, :host(.is-focused) .selection .region {
+  background-color: @syntax-selection-color;
+}
+
+atom-text-editor.is-focused .line-number.cursor-line-no-selection, atom-text-editor.is-focused .line.cursor-line, :host(.is-focused) .line-number.cursor-line-no-selection, :host(.is-focused) .line.cursor-line {
+  background-color: #531919;
+}
+
+.comment {
+  color: #bd7575;
+}
+
+.string {
+  color: #FAFFDB;
+}
+
+.constant.numeric {
+  color: #C7AF3F;
+}
+
+.constant.language {
+  font-style: italic;
+  color: #83AAD6;
+}
+
+.constant.character, .constant.other {
+  color: #9FB3C2;
+}
+
+.variable {
+}
+
+.keyword {
+  color: #7CA4C2;
+}
+
+.storage {
+  color: #9FB3C2;
+}
+
+.storage.type {
+  color: #FAFFDB;
+}
+
+.entity.name.class {
+  font-style: italic;
+  color: #85CC8B;
+}
+
+.entity.other.inherited-class {
+  font-style: italic;
+  text-decoration: underline;
+  color: #9FB3C2;
+}
+
+.entity.name.function {
+  color: #C7AF3F;
+}
+
+.variable.parameter {
+  font-style: italic;
+}
+
+.entity.name.tag {
+  color: #FAFFDB;
+}
+
+.entity.other.attribute-name {
+  color: #9FB3C2;
+}
+
+.support.function {
+  color: #C7AF3F;
+}
+
+.support.constant {
+  font-style: italic;
+  color: #9FB3C2;
+}
+
+.support.type, .support.class {
+  font-style: italic;
+  color: #9BC2B6;
+}
+
+.support.other.variable {
+}
+
+.invalid {
+  color: #f8f8f0;
+  background-color: #00a8c6;
+}
+
+.invalid.deprecated {
+  color: #f8f8f0;
+  background-color: #00a8c6;
+}
+
+.meta.structure.dictionary.json .string.quoted.double.json {
+  color: #FAFFDB;
+}
+
+.meta.diff, .meta.diff.header {
+  color: #75715E;
+}
+
+.markup.deleted {
+  color: #00A8C6;
+}
+
+.markup.inserted {
+  color: #A6E22E;
+}
+
+.markup.changed {
+  color: #E6DB74;
+}
+
+.constant.numeric.line-number.find-in-files:not(.match) {
+  color: rgba(143, 190, 0, 0.63);
+}
+
+.entity.name.filename.find-in-files {
+  color: #E6DB74;
+}
+
+.keyword.other {
+  color: #80919f;
+}
+
+.meta.property-value, .support.constant.property-value, .constant.other.color {
+  color: #FAFFDB;
+}
+
+.meta.structure.dictionary.json .string.quoted.double.json {
+  color: #9FB3C2;
+}
+
+.meta.structure.dictionary.value.json .string.quoted.double.json {
+  color: #FAFFDB;
+}
+
+.meta.property-name .support.type.property-name {
+}
+
+.meta.property-value .punctuation.separator.key-value {
+  color: #FFFFFF;
+}
+
+.keyword.other.use, .keyword.other.function.use, .keyword.other.namespace, .keyword.other.new, .keyword.other.special-method, .keyword.other.unit, .keyword.other.use-as {
+  color: #FAFFDB;
+}
+
+.meta.use .support.class.builtin, .meta.other.inherited-class .support.class.builtin {
+  color: #FFFFFF;
+}
+
+.variable.other {
+}
+
+.variable.parameter.function.coffee {
+  font-style: italic;
+  color: #C7AF3F;
+}
+
+.entity.name.section.markdown {
+  color: #9FB3C2;
+}
+
+.punctuation.definition.heading.markdown {
+  color: #9FB3C2;
+}
+
+.markup.raw.inline.markdown {
+  color: #FAFFDB;
+}
+
+.punctuation.definition.bold.markdown, .punctuation.definition.italic.markdown {
+  color: #9FB3C2;
+}
+
+.punctuation.definition.string.begin.markdown, .punctuation.definition.string.end.markdown {
+  color: #9FB3C2;
+}
+
+.punctuation.definition.metadata.markdown {
+  color: #9FB3C2;
+}
+
+.markup.underline.link.markdown, .markup.underline.link.image.markdown, .meta.image.inline.markdown {
+  font-style: italic;
+  color: #FAFFDB;
+}
+
+.markup.bold.markdown, .markup.italic.markdown {
+  color: #FAFFDB;
+}
+
+.markup.italic.markdown {
+  font-style: italic;
+}
+
+.markup.bold.markdown {
+  font-weight: bold;
+}
+
+.markup.raw.block.markdown {
+  color: #00a8c6;
+}
+
+.markup.deleted.git_gutter {
+  color: #e61f44;
+}
+
+.markup.inserted.git_gutter {
+  color: #a7da1e;
+}
+
+.markup.changed.git_gutter {
+  color: #f7b83d;
+}
+
+.entity.other.attribute-name.class.css {
+  color: #C7AF3F;
+}
+
+.sublimelinter.mark.warning {
+  color: #DDB700;
+}
+
+.sublimelinter.gutter-mark {
+  color: #FFFFFF;
+}
+
+.sublimelinter.mark.error {
+  color: #D02000;
+}
