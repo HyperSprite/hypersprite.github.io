@@ -90,6 +90,18 @@ textarea:focus {
   color: #212121;                      /* 1 */
 }
 
+.txtlink {
+  text-shadow:                         /* 1 */
+    0.05em 0 0 #212121,
+    -0.05em 0 0 #212121,
+    0 0 0.05em #212121,
+    0 -0.05em 0 #212121,
+    0.1em 0 0 #212121,
+    0.1em 0 0 #212121,
+    0 0 0.1em #212121,
+    0 -0.1em 0 #212121;
+}
+
 .profile:hover {
   border: 8px solid #424242;           /* 2 */
 }
@@ -102,6 +114,10 @@ textarea:focus {
 input,
 textarea {
   border-bottom: solid 2px #757575;    /* 4 */
+}
+
+.txtlink a:hover, a:focus, a:active {
+  background-color: #757575;            /* 4 */
 }
 
 .navbar {

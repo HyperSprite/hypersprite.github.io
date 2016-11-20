@@ -85,6 +85,18 @@ textarea:focus {
   border-top: solid 1px #F5F5F5;       /* 1 */
 }
 
+.txtlink {
+  text-shadow:                         /* 1 */
+    0.05em 0 0 #F5F5F5,
+    -0.05em 0 0 #F5F5F5,
+    0 0 0.05em #F5F5F5,
+    0 -0.05em 0 #F5F5F5,
+    0.1em 0 0 #F5F5F5,
+    0.1em 0 0 #F5F5F5,
+    0 0 0.1em #F5F5F5,
+    0 -0.1em 0 #F5F5F5;
+}
+
 .profile:hover {
   border: 8px solid #EEEEEE;           /* 2 */
 }
@@ -97,6 +109,10 @@ textarea:focus {
 input,
 textarea {
   border-bottom: solid 2px #BDBDBD;    /* 4 */
+}
+
+.txtlink a:hover, a:focus, a:active {
+  background-color: #BDBDBD;            /* 4 */
 }
 
 .navbar {

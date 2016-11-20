@@ -24,7 +24,7 @@
     "repoIcon":"fa-github-square",
     "furtherReading":"http://codepen.io/HyperSprite/full/RGpKYE/",
     "moreTitle":"CodePen",
-    "content":"This is the Portfolio Project. It uses no jQuery or Bootstrap (although it does have <a href='http://necolas.github.io/normalize.css'>Normalize.css</a> to get all the browsers on the same page). This list, with the three types is generated via JavaScript. JSON is downloaded via an AJAX request and then parsed into this list."
+    "content":"This is the Portfolio Project. It uses no jQuery or Bootstrap (although it does have <span class='txtlink'><a href='http://necolas.github.io/normalize.css'>Normalize.css</a></span> to get all the browsers on the same page). This list, with the three types is generated via JavaScript. JSON is downloaded via an AJAX request and then parsed into this list."
   },
   {
     "type":"opensource",
@@ -99,7 +99,7 @@
     "repoIcon":"fa-github-square",
     "furtherReading":"http://codepen.io/HyperSprite/full/QKpEAb/",
     "moreTitle":"CodePen",
-    "content":"This in part of the Intermediate Front End Developer Projects section. The task is to make a random quote display, have a button to get a new quote and a button to tweet the quote. In addition to the requirements, I also added a random background image from <a href='http://www.unsplash.com' target='new'>Unsplash</a>."
+    "content":"This in part of the Intermediate Front End Developer Projects section. The task is to make a random quote display, have a button to get a new quote and a button to tweet the quote. In addition to the requirements, I also added a random background image from <span class='txtlink'><a href='http://www.unsplash.com' target='new' >Unsplash</a></span>."
   },
   {
     "type":"projects",
@@ -109,10 +109,11 @@
     "imgAlt":"",
     "repoLink":"https://github.com/HyperSprite/hypersprite.github.io/tree/master/highlightjs",
     "repoTitle":"Repo",
+    "image":"/assets/images/hyperspritedarktheme.jpg",
     "demoLink":"/highlightjs/",
     "furtherReading":"",
     "repoIcon":"fa-github-square",
-    "content":"In Progress: I love highlightjs and wanted to work on a theme that looks like my <a href='/highlightjs/assets/hypersprite-dark.tmTheme' target='new'>Sublime Text theme</a>."
+    "content":"In Progress: I love highlightjs and wanted to work on a theme that looks like my <span class='txtlink'><a href='/highlightjs/assets/hypersprite-dark.tmTheme' target='new' >Sublime Text theme</a></span>. Meanwhile, I switched to the Atom editor and imported my theme, that can be found in here as well."
   },
   {
     "type":"opensource",

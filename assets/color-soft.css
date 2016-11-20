@@ -99,12 +99,28 @@ ul.topnav .selected {
   border: 8px solid #eee; /* 1 */
 }
 
+.txtlink {
+  text-shadow:                         /* 1 */
+    0.05em 0 0 #ddd,
+    -0.05em 0 0 #ddd,
+    0 0 0.05em #ddd,
+    0 -0.05em 0 #ddd,
+    0.1em 0 0 #ddd,
+    0.1em 0 0 #ddd,
+    0 0 0.1em #ddd,
+    0 -0.1em 0 #ddd;
+}
+
 .profile:hover {
   border: 8px solid #ccc; /* 4 */
 }
 
 .cardgroup:nth-child(even) {
   background-color: #e6e6e6; /* 4 */
+}
+
+.txtlink a:hover, a:focus, a:active {
+  background-color: #eee;            /* 4 */
 }
 
 .card {

@@ -133,6 +133,7 @@ var pGlobal = {};
     document.cookie = name + '=' + value + expires + '; path=/';
   }
 
+  // Generic getCookie function
   function getCookie(name) {
     var cookArr = document.cookie.split(';');
     for (var i = 0, l = cookArr.length; i < l; i++) {
