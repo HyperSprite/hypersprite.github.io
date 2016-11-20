@@ -29,10 +29,6 @@ a:visited {
   color: #555; /* 8 */
 }
 
-a:hover, a:active {
-  color: #336699;
-}
-
 input, textarea {
   border-bottom: solid 2px #ccc; /* 4 */
 }
@@ -119,8 +115,11 @@ ul.topnav .selected {
   background-color: #e6e6e6; /* 4 */
 }
 
-.txtlink a:hover, a:focus, a:active {
-  background-color: #eee;            /* 4 */
+a:hover,
+a:focus,
+a:active {
+  background-color: #19334d;            /* 4 */
+  color: #eee; /* 1 */
 }
 
 .card {
@@ -138,6 +137,14 @@ ul.topnav .selected {
 .btn-color:hover,
 .btn-color:focus {
   background-color: #336699;
+}
+
+a.card-btn:link,
+a.card-btn:visited,
+.card-btn:hover,
+.card-btn:focus,
+.btn-color:hover,
+.btn-color:focus {
   color: #eee; /* 1 */
 }
 

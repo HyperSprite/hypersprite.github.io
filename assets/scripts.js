@@ -22,11 +22,11 @@ var pGlobal = {};
         '<i class="fa ' + this.repoIcon + ' fa-lg" aria-hidden="true"></i> ' : '';
       var repoBtnName = this.repoTitle || 'Site';
       var link = this.repoLink ?
-        '<a href="' + this.repoLink + '" target="new"><button class="card-btn">' + repoBtnName + '</button></a>' : '';
+        '<a href="' + this.repoLink + '" class="card-btn" target="new">' + repoBtnName + '</a>' : '';
       var demoLink = this.demoLink ?
-        '<a href="' + this.demoLink + '" target="new"><button class="card-btn">Demo</button></a>' : '';
+        '<a href="' + this.demoLink + '" class="card-btn" target="new">Demo</a>' : '';
       var moreInfo = this.furtherReading ?
-        '<a href="' + this.furtherReading + '" target="new"><button class="card-btn">' + this.moreTitle + '</button></a>' : '';
+        '<a href="' + this.furtherReading + '" class="card-btn" target="new">' + this.moreTitle + '</a>' : '';
       var cardImage = this.image ?
         '<div class="card-img"><img src="' + this.image + '" alt="' + this.imgAlt + '"></div>' : '';
       var cardHeadline = '';

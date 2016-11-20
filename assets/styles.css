@@ -25,9 +25,9 @@ a:link, a:visited {
   text-decoration: none;
 }
 
- a:hover, a:focus, a:active {
+ /*a:hover, a:focus, a:active {
   text-decoration: underline;
-}
+}*/
 
 .txtlink {
   color: inherit;
@@ -37,14 +37,16 @@ a:link, a:visited {
   background-size: 100% 0.1em;
 }
 
+a:hover,
+a:focus,
+a:active,
 .txtlink a:hover, a:focus, a:active {
   text-decoration: none;
   outline: none;
-  color: inherit;
   text-shadow: none;
 }
 
-button {
+.card-btn {
   font-weight: bold;
 }
 

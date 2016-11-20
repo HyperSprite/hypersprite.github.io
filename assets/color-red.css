@@ -68,8 +68,17 @@ html {
   border: 8px solid #e6e6e6;           /* white + 2 */
 }
 
-.card-btn, .btn-color {
+.card-btn,
+.btn-color {
   color: #e6e6e6;                      /* white + 2 */
+}
+a.card-btn:link,
+a.card-btn:visited,
+.card-btn:hover,
+.card-btn:focus,
+.btn-color:hover,
+.btn-color:focus {
+  color:  #e6e6e6;                      /* white + 2 */
 }
 
 .locked {
@@ -111,7 +120,9 @@ textarea {
   border-bottom: solid 2px #BDBDBD;    /* 4 */
 }
 
-.txtlink a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
   background-color: #BDBDBD;            /* 4 */
 }
 
@@ -160,8 +171,6 @@ ul.topnav li a:hover {
   background-color: #C62828;           /* 7 alt */
 }
 
-a:hover,
-a:active,
 ul.topnav li a:hover,
 ul.topnav .selected  {
   color: #C62828;                      /* 7 alt */

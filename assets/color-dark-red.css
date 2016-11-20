@@ -69,7 +69,17 @@ html {
   border: 8px solid #fff7e6;           /* white + 2 */
 }
 
-.card-btn,  .btn-color {
+.card-btn,
+.btn-color {
+  color: #fff7e6;                      /* white + 2 */
+}
+
+a.card-btn:link,
+a.card-btn:visited,
+.card-btn:hover,
+.card-btn:focus,
+.btn-color:hover,
+.btn-color:focus {
   color: #fff7e6;                      /* white + 2 */
 }
 
@@ -116,7 +126,9 @@ textarea {
   border-bottom: solid 2px #757575;    /* 4 */
 }
 
-.txtlink a:hover, a:focus, a:active {
+a:hover,
+a:focus,
+a:active {
   background-color: #757575;            /* 4 */
 }
 
@@ -169,8 +181,6 @@ ul.topnav li a:hover {
   background-color: #e6e6e6;           /* 7 alt */
 }
 
-a:hover,
-a:active,
 ul.topnav li a:hover,
 ul.topnav .selected  {
   color: #fff7e6;                      /* 7 alt */
