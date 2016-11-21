@@ -26,9 +26,17 @@ function captcha(){
   for (i = 0; i < 7; i++) {
     _eG.iHateBots += alpha[Math.floor(Math.random() * alpha.length)];
   }
+  var canvasTextColor = '#222222';
+  if (pGlobal.curTheme === 1) {
+    canvasTextColor = '#fff7e6';
+  } else if (pGlobal.curTheme === 4) {
+    canvasTextColor = '#e6e6e6';
+  }
   var canvas = document.getElementById('email-canvas');
   var context = canvas.getContext('2d');
-  context.clearRect(0, 0, 150, 50);
+  // context.fillRect(0, 0, 150, 30);
+  context.fillStyle = canvasTextColor;
+  context.clearRect(0, 0, 150, 30);
   context.font = '20px courier';
   context.fillText(_eG.iHateBots.split('').join(' '), -18, 30);
 }

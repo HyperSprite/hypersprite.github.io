@@ -109,15 +109,15 @@ var pGlobal = {};
 (function () {
   var cssArray = [
     'soft',
-    'dark-gray',
-    'gray',
     'dark-red',
     'red',
+    'orange',
+    'dark-gray',
+    'gray',
     'indigo',
     'green',
-    'orange',
   ];
-  var curTheme;
+  pGlobal.curTheme;
   var cTheme;
   var tstrTime;
   var cssAL = cssArray.length;
@@ -153,12 +153,12 @@ var pGlobal = {};
   // This gets the cookie and sets current theme based on what it finds
   cTheme = getCookie('theme') || NaN;
   if (isNaN(cTheme[1] * 1)) {
-    curTheme = 0;
+    pGlobal.curTheme = 0;
   } else {
-    curTheme = +cTheme[1];
+    pGlobal.curTheme = +cTheme[1];
   }
   // This sets the page to use the current theme on page load
-  linkCssColor.href = '/assets/color-' + cssArray[curTheme] + '.css';
+  linkCssColor.href = '/assets/color-' + cssArray[pGlobal.curTheme] + '.css';
 
   // This timeout function is here so it can be killed
   // this way if someone hits the button quickly, the
@@ -175,13 +175,14 @@ var pGlobal = {};
     clearTimeout(tstrTime);
 
     cTheme = getCookie('theme');
-    curTheme++;
-    curTheme >= cssAL ? curTheme = 0 : curTheme;
-    linkCssColor.href = '/assets/color-' + cssArray[curTheme] + '.css';
-    tstr.textContent = mkUpper(cssArray[curTheme].split('-').join(' '));
+    pGlobal.curTheme++;
+    pGlobal.curTheme >= cssAL ? pGlobal.curTheme = 0 : pGlobal.curTheme;
+    linkCssColor.href = '/assets/color-' + cssArray[pGlobal.curTheme] + '.css';
+    tstr.textContent = mkUpper(cssArray[pGlobal.curTheme].split('-').join(' '));
     tstr.className = 'show card-btn';
+    captcha();
     tstrTimeout();
-    setCookie('theme', curTheme, 7);
+    setCookie('theme', pGlobal.curTheme, 7);
   };
 })();
 
