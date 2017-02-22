@@ -83,17 +83,17 @@ var pGlobal = {};
   var lastPageYOff = 0;
 
   window.onscroll = function () {
-      var windowYOffset = window.pageYOffset;
-      var elBackgrounPos;
+    var windowYOffset = window.pageYOffset;
+    var elbackgroundPos;
       // this controles scroll up and down speed of the banner
-      if (lastPageYOff > windowYOffset) {
-        speed = -0.3;
-      } else {
-        speed = -0.5;
-      }
-      elBackgrounPos = '50% ' + (windowYOffset * speed) + 'px';
-      parallax.style.backgroundPosition = elBackgrounPos;
-      lastPageYOff = windowYOffset;
+    if (lastPageYOff > windowYOffset) {
+      speed = -0.3;
+    } else {
+      speed = -0.5;
+    }
+    elbackgroundPos = '50% ' + (windowYOffset * speed) + 'px';
+    parallax.style.backgroundPosition = elbackgroundPos;
+    lastPageYOff = windowYOffset;
 
     if (window.pageYOffset > 500) {
       navContainer.className = 'locked';
