@@ -1,7 +1,7 @@
 [
   {
     "type":"projects",
-    "priority":"1",
+    "priority":"2",
     "headline":"DCIT - Data Center Information Tracking",
     "image":"/assets/images/dcitjumbotron.jpg",
     "imgAlt":"Jumbotron from DCIT application",
@@ -24,7 +24,7 @@
     "repoIcon":"fa-github-square",
     "furtherReading":"http://codepen.io/HyperSprite/full/RGpKYE/",
     "moreTitle":"CodePen",
-    "content":"This is the Portfolio Project. It uses no jQuery or Bootstrap (although it does have <span class='txtlink'><a href='http://necolas.github.io/normalize.css'>Normalize.css</a></span> to get all the browsers on the same page). This list, with the three types is generated via JavaScript. JSON is downloaded via an AJAX request and then parsed into this list."
+    "content":"This is the Portfolio Project you are looking at right now. It is library/framework free (although it does have <span class='txtlink'><a href='http://necolas.github.io/normalize.css'>Normalize.css</a></span> to get all the browsers on the same page). Make sure you click the magic wand in the lower right hand corner."
   },
   {
     "type":"opensource",
@@ -50,7 +50,7 @@
   },
   {
     "type":"more",
-    "priority":"1",
+    "priority":"6",
     "headline":"HyperSprite.com Photography Blog",
     "image":"/assets/images/hyperspriteblog.jpg",
     "imgAlt":"HyperSprite Blog Image",
@@ -63,8 +63,8 @@
   },
   {
     "type":"more",
-    "priority":"5",
-    "headline":"2017 Goal: Finish Leadville MTB Trail 100",
+    "priority":"3",
+    "headline":"2017 Goal: Sub 9 Leadville MTB Trail 100",
     "image":"/assets/images/leadvilleblvd.jpg",
     "repoLink":"http://www.leadvilleraceseries.com/mtb/leadvilletrail100mtb/",
     "repoTitle":"Race",
@@ -72,7 +72,7 @@
     "demoLink":"",
     "furtherReading":"",
     "repoIcon":"fa-square-o",
-    "content":"The Leadville Trail 100 Mountain Bike Race is a bucket list item. To be an official finisher, you need to complete <em>104 miles at altitudes between ten thousand and twelve thousand five hundred feet in under twelve hours</em>. The gold belt buckle is awarded for a time <strong>under nine hours</strong>. The first challenge is just to get in. The Lottery opens in December."
+    "content":"The Leadville Trail 100 Mountain Bike Race is a bucketlist item. To be an official finisher, you need to complete <em>104 miles at altitudes between ten thousand and twelve thousand five hundred feet in under twelve hours</em>. For the gold buckle, the finish time needs to be <strong>under nine hours</strong>. For a first timer, starting from the White corral (back), I've got my work cut out for me. Wish me luck!"
   },
   {
     "type":"opensource",
@@ -103,7 +103,7 @@
   },
   {
     "type":"projects",
-    "priority":"7",
+    "priority":"5",
     "headline":"Personal theme for HighLightjs",
     "image":"",
     "imgAlt":"",
@@ -117,7 +117,7 @@
   },
   {
     "type":"opensource",
-    "priority":"1",
+    "priority":"7",
     "headline":"R3bl-base - Open Communication",
     "image":"/assets/images/r3blbase.jpg",
     "imgAlt":"Github Network",
@@ -129,7 +129,7 @@
   },
   {
     "type":"projects",
-    "priority":"2",
+    "priority":"1",
     "headline":"A Race athlete - A Strava Connected Goals Web App",
     "image":"/assets/images/araceathlete.png",
     "imgAlt":"A Race athlete screenshot",
