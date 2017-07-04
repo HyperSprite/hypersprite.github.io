@@ -140,13 +140,13 @@
   },
   {
     "type":"projects",
-    "priority":"2",
+    "priority":"3",
     "headline":"Bootstrap ReduxForm Exploration",
     "image":"/assets/images/bootstrap-reduxform.jpg",
     "imgAlt":"Simple Form Image",
     "repoLink":"https://github.com/HyperSprite/bootstrap-reduxform",
     "demoLink":"https://bootstrap-reduxform.herokuapp.com",
     "repoIcon":"fa-github-square",
-    "content":"This is an exploration of setting up ReduxForm for easy reuse and React styling using Bootstrap and Sass. The two main types of forms are \"Edit in place\" and \"Wizard\". Edit in place style allows the user to update their user profile without loading a whole form. The Wizard style reveals each form element as the form is filled out and displays earlier elements allowing for review before submitting. This is built using Create React App, Redux, React-Bootstrap, Redux-Form on a free Heroku dyno (so it may start up a bit slow).
+    "content":"This is an exploration of setting up ReduxForm for easy reuse and React styling using Bootstrap and Sass. The two main types of forms are \"Edit in place\" and \"Wizard\". Edit in place style allows the user to update their user profile without loading a whole form. The Wizard style reveals each form element as the form is filled out and displays earlier elements allowing for review before submitting. This is built using Create React App, Redux, React-Bootstrap, Redux-Form on a free Heroku dyno (so it may start up a bit slow)."
   }
 ]
