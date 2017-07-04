@@ -1,7 +1,7 @@
 [
   {
     "type":"projects",
-    "priority":"2",
+    "priority":"4",
     "headline":"DCIT - Data Center Information Tracking",
     "image":"/assets/images/dcitjumbotron.jpg",
     "imgAlt":"Jumbotron from DCIT application",
@@ -50,7 +50,7 @@
   },
   {
     "type":"more",
-    "priority":"6",
+    "priority":"1",
     "headline":"HyperSprite.com Photography Blog",
     "image":"/assets/images/hyperspriteblog.jpg",
     "imgAlt":"HyperSprite Blog Image",
@@ -103,7 +103,7 @@
   },
   {
     "type":"projects",
-    "priority":"5",
+    "priority":"7",
     "headline":"Personal theme for HighLightjs",
     "image":"",
     "imgAlt":"",
@@ -117,7 +117,7 @@
   },
   {
     "type":"opensource",
-    "priority":"7",
+    "priority":"1",
     "headline":"R3bl-base - Open Communication",
     "image":"/assets/images/r3blbase.jpg",
     "imgAlt":"Github Network",
@@ -130,12 +130,23 @@
   {
     "type":"projects",
     "priority":"1",
-    "headline":"A Race athlete - A Strava Connected Goals Web App",
+    "headline":"A Race athlete - A Cycling Analytics Web App",
     "image":"/assets/images/araceathlete.png",
     "imgAlt":"A Race athlete screenshot",
     "repoLink":"https://github.com/HyperSprite/redux-todo-with-auth",
     "demoLink":"https://www.araceathlete.com",
     "repoIcon":"fa-github-square",
     "content":"The point of this web app is to use Strava Oauth and v3 API to connect to an athlete's stats and track their fitness as it relates to their seasonal goals.<br><br> It will have three parts, Events, Goals, and Trending Fitness. I am working on the Events portion which has already proved useful by having a single place to see an athlete's upcoming events listed with week to go. <br><br>Technologies include MongoDB, Nodejs/Express, React, Redux and Material UI. Some of the features include offline storage, markdown to html input, twitter and facebook posts. See the repo for many of the libraries used."
+  },
+  {
+    "type":"projects",
+    "priority":"2",
+    "headline":"Bootstrap ReduxForm Exploration",
+    "image":"/assets/images/bootstrap-reduxform.jpg",
+    "imgAlt":"Simple Form Image",
+    "repoLink":"https://github.com/HyperSprite/bootstrap-reduxform",
+    "demoLink":"https://bootstrap-reduxform.herokuapp.com",
+    "repoIcon":"fa-github-square",
+    "content":"This is an exploration of setting up ReduxForm for easy reuse and React styling using Bootstrap and Sass. The two main types of forms are \"Edit in place\" and \"Wizard\". Edit in place style allows the user to update their user profile without loading a whole form. The Wizard style reveals each form element as the form is filled out and displays earlier elements allowing for review before submitting. This is built using Create React App, Redux, React-Bootstrap, Redux-Form on a free Heroku dyno (so it may start up a bit slow).
   }
 ]
