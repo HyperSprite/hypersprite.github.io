@@ -64,7 +64,7 @@
   {
     "type":"more",
     "priority":"3",
-    "headline":"2017 Goal: Sub 9 Leadville MTB Trail 100",
+    "headline":"2017 Goal: Sub 9 Leadville MTB Trail 100 (updated)",
     "image":"/assets/images/leadvilleblvd.jpg",
     "repoLink":"http://www.leadvilleraceseries.com/mtb/leadvilletrail100mtb/",
     "repoTitle":"Race",
@@ -72,7 +72,7 @@
     "demoLink":"",
     "furtherReading":"",
     "repoIcon":"fa-square-o",
-    "content":"The Leadville Trail 100 Mountain Bike Race is a bucketlist item. To be an official finisher, you need to complete <em>104 miles at altitudes between ten thousand and twelve thousand five hundred feet in under twelve hours</em>. For the gold buckle, the finish time needs to be <strong>under nine hours</strong>. For a first timer, starting from the White corral (back), I've got my work cut out for me. Wish me luck!"
+    "content":"The Leadville Trail 100 Mountain Bike Race is a bucket list item. To be an official finisher, you need to complete <em>104 miles at altitudes between ten thousand and twelve thousand five hundred feet in under twelve hours</em>. For the gold buckle, the finish time needs to be <strong>under nine hours</strong>. For a first timer, starting from the White corral (back), I've got my work cut out for me. Wish me luck! <br><br> Well... I finished with a 9:49:50. Not what I had hoped for but still a good result. Maybe next time. :)"
   },
   {
     "type":"opensource",
@@ -148,5 +148,16 @@
     "demoLink":"https://bootstrap-reduxform.herokuapp.com",
     "repoIcon":"fa-github-square",
     "content":"This is an exploration of setting up ReduxForm for easy reuse and React styling using Bootstrap and Sass. The two main types of forms are \"Edit in place\" and \"Wizard\". Edit in place style allows the user to update their user profile without loading a whole form. The Wizard style reveals each form element as the form is filled out and displays earlier elements allowing for review before submitting. This is built using Create React App, Redux, React-Bootstrap, Redux-Form on a free Heroku dyno (so it may start up a bit slow)."
+  },
+  {
+    "type":"projects",
+    "priority":"2",
+    "headline":"Material-ui Components",
+    "image":"/assets/images/base-material-components.png",
+    "imgAlt":"Demo AppBar with map",
+    "repoLink":"https://github.com/HyperSprite/base-material-components-next",
+    "demoLink":"https://portfolio.hypersprite.com/base-material-components/index.html",
+    "repoIcon":"fa-github-square",
+    "content":"Creating new and migrating existing components for A Race athlete. This effort will move the UI to Material-ui v1 as well as unify the styling system using JSS."
   }
 ]
