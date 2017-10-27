@@ -1,7 +1,7 @@
 [
   {
     "type":"projects",
-    "priority":"4",
+    "priority":"2",
     "headline":"DCIT - Data Center Information Tracking",
     "image":"/assets/images/dcitjumbotron.jpg",
     "imgAlt":"Jumbotron from DCIT application",
@@ -14,7 +14,7 @@
   },
   {
     "type":"projects",
-    "priority":"5",
+    "priority":"6",
     "headline":"Portfolio Project",
     "image":"/assets/images/portfolioproject.jpg",
     "imgAlt":"Header of a website",
@@ -32,9 +32,9 @@
     "headline":"GoalsManager",
     "repoLink":"https://github.com/tcote19/goalsmanager",
     "repoTitle":"Repo",
-    "image":"/assets/images/goalstar.png", "furtherReading":"https://app.moqups.com/hypersprite/neomoD50mC/view/page/ad64222d5",
     "repoIcon":"fa-github-square",
-    "content":"This is just getting started. A small group of Front End JavaScript developers in Silicon Valley are spending their free time working on building a new interface for Google Tasks. The idea is that google has a fine Task API with a front end that has never reached its full potential. <br>I have completed some mock ups and others have begun to contribute code. This is still in early stages. <br>Some of the goals of this project are:<ul><li>Use as much of Google infrastructure as possible, including authentication and storage.</li><li>This should be a single page app.</li></ul>"
+    "image":"/assets/images/goalstar.png", "furtherReading":"https://app.moqups.com/hypersprite/neomoD50mC/view/page/ad64222d5",
+    "content":"The idea is that Google has a fine Task API with a front end that has never reached its full potential. <br>I have completed some mock ups and others have begun to contribute code. This is still in early stages. <br>Some of the goals of this project are:<ul><li>Use as much of Google infrastructure as possible, including authentication and storage.</li><li>This should be a single page app.</li></ul>This was just getting started but never went anywhere. Originally it was a project for a small group of Front End JavaScript developers meeting in Silicon Valley but that has since disbanded. I still think this would be an interesting project."
   },
   {
     "type":"more",
@@ -50,6 +50,19 @@
   },
   {
     "type":"more",
+    "priority":"3",
+    "headline":"Sub 9 2017 Leadville MTB Trail 100",
+    "image":"/assets/images/leadvilleblvd.jpg",
+    "repoLink":"http://www.leadvilleraceseries.com/mtb/leadvilletrail100mtb/",
+    "repoTitle":"Race",
+    "imgAlt":"Mountain biking on the Leadville Blvd.",
+    "demoLink":"",
+    "furtherReading":"",
+    "repoIcon":"fa-square-o",
+    "content":"The Leadville Trail 100 Mountain Bike Race is a bucket list item. To be an official finisher, you need to complete <em>104 miles at altitudes between ten thousand and twelve thousand five hundred feet in under twelve hours</em>. For the gold buckle, the finish time needs to be <strong>under nine hours</strong>. For a first timer, starting from the White corral (back), I've got my work cut out for me. Wish me luck! <br><br> Well... I finished with a 9:49:50. Not what I had hoped for but still a good result. Maybe next time. :)"
+  },
+  {
+    "type":"more",
     "priority":"1",
     "headline":"HyperSprite.com Photography Blog",
     "image":"/assets/images/hyperspriteblog.jpg",
@@ -60,19 +73,6 @@
     "furtherReading":"",
     "repoIcon":"fa-wordpress",
     "content":"This is a collection of pictures from my travels. Subjects range from landscapes of Yosemite and Zion National Parks to animals and other interests."
-  },
-  {
-    "type":"more",
-    "priority":"3",
-    "headline":"2017 Goal: Sub 9 Leadville MTB Trail 100 (updated)",
-    "image":"/assets/images/leadvilleblvd.jpg",
-    "repoLink":"http://www.leadvilleraceseries.com/mtb/leadvilletrail100mtb/",
-    "repoTitle":"Race",
-    "imgAlt":"Mountain biking on the Leadville Blvd.",
-    "demoLink":"",
-    "furtherReading":"",
-    "repoIcon":"fa-square-o",
-    "content":"The Leadville Trail 100 Mountain Bike Race is a bucket list item. To be an official finisher, you need to complete <em>104 miles at altitudes between ten thousand and twelve thousand five hundred feet in under twelve hours</em>. For the gold buckle, the finish time needs to be <strong>under nine hours</strong>. For a first timer, starting from the White corral (back), I've got my work cut out for me. Wish me luck! <br><br> Well... I finished with a 9:49:50. Not what I had hoped for but still a good result. Maybe next time. :)"
   },
   {
     "type":"opensource",
@@ -89,8 +89,8 @@
   },
   {
     "type":"projects",
-    "priority":"6",
-    "headline":"FreeCodeCamp: Random Quote Machine",
+    "priority":"7",
+    "headline":"Random Quote Machine",
     "repoLink":"https://github.com/HyperSprite/hypersprite.github.io/tree/master/randomquotemachine",
     "repoTitle":"Repo",
     "image":"/assets/images/randomquotemachine.jpg",
@@ -103,7 +103,7 @@
   },
   {
     "type":"projects",
-    "priority":"7",
+    "priority":"8",
     "headline":"Personal theme for HighLightjs",
     "image":"",
     "imgAlt":"",
@@ -134,13 +134,14 @@
     "image":"/assets/images/araceathlete.png",
     "imgAlt":"A Race athlete screenshot",
     "repoLink":"https://github.com/HyperSprite/redux-todo-with-auth",
-    "demoLink":"https://www.araceathlete.com",
     "repoIcon":"fa-github-square",
-    "content":"The point of this web app is to use Strava Oauth and v3 API to connect to an athlete's stats and track their fitness as it relates to their seasonal goals.<br><br> It will have three parts, Events, Goals, and Trending Fitness. I am working on the Events portion which has already proved useful by having a single place to see an athlete's upcoming events listed with week to go. <br><br>Technologies include MongoDB, Nodejs/Express, React, Redux and Material UI. Some of the features include offline storage, markdown to html input, twitter and facebook posts. See the repo for many of the libraries used."
+    "furtherReading":"https://www.araceathlete.com",
+    "moreTitle":"Web App",
+    "content":"This web app connects with Strava using Oath and features different ways to use and view athlete data.<br/>Current features include:<ul><li>Events: users can add and favorite Events. Each Event will show specific data such as starting elevation and timezone with offset based on the event location and date using Google locaiton services. As the event grows near, it will show weather forecasting for the location on the event day, using Open Weather Maps</li><li>Power at Altitude: Calculates your FTP based on your training location and event altitude.</li><li>Weekly Stats: Calculates an athletes cumulative stats for the week.</li><li>Activity Search: Anyone that uses Strava knows searching their past activities is hit or miss. This uses MongoDB aggregation and text indexing to accurately return all activities that match the search. It also lets you download the activities to a CSV for further examination.</li></ul>Follow the <strong>Web App</strong> link below to see this app live and scroll down the home page for more in depth feature descriptions and usage.<br/>For the code and list of technologies and APIs, follow the <strong>Repo</strong> link. If you're an athlete, click the <strong>\"Connect with Strava\"</strong> button in the top right to get started!"
   },
   {
     "type":"projects",
-    "priority":"3",
+    "priority":"4",
     "headline":"Bootstrap ReduxForm Exploration",
     "image":"/assets/images/bootstrap-reduxform.jpg",
     "imgAlt":"Simple Form Image",
@@ -151,15 +152,28 @@
   },
   {
     "type":"projects",
-    "priority":"2",
+    "priority":"3",
     "headline":"Material-ui Components",
     "image":"/assets/images/base-material-components.png",
     "imgAlt":"Demo AppBar with map",
     "repoLink":"https://github.com/HyperSprite/base-material-components-next",
-    "demoLink":"base-material-components/index.html",
+    "demoLink":"http://portfolio.hypersprite.com/base-material-components/index.html",
     "repoIcon":"fa-github-square",
-    "furtherReading":"base-material-components/styleguide",
+    "furtherReading":"http://portfolio.hypersprite.com/base-material-components/styleguide",
     "moreTitle":"Style Guide",
     "content":"Creating new and migrating existing components for A Race athlete. This effort will move the UI to Material-ui v1 as well as unify the styling system using JSS."
+  },
+  {
+    "type":"projects",
+    "priority":"3",
+    "headline":"Image Transformation Library",
+    "image":"/assets/images/img-transformation-ts.png",
+    "imgAlt":"Screenshot",
+    "repoLink":"https://github.com/hypersprite/img-transformer-ts",
+    "repoIcon":"fa-github-square",
+    "demoLink":"http://portfolio.hypersprite.com/img-transformation-ts",
+    "furtherReading":"https://github.com/hypersprite/img-transformer-ts/tree/master/src/util",
+    "moreTitle":"API Docs",
+    "content":"A project to build an Image Transformation library that converts color to grayscale and rotates an image. It is built with React, Canvas, Typescript and Semantic-ui. The primary point is the API library, while the front end was built to show how it could be used."
   }
 ]

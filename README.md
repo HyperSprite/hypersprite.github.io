@@ -16,4 +16,4 @@ You can find it at [portfolio.hypersprite.com](http://portfolio.hypersprite.com)
 
 * JavaScript email input validation and message boxes.
 * Testing with IE/Edge.
-*  Work on phone landscape mode. 
+* Work on phone landscape mode.
