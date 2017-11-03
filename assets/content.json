@@ -157,9 +157,9 @@
     "image":"/assets/images/base-material-components.png",
     "imgAlt":"Demo AppBar with map",
     "repoLink":"https://github.com/HyperSprite/base-material-components-next",
-    "demoLink":"http://portfolio.hypersprite.com/base-material-components/index.html",
+    "demoLink":"/base-material-components",
     "repoIcon":"fa-github-square",
-    "furtherReading":"http://portfolio.hypersprite.com/base-material-components/styleguide",
+    "furtherReading":"/base-material-components-styleguide",
     "moreTitle":"Style Guide",
     "content":"Creating new and migrating existing components for A Race athlete. This effort will move the UI to Material-ui v1 as well as unify the styling system using JSS."
   },
@@ -171,7 +171,7 @@
     "imgAlt":"Screenshot",
     "repoLink":"https://github.com/hypersprite/img-transformer-ts",
     "repoIcon":"fa-github-square",
-    "demoLink":"http://portfolio.hypersprite.com/img-transformation-ts",
+    "demoLink":"/img-transformation-ts",
     "furtherReading":"https://github.com/hypersprite/img-transformer-ts/tree/master/src/util",
     "moreTitle":"API Docs",
     "content":"A project to build an Image Transformation library that converts color to grayscale and rotates an image. It is built with React, Canvas, Typescript and Semantic-ui. The primary point is the API library, while the front end was built to show how it could be used."
