@@ -89,14 +89,11 @@
     "type":"projects",
     "priority":"7",
     "headline":"Random Quote Machine",
-    "repoLink":"https://github.com/HyperSprite/hypersprite.github.io/tree/master/randomquotemachine",
+    "repoLink":"https://github.com/HyperSprite/hypersprite.github.io/tree/master/quotemachine",
     "repoTitle":"Repo",
     "image":"/assets/images/randomquotemachine.jpg",
     "demoLink":"randomquotemachine",
-    "furtherReading":"https://www.freecodecamp.com/challenges/build-a-random-quote-machine",
     "repoIcon":"fa-github-square",
-    "furtherReading":"http://codepen.io/HyperSprite/full/QKpEAb/",
-    "moreTitle":"CodePen",
     "content":"This in part of the Intermediate Front End Developer Projects section. The task is to make a random quote display, have a button to get a new quote and a button to tweet the quote. In addition to the requirements, I also added a random background image from <span class='txtlink'><a href='http://www.unsplash.com' target='new' >Unsplash</a></span>."
   },
   {
