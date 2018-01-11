@@ -22,8 +22,6 @@
     "repoTitle":"Repo",
     "demoLink":"http://hypersprite.github.io/",
     "repoIcon":"fa-github-square",
-    "furtherReading":"http://codepen.io/HyperSprite/full/RGpKYE/",
-    "moreTitle":"CodePen",
     "content":"This is the Portfolio Project you are looking at right now. It is library/framework free (although it does have <span class='txtlink'><a href='http://necolas.github.io/normalize.css'>Normalize.css</a></span> to get all the browsers on the same page). Make sure you click the magic wand in the lower right hand corner."
   },
   {
@@ -175,5 +173,18 @@
     "furtherReading":"https://github.com/hypersprite/img-transformer-ts/tree/master/src/util",
     "moreTitle":"API Docs",
     "content":"A project to build an Image Transformation library that converts color to grayscale and rotates an image. It is built with React, Canvas, Typescript and Semantic-ui. The primary point is the API library, while the front end was built to show how it could be used."
+  },
+  {
+    "type":"projects",
+    "priority":"4",
+    "headline":"NPM Just-FNS",
+    "image":"/assets/images/npmjustfns.png",
+    "imgAlt":"Screenshot of NPM page",
+    "repoLink":"https://github.com/HyperSprite/just-fns",
+    "repoTitle":"Repo",
+    "furtherReading":"https://www.npmjs.com/package/just-fns",
+    "moreTitle":"NPM",
+    "repoIcon":"fa-github-square",
+    "content":"This is a collection of functions for performing various calculations for cycling related data, as found on Strava, TrainingPeaks and TrainerRoad. I am using them in araceathlete.com (see above) and wanted to break this out into its own module for \"simplicity\". Most of these are used in the view for converting raw data into something user friendly.<br/><br/> Setup wise, the build process includes Jest, ESlint, Babel, NPM Scripts and Git commit hooks."
   }
 ]
