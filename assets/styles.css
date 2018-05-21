@@ -341,6 +341,11 @@ ul.topnav .selected {
   top: 50px;
 }
 
+li.social a {
+  padding: 2px;
+  border-radius: 2px;
+}
+
 .maincol {
   position: absolute;
   left: 500px;
@@ -535,6 +540,7 @@ ul.topnav .selected {
     left: 10px;
     top: 220px;
     border-radius: 10px;
+    padding-bottom: 5px;
   }
 
   .hide-label {
