@@ -7,7 +7,6 @@
     "imgAlt":"Jumbotron from DCIT application",
     "repoLink":"https://github.com/HyperSprite/dcit",
     "repoTitle":"Repo",
-    "demoLink":"https://dcit.hypersprite.com/",
     "furtherReading":"https://github.com/HyperSprite/dcit/wiki",
     "repoIcon":"fa-github-square",
     "content":"This is a data center asset tracking tool that goes way beyond spreadsheets. The point was to make it easier to use the tool as the equipment is received and installed because, the reality is, nobody has time to go back and documents things.<br/>I designed it using three main collections, Locations, Assets and Systems. This allows equipment to be treated as commodity while not losing what makes each System unique. It has Search and Reporting capabilities that allow data to be easily exported and utilized by other departments. <br/><br/>It currently uses:<ul><li>Node.js and Express for the server and includes such npm packages such as Passport, Moment.js and many more.</li><li>Mongodb and Mongoose for data storage and models.</li><li>Front end is primarily server rendered templates using Handlebars, Bootstrap and jQuery</li><li>For the future,  I hope to move to a React front end to allow for easier customization of the configuration output scripts</li></ul>."
@@ -99,18 +98,6 @@
     "furtherReading":"",
     "repoIcon":"fa-github-square",
     "content":"In Progress: I love highlightjs and wanted to work on a theme that looks like my <span class='txtlink'><a href='/highlightjs/assets/hypersprite-dark.tmTheme' target='new' >Sublime Text theme</a></span>. Meanwhile, I switched to the Atom editor and imported my theme, that can be found in here as well."
-  },
-  {
-    "type":"opensource",
-    "priority":"1",
-    "headline":"R3bl-base - Open Communication",
-    "image":"/assets/images/r3blbase.jpg",
-    "imgAlt":"Github Network",
-    "repoLink":"https://github.com/r3bl-alliance/r3bl-base",
-    "repoTitle":"Repo",
-    "demoLink":"https://r3bl-base-test.herokuapp.com",
-    "repoIcon":"fa-github-square",
-    "content":"Working on a web platform for building all manner of useful projects. It uses technologies such as Firebase, React, Redux, Flow, Socket.io, Node, Express, Webpack and Material Design"
   },
   {
     "type":"projects",
