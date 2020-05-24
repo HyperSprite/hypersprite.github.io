@@ -107,8 +107,8 @@
     "imgAlt":"A Race athlete screenshot",
     "repoLink":"https://github.com/HyperSprite/redux-todo-with-auth",
     "repoIcon":"fa-github-square",
-    "furtherReading":"https://www.araceathlete.com",
-    "moreTitle":"Web App",
+    "furtherReading":"https://blog.araceathlete.com",
+    "moreTitle":"History",
     "content":"This web app connects with Strava using Oath and features different ways to use and view athlete data.<br/><br/>For the code and list of technologies and APIs, follow the <strong>Repo</strong> link. Follow the <strong>Web App</strong> link below to see this app live and scroll down the home page for more in depth feature descriptions and usage. If you're an athlete, click the <strong>\"Connect with Strava\"</strong> button in the top right to get started!<br/><br/>Current features include:<br/><ul><li><strong>Events:</strong> users can add and favorite Events. Each Event will show specific data such as starting elevation and timezone with offset based on the event location and date using Google location services. As the event grows near, it will show weather forecasting for the location on the event day, using Open Weather Maps</li><li><strong>Power at Altitude:</strong> Calculates your FTP based on your training location and event altitude.</li><li><strong>Weekly Stats:</strong> Calculates an athletes cumulative stats for the week.</li><li><strong>Activity Search:</strong> Anyone that uses Strava knows searching their past activities is hit or miss. This uses MongoDB aggregation and text indexing to accurately return all activities that match the search. It also lets you download the activities to a CSV for further examination.</li></ul>"
   },
   {
